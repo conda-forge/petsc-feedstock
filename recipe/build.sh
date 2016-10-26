@@ -16,9 +16,13 @@ $PYTHON ./configure \
   --CXXOPTFLAGS=-O3 \
   --LIBS=-Wl,-rpath,$PREFIX/lib \
   --with-blas-lapack-lib=libopenblas.$SO \
-  --with-cmake=0 \
   --with-hwloc=0 \
+  --download-metis \
+  --with-mpi=1 \
+  --with-pthread=1 \
+  --download-parmetis \
   --with-ssl=0 \
+  --with-suitesparse=1 \
   --with-x=0 \
   --prefix=$PREFIX
 
