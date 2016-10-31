@@ -7,9 +7,12 @@ if [[ $(uname) == Darwin ]]; then
     SO=dylib
 else
     SO=so
+    # -lpthread needed for ptscotch
+    LDFLAGS="-lpthread $LDFLAGS"
 fi
 
 $PYTHON ./configure \
+  LDFLAGS="$LDFLAGS" \
   --with-fc=0 \
   --with-debugging=0 \
   --COPTFLAGS=-O3 \
