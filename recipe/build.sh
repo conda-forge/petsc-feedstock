@@ -31,6 +31,7 @@ for path in $PETSC_DIR $PREFIX; do
 done
 
 make
+make check
 make install
 
 rm -fr $PREFIX/bin
