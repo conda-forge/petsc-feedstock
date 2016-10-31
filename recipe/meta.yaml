@@ -27,12 +27,14 @@ requirements:
     - python
     - cmake
     - blas 1.* {{blas}}
-    - toolchain
     - {{mpi}} {{req[mpi]}}
+    - ptscotch
     - suitesparse 4.5.*
+    - toolchain
   run:
     - blas 1.* {{blas}}
     - {{mpi}} {{req[mpi]}}
+    - ptscotch
     - suitesparse 4.5.*
 
 about:

@@ -17,10 +17,9 @@ $PYTHON ./configure \
   --LIBS=-Wl,-rpath,$PREFIX/lib \
   --with-blas-lapack-lib=libopenblas.$SO \
   --with-hwloc=0 \
-  --download-metis \
   --with-mpi=1 \
   --with-pthread=1 \
-  --download-parmetis \
+  --with-ptscotch=1 \
   --with-ssl=0 \
   --with-suitesparse=1 \
   --with-x=0 \
