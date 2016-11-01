@@ -1,6 +1,6 @@
-{% set build = 1 %}
-{% set version = '3.7.2' %}
-{% set md5 = '26c2ff8eaaa9e49aea063f839f5daa7e' %}
+{% set build = 0 %}
+{% set version = '3.7.4' %}
+{% set sha256 = '92aab64b7fd9c8491eefffd4ccebe5c8a0ba90a464e766db453e8fe96fd332e9' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
 {% set mpi = os.environ.get('MPI') or 'mpich' %}
 {% set req = {'mpich':'>=3.2', 'openmpi':'>=1.10'} %}
@@ -12,7 +12,7 @@ package:
 source:
   fn: petsc-lite-{{version}}.tar.gz
   url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{version}}.tar.gz
-  md5: {{md5}}
+  sha256: {{sha256}}
 
 build:
   number: {{build}}
