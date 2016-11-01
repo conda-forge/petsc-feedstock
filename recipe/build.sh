@@ -7,18 +7,24 @@ if [[ $(uname) == Darwin ]]; then
     SO=dylib
 else
     SO=so
+    # -lpthread needed for ptscotch
+    LDFLAGS="-lpthread $LDFLAGS"
 fi
 
 $PYTHON ./configure \
+  LDFLAGS="$LDFLAGS" \
   --with-fc=0 \
   --with-debugging=0 \
   --COPTFLAGS=-O3 \
   --CXXOPTFLAGS=-O3 \
   --LIBS=-Wl,-rpath,$PREFIX/lib \
   --with-blas-lapack-lib=libopenblas.$SO \
-  --with-cmake=0 \
   --with-hwloc=0 \
+  --with-mpi=1 \
+  --with-pthread=1 \
+  --with-ptscotch=1 \
   --with-ssl=0 \
+  --with-suitesparse=1 \
   --with-x=0 \
   --prefix=$PREFIX
 
@@ -28,6 +34,7 @@ for path in $PETSC_DIR $PREFIX; do
 done
 
 make
+make check
 make install
 
 rm -fr $PREFIX/bin
