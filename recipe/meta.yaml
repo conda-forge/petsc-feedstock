@@ -18,13 +18,13 @@ build:
   number: {{build}}
   binary_relocation: true
   detect_binary_files_with_prefix: true
-  skip: true  # [win or py3k]
+  skip: true  # [win]
   features:
     - blas_{{blas}}
 
 requirements:
   build:
-    - python
+    - python 2.7.*
     - cmake
     - blas 1.* {{blas}}
     - {{mpi}} {{req[mpi]}}
