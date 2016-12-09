@@ -1,7 +1,8 @@
-{% set build = 1 %}
+{% set build = 2 %}
 {% set version = '3.7.4' %}
 {% set sha256 = '92aab64b7fd9c8491eefffd4ccebe5c8a0ba90a464e766db453e8fe96fd332e9' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
+{% set openblas_version = '0.2.19' %}
 {% set mpi = os.environ.get('MPI') or 'mpich' %}
 {% set req = {'mpich':'>=3.2', 'openmpi':'>=1.10'} %}
 
@@ -27,12 +28,18 @@ requirements:
     - python 2.7.*
     - cmake
     - blas 1.* {{blas}}
+    {% if blas == 'openblas' %}
+    - openblas {{openblas_version}}
+    {% endif %}
     - {{mpi}} {{req[mpi]}}
     - ptscotch
     - suitesparse 4.5.*
     - toolchain
   run:
     - blas 1.* {{blas}}
+    {% if blas == 'openblas' %}
+    - openblas {{openblas_version}}
+    {% endif %}
     - {{mpi}} {{req[mpi]}}
     - ptscotch
     - suitesparse 4.5.*
