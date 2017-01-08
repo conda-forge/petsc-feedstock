@@ -3,11 +3,6 @@
 export PETSC_DIR=$SRC_DIR
 export PETSC_ARCH=arch-conda-c-opt
 
-if [[ $(uname) == Darwin ]]; then
-    SO=dylib
-else
-    SO=so
-fi
 
 $PYTHON ./configure \
   LDFLAGS="$LDFLAGS" \
@@ -16,7 +11,7 @@ $PYTHON ./configure \
   --COPTFLAGS=-O3 \
   --CXXOPTFLAGS=-O3 \
   --LIBS=-Wl,-rpath,$PREFIX/lib \
-  --with-blas-lapack-lib=libopenblas.$SO \
+  --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
   --with-hwloc=0 \
   --with-mpi=1 \
   --with-pthread=1 \
