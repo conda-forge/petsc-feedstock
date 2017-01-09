@@ -1,7 +1,7 @@
 set -e
 
 export PETSC_DIR=${PREFIX}
-cd "${SRC_DIR}/src/snes/examples/tests"
+cd "src/snes/examples/tests"
 make ex1
 
 # FIXME: runex1 causes early termination with success (?!) on Linux

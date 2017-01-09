@@ -44,6 +44,10 @@ requirements:
     - ptscotch
     - suitesparse 4.5.*
 
+test:
+  source_files:
+    - src/snes/examples/tests
+
 about:
   home: http://www.mcs.anl.gov/petsc/
   summary: 'PETSc: Portable, Extensible Toolkit for Scientific Computation'
