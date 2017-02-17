@@ -17,6 +17,7 @@ $PYTHON ./configure \
   --with-mumps=1 \
   --with-pthread=1 \
   --with-ptscotch=1 \
+  --with-scalapack=1 \
   --with-ssl=0 \
   --with-suitesparse=1 \
   --with-x=0 \
