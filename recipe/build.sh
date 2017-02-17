@@ -14,8 +14,10 @@ $PYTHON ./configure \
   --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
   --with-hwloc=0 \
   --with-mpi=1 \
+  --with-mumps=1 \
   --with-pthread=1 \
   --with-ptscotch=1 \
+  --with-scalapack=1 \
   --with-ssl=0 \
   --with-suitesparse=1 \
   --with-x=0 \
