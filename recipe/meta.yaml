@@ -1,4 +1,4 @@
-{% set build = 3 %}
+{% set build = 4 %}
 {% set version = '3.7.4' %}
 {% set sha256 = '92aab64b7fd9c8491eefffd4ccebe5c8a0ba90a464e766db453e8fe96fd332e9' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
@@ -33,7 +33,7 @@ requirements:
     {% endif %}
     - {{mpi}} {{req[mpi]}}
     - ptscotch
-    - suitesparse 4.5.*
+    - suitesparse 4.5.4
     - toolchain
   run:
     - blas 1.* {{blas}}
@@ -42,7 +42,7 @@ requirements:
     {% endif %}
     - {{mpi}} {{req[mpi]}}
     - ptscotch
-    - suitesparse 4.5.*
+    - suitesparse 4.5.4
 
 test:
   source_files:
