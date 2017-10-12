@@ -38,11 +38,10 @@ done
 
 make
 
-# FIXME: make check prevents upload on CircleCI
+# FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
 # See https://github.com/conda-forge/conda-smithy/pull/337
-if [[ $(uname) == Darwin ]]; then
-    make check
-fi
+# See https://github.com/pmodels/mpich/pull/2755
+make check MPIEXEC="${RECIPE_DIR}/mpiexec.sh"
 
 make install
 
