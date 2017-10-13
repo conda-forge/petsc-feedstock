@@ -1,11 +1,11 @@
+#!/bin/bash
 set -e
 
 export PETSC_DIR=${PREFIX}
 cd "src/snes/examples/tests"
 make ex1
 
-# FIXME: runex1 causes early termination with success (?!) on Linux
-# preventing upload. Still a complete mystery.
-if [[ "$(uname)" == "Darwin" ]]; then
-    make runex1
-fi
+# FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
+# See https://github.com/conda-forge/conda-smithy/pull/337
+# See https://github.com/pmodels/mpich/pull/2755
+make runex1 MPIEXEC="${RECIPE_DIR}/mpiexec.sh"

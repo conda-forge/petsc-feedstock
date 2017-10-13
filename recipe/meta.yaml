@@ -1,6 +1,6 @@
 {% set build = 0 %}
-{% set version = '3.7.6' %}
-{% set sha256 = 'b07f7b4e57d75f982787bd8169f7b8debd5aee2477293da230ab6c80a52c6ef8' %}
+{% set version = '3.8.0' %}
+{% set sha256 = '1aa149d58f366f92339fe05c00a76fcb6c8ed4a87531b307821626c1c65c52d1' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
 {% set openblas_version = '0.2.19' %}
 {% set mpi = os.environ.get('MPI') or 'mpich' %}
@@ -11,20 +11,21 @@ package:
   version: {{version}}
 
 source:
-  fn: petsc-lite-{{version}}.tar.gz
+  fn: petsc-{{version}}.tar.gz
   url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{version}}.tar.gz
   sha256: {{sha256}}
 
 build:
+  skip: true  # [win]
   number: {{build}}
   binary_relocation: true
   detect_binary_files_with_prefix: true
-  skip: true  # [win]
   features:
     - blas_{{blas}}
 
 requirements:
   build:
+    - toolchain
     - python 2.7.*
     - cmake
     - blas 1.* {{blas}}
@@ -34,7 +35,6 @@ requirements:
     - {{mpi}} {{req[mpi]}}
     - ptscotch
     - suitesparse 4.5.4
-    - toolchain
   run:
     - blas 1.* {{blas}}
     {% if blas == 'openblas' %}
@@ -47,6 +47,8 @@ requirements:
 test:
   source_files:
     - src/snes/examples/tests
+  commands:
+    - conda inspect linkages petsc  # [not win]
 
 about:
   home: http://www.mcs.anl.gov/petsc/
