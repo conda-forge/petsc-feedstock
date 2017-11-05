@@ -1,6 +1,6 @@
 {% set build = 0 %}
-{% set version = '3.8.0' %}
-{% set sha256 = '1aa149d58f366f92339fe05c00a76fcb6c8ed4a87531b307821626c1c65c52d1' %}
+{% set version = '3.8.1' %}
+{% set sha256 = 'fdc94525422c41ed617b38d09723bb27c6dbf4831c4c6cc1e27850e60788ccfa' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
 {% set openblas_version = '0.2.19' %}
 {% set mpi = os.environ.get('MPI') or 'mpich' %}
