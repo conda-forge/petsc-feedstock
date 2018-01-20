@@ -25,6 +25,7 @@ build:
 
 requirements:
   build:
+    - gcc  # [not win]
     - toolchain
     - python 2.7.*
     - cmake
@@ -36,6 +37,8 @@ requirements:
     - ptscotch
     - suitesparse 4.5.4
   run:
+    - libgcc  # [linux]
+    - libgfortran  # [osx]
     - blas 1.* {{blas}}
     {% if blas == 'openblas' %}
     - openblas {{openblas_version}}
@@ -45,6 +48,8 @@ requirements:
     - suitesparse 4.5.4
 
 test:
+  requires:
+    - gcc  # [not win]
   source_files:
     - src/snes/examples/tests
   commands:
