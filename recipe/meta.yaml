@@ -14,6 +14,8 @@ source:
   fn: petsc-{{version}}.tar.gz
   url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{version}}.tar.gz
   sha256: {{sha256}}
+  patches:
+    - mumps-metis.patch
 
 build:
   skip: true  # [win]
@@ -34,7 +36,9 @@ requirements:
     - openblas {{openblas_version}}
     {% endif %}
     - {{mpi}} {{req[mpi]}}
-    - ptscotch
+    - mumps-mpi 5.0.2
+    - ptscotch 6.0.4
+    - scalapack 2.0.2
     - suitesparse 4.5.4
   run:
     - libgcc  # [linux]
@@ -44,7 +48,9 @@ requirements:
     - openblas {{openblas_version}}
     {% endif %}
     - {{mpi}} {{req[mpi]}}
-    - ptscotch
+    - mumps-mpi 5.0.2
+    - ptscotch 6.0.4
+    - scalapack 2.0.2
     - suitesparse 4.5.4
 
 test:

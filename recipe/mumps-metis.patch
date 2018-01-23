@@ -1,0 +1,15 @@
+--- a/config/BuildSystem/config/packages/MUMPS.py
++++ b/config/BuildSystem/config/packages/MUMPS.py
+@@ -7,7 +7,8 @@ class Configure(config.package.Package):
+     self.download         = ['git://https://bitbucket.org/petsc/pkg-mumps.git',
+                              'https://bitbucket.org/petsc/pkg-mumps/get/'+self.gitcommit+'.tar.gz']
+     self.downloaddirnames = ['petsc-pkg-mumps']
++    import os
+-    self.liblist          = [['libcmumps.a','libdmumps.a','libsmumps.a','libzmumps.a','libmumps_common.a','libpord.a'],
++    self.liblist          = [['libcmumps.a','libdmumps.a','libsmumps.a','libzmumps.a','libmumps_common.a','libpord.a', 'libmetis' + os.environ['SHLIB_EXT']],
+                             ['libcmumps.a','libdmumps.a','libsmumps.a','libzmumps.a','libmumps_common.a','libpord.a','libpthread.a'],
+                             ['libcmumps.a','libdmumps.a','libsmumps.a','libzmumps.a','libmumps_common.a','libpord.a','libmpiseq.a'],
+                             ['libcmumps.a','libdmumps.a','libsmumps.a','libzmumps.a','libmumps_common.a','libpord.a','libpthread.a','libmpiseq.a']]
+-- 
+2.16.1
+
