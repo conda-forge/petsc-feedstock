@@ -23,6 +23,7 @@ $PYTHON ./configure \
   --with-debugging=0 \
   --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
   --with-hwloc=0 \
+  --with-hypre=1 \
   --with-mpi=1 \
   --with-mumps=1 \
   --with-pthread=1 \

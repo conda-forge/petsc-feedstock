@@ -36,6 +36,7 @@ requirements:
     - openblas {{openblas_version}}
     {% endif %}
     - {{mpi}} {{req[mpi]}}
+    - hypre 2.11.2
     - mumps-mpi 5.0.2
     - ptscotch 6.0.4
     - scalapack 2.0.2
@@ -48,6 +49,7 @@ requirements:
     - openblas {{openblas_version}}
     {% endif %}
     - {{mpi}} {{req[mpi]}}
+    - hypre 2.11.2
     - mumps-mpi 5.0.2
     - ptscotch 6.0.4
     - scalapack 2.0.2
