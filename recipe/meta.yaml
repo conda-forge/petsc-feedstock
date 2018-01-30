@@ -1,4 +1,4 @@
-{% set build = 0 %}
+{% set build = 1 %}
 {% set version = '3.8.3' %}
 {% set sha256 = '5509e35d55d5ce9e92dbe7a83f5e509865aea2a4cc2d9f16f72b7a5ceaafed96' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
@@ -14,6 +14,8 @@ source:
   fn: petsc-{{version}}.tar.gz
   url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{version}}.tar.gz
   sha256: {{sha256}}
+  patches:
+    - petsc-lib.patch
 
 build:
   skip: true  # [win]

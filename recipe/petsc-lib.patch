@@ -1,0 +1,31 @@
+--- config/PETSc/Configure.py.orig	2018-01-30 19:42:31.000000000 +0100
++++ config/PETSc/Configure.py	2018-01-30 19:44:28.000000000 +0100
+@@ -416,17 +416,17 @@
+       self.addMakeMacro('PETSC_WITH_EXTERNAL_LIB',self.alllibs)
+       self.addDefine('USE_SINGLE_LIBRARY', '1')
+       if self.sharedlibraries.useShared:
+-        self.addMakeMacro('PETSC_SYS_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_VEC_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_MAT_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_DM_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_KSP_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_SNES_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_TS_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_TAO_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_CHARACTERISTIC_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_LIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
+-        self.addMakeMacro('PETSC_CONTRIB','${C_SH_LIB_PATH} ${PETSC_WITH_EXTERNAL_LIB}')
++        self.addMakeMacro('PETSC_SYS_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_VEC_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_MAT_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_DM_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_KSP_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_SNES_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_TS_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_TAO_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_CHARACTERISTIC_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_LIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
++        self.addMakeMacro('PETSC_CONTRIB','${C_SH_LIB_PATH} ${PETSC_LIB_BASIC}')
+       else:
+         self.addMakeMacro('PETSC_SYS_LIB','${PETSC_WITH_EXTERNAL_LIB}')
+         self.addMakeMacro('PETSC_VEC_LIB','${PETSC_WITH_EXTERNAL_LIB}')
