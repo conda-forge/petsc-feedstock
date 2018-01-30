@@ -37,7 +37,9 @@ requirements:
     {% endif %}
     - {{mpi}} {{req[mpi]}}
     - hypre 2.11.2
+    - metis 5.1.0
     - mumps-mpi 5.0.2
+    - parmetis 4.0.3
     - ptscotch 6.0.4
     - scalapack 2.0.2
     - suitesparse 4.5.4
@@ -50,7 +52,9 @@ requirements:
     {% endif %}
     - {{mpi}} {{req[mpi]}}
     - hypre 2.11.2
+    - metis 5.1.0
     - mumps-mpi 5.0.2
+    - parmetis 4.0.3
     - ptscotch 6.0.4
     - scalapack 2.0.2
     - suitesparse 4.5.4
