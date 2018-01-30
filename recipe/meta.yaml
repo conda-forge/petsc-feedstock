@@ -1,8 +1,6 @@
-{% set build = 0 %}
 {% set version = '3.8.3' %}
 {% set sha256 = '5509e35d55d5ce9e92dbe7a83f5e509865aea2a4cc2d9f16f72b7a5ceaafed96' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
-{% set openblas_version = '0.2.20|0.2.20.*' %}
 {% set mpi = os.environ.get('MPI') or 'mpich' %}
 {% set req = {'mpich':'>=3.2', 'openmpi':'>=1.10'} %}
 
@@ -19,7 +17,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: {{build}}
+  number: 1
   binary_relocation: true
   detect_binary_files_with_prefix: true
   features:
@@ -33,7 +31,7 @@ requirements:
     - cmake
     - blas 1.* {{blas}}
     {% if blas == 'openblas' %}
-    - openblas {{openblas_version}}
+    - openblas 0.2.20|0.2.20.*
     {% endif %}
     - {{mpi}} {{req[mpi]}}
     - hypre 2.11.2
@@ -48,7 +46,7 @@ requirements:
     - libgfortran  # [osx]
     - blas 1.* {{blas}}
     {% if blas == 'openblas' %}
-    - openblas {{openblas_version}}
+    - openblas 0.2.20|0.2.20.*
     {% endif %}
     - {{mpi}} {{req[mpi]}}
     - hypre 2.11.2
