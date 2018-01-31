@@ -12,8 +12,6 @@ source:
   fn: petsc-{{version}}.tar.gz
   url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{version}}.tar.gz
   sha256: {{sha256}}
-  patches:
-    - mumps-metis.patch
 
 build:
   skip: true  # [win]
