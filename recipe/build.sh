@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -eu
 export PETSC_DIR=$SRC_DIR
 export PETSC_ARCH=arch-conda-c-opt
 
@@ -23,10 +23,15 @@ $PYTHON ./configure \
   --with-debugging=0 \
   --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
   --with-hwloc=0 \
+  --with-hypre=1 \
+  --with-metis=1 \
   --with-mpi=1 \
+  --with-mumps=1 \
+  --with-parmetis=1 \
   --with-pthread=1 \
   --with-ptscotch=1 \
   --with-ssl=0 \
+  --with-scalapack=1 \
   --with-suitesparse=1 \
   --with-x=0 \
   --prefix=$PREFIX
