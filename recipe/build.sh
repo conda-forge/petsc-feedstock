@@ -50,15 +50,6 @@ make check MPIEXEC="${RECIPE_DIR}/mpiexec.sh"
 
 make install
 
-rm -fr $PREFIX/bin && mkdir $PREFIX/bin
-rm -fr $PREFIX/share && mkdir $PREFIX/share
-rm -fr $PREFIX/lib/lib$PKG_NAME.*.dylib.dSYM
-rm -f  $PREFIX/lib/$PKG_NAME/conf/.DIR
-rm -f  $PREFIX/lib/$PKG_NAME/conf/mpitest.c
-rm -f  $PREFIX/lib/$PKG_NAME/conf/files
-rm -f  $PREFIX/lib/$PKG_NAME/conf/testfiles
-rm -f  $PREFIX/lib/$PKG_NAME/conf/*.py
-rm -f  $PREFIX/lib/$PKG_NAME/conf/*.log
-rm -f  $PREFIX/lib/$PKG_NAME/conf/RDict.db
-rm -f  $PREFIX/lib/$PKG_NAME/conf/*BuildInternal.cmake
-find   $PREFIX/include -name '*.html' -delete
+rm -fr $PREFIX/share/petsc/examples
+rm -fr $PREFIX/share/petsc/datafiles
+find   $PREFIX/lib/petsc -name '*.pyc' -delete

@@ -1,5 +1,5 @@
-{% set version = "3.8.4" %}
-{% set sha256 = '4b511f4dc6ae1972b8c3d25673bc2b1262775df703728fa57522b2ddf14b13b8' %}
+{% set version = "3.9.0" %}
+{% set sha256 = 'a233e0d7f69c98504a1c3548162c6024f7797dde5556b83b0f98ce7326251ca1' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
 {% set mpi = os.environ.get('MPI') or 'mpich' %}
 {% set req = {'mpich':'>=3.2', 'openmpi':'>=1.10'} %}
@@ -29,10 +29,10 @@ requirements:
     - cmake
     - blas 1.* {{blas}}
     {% if blas == 'openblas' %}
-    - openblas 0.2.20|0.2.20.*
+    - openblas 0.2.20
     {% endif %}
     - {{mpi}} {{req[mpi]}}
-    - hypre 2.11.2
+    - hypre 2.14.0
     - metis 5.1.0
     - mumps-mpi 5.0.2
     - parmetis 4.0.3
@@ -58,9 +58,12 @@ requirements:
 test:
   requires:
     - gcc  # [not win]
-  source_files:
-    - src/snes/examples/tests
+  files:
+    - tests/ex1.c
+    - tests/ex1f.F90
+    - tests/makefile
   commands:
+    - conda inspect objects mpich  # [osx]
     - conda inspect linkages petsc  # [not win]
 
 about:
@@ -68,6 +71,7 @@ about:
   summary: 'PETSc: Portable, Extensible Toolkit for Scientific Computation'
   license: BSD 2-Clause
   license_file: LICENSE
+  license_family: BSD
 
 extra:
   recipe-maintainers:

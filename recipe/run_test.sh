@@ -2,7 +2,7 @@
 set -e
 
 export PETSC_DIR=${PREFIX}
-cd "src/snes/examples/tests"
+cd tests
 make ex1
 make ex1f
 
