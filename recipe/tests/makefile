@@ -13,6 +13,6 @@ runex1:
 	-@${MPIEXEC} -n 1 ./ex1 -snes_monitor_short -ksp_gmres_cgs_refinement_type refine_always
 
 runex1f:
-	-@${MPIEXEC} -n 1 ./ex1f -snes_monitor_short -snes_type newtontr -ksp_gmres_cgs_refinement_type refine_always
+	-@${MPIEXEC} -n 1 ./ex1f -snes_monitor_short -snes_type newtontr -ksp_gmres_cgs_refinement_type refine_always -nox
 
 include ${PETSC_DIR}/lib/petsc/conf/test
