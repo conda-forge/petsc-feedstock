@@ -1,25 +1,22 @@
 {% set version = "3.9.1" %}
 {% set sha256 = '8e3455d2ef0aed637d4d8033dab752551e049a088f893610b799aa3188a5c246' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
-{% set mpi = os.environ.get('MPI') or 'mpich' %}
-{% set req = {'mpich':'>=3.2', 'openmpi':'>=1.10'} %}
 
 package:
   name: petsc
-  version: {{version}}
+  version: {{ version }}
 
 source:
-  fn: petsc-{{version}}.tar.gz
-  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{version}}.tar.gz
-  sha256: {{sha256}}
+  fn: petsc-{{ version }}.tar.gz
+  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   skip: true  # [win]
   number: 0
-  binary_relocation: true
-  detect_binary_files_with_prefix: true
+  string: {{ mpi }}_{{ build }}
   features:
-    - blas_{{blas}}
+    - blas_{{ blas }}
 
 requirements:
   build:
@@ -27,11 +24,11 @@ requirements:
     - toolchain
     - python 2.7.*
     - cmake
-    - blas 1.* {{blas}}
+    - blas 1.* {{ blas }}
     {% if blas == 'openblas' %}
     - openblas 0.2.20|0.2.20.*
     {% endif %}
-    - {{mpi}} {{req[mpi]}}
+    - {{ mpi }}
     - hypre 2.14.0
     - metis 5.1.0
     - mumps-mpi 5.0.2
@@ -42,11 +39,11 @@ requirements:
   run:
     - libgcc  # [linux]
     - libgfortran  # [osx]
-    - blas 1.* {{blas}}
+    - blas 1.* {{ blas }}
     {% if blas == 'openblas' %}
     - openblas 0.2.20|0.2.20.*
     {% endif %}
-    - {{mpi}} {{req[mpi]}}
+    - {{ mpi }}
     - hypre 2.11.2
     - metis 5.1.0
     - mumps-mpi 5.0.2
