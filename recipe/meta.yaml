@@ -1,5 +1,5 @@
-{% set version = "3.9.1" %}
-{% set sha256 = '8e3455d2ef0aed637d4d8033dab752551e049a088f893610b799aa3188a5c246' %}
+{% set version = "3.9.2" %}
+{% set sha256 = '65100189796f05991bb2e746f56eec27f8425f6eb901f8f08459ffd2a5e6c69a' %}
 {% set blas = os.environ.get('BLAS') or 'openblas' %}
 
 package:
@@ -14,7 +14,6 @@ source:
 build:
   skip: true  # [win]
   number: 0
-  string: {{ mpi }}_{{ build }}
   features:
     - blas_{{ blas }}
 
