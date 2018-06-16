@@ -29,7 +29,7 @@ requirements:
     - cmake
     - blas 1.* {{blas}}
     {% if blas == 'openblas' %}
-    - openblas 0.2.20
+    - openblas 0.2.20|0.2.20.*
     {% endif %}
     - {{mpi}} {{req[mpi]}}
     - hypre 2.14.0
