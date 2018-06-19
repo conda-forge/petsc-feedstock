@@ -28,13 +28,13 @@ requirements:
     - openblas 0.2.20|0.2.20.*
     {% endif %}
     - {{ mpi }}
-    - hypre 2.14.0
-    - metis 5.1.0
-    - mumps-mpi 5.0.2
-    - parmetis 4.0.3
-    - ptscotch 6.0.4
-    - scalapack 2.0.2
-    - suitesparse 4.5.4
+    - hypre 2.14.*
+    - metis 5.1.*
+    - parmetis 4.0.*
+    - ptscotch 6.0.*
+    - scalapack 2.0.*
+    - mumps-mpi 5.1.*
+    - suitesparse 4.5.*
   run:
     - libgcc  # [linux]
     - libgfortran  # [osx]
@@ -43,13 +43,13 @@ requirements:
     - openblas 0.2.20|0.2.20.*
     {% endif %}
     - {{ mpi }}
-    - hypre 2.11.2
-    - metis 5.1.0
-    - mumps-mpi 5.0.2
-    - parmetis 4.0.3
-    - ptscotch 6.0.4
-    - scalapack 2.0.2
-    - suitesparse 4.5.4
+    - hypre 2.14.*
+    - metis 5.1.*
+    - parmetis 4.0.*
+    - ptscotch 6.0.*
+    - scalapack 2.0.*
+    - mumps-mpi 5.1.*
+    - suitesparse 4.5.*
 
 test:
   requires:
