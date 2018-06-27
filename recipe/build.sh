@@ -9,7 +9,7 @@ if [[ $(uname) == Linux ]]; then
     export LDFLAGS="-pthread $LDFLAGS"
 fi
 
-$PYTHON ./configure \
+python ./configure \
   CPPFLAGS="$CPPFLAGS" \
   CFLAGS="$CFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
