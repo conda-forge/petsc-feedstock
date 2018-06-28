@@ -22,7 +22,7 @@ python ./configure \
   --FOPTFLAGS=-O3 \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
-  --with-fortranlib-autodetect=0 \
+  --with-fortranlib-autodetect=1 \
   --with-debugging=0 \
   --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
   --with-hwloc=0 \
