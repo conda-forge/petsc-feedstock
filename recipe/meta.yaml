@@ -13,47 +13,49 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   features:
     - blas_{{ blas }}
 
 requirements:
   build:
-    - gcc  # [not win]
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
     - python 2.7.*
+  host:
     - cmake
     - blas 1.* {{ blas }}
     {% if blas == 'openblas' %}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
     {% endif %}
     - {{ mpi }}
-    - hypre 2.14.*
-    - metis 5.1.*
-    - parmetis 4.0.*
-    - ptscotch 6.0.*
-    - scalapack 2.0.*
-    - mumps-mpi 5.1.*
-    - suitesparse 4.5.*
+    - hypre
+    - metis
+    - parmetis
+    - ptscotch
+    - scalapack
+    - mumps-mpi
+    - suitesparse
   run:
-    - libgcc  # [linux]
-    - libgfortran  # [osx]
     - blas 1.* {{ blas }}
     {% if blas == 'openblas' %}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
     {% endif %}
     - {{ mpi }}
-    - hypre 2.14.*
-    - metis 5.1.*
-    - parmetis 4.0.*
-    - ptscotch 6.0.*
-    - scalapack 2.0.*
-    - mumps-mpi 5.1.*
-    - suitesparse 4.5.*
+    - hypre
+    - metis
+    - parmetis
+    - ptscotch
+    - scalapack
+    - mumps-mpi
+    - suitesparse
 
 test:
   requires:
-    - gcc  # [not win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
   files:
     - tests/ex1.c
     - tests/ex1f.F90
