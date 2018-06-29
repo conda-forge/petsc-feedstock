@@ -53,7 +53,7 @@ done
 
 make
 
-for f in $(grep -l build_env -R "${PETSC_ARCH}/lib"); do
+for f in $(grep -l build_env -R "${PETSC_ARCH}/lib/petsc"); do
   echo "fixing build prefix in $f"
   sedinplace s%${BUILD_PREFIX}%${PREFIX}%g $f
 done
