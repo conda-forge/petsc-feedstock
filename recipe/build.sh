@@ -10,8 +10,11 @@ if [[ $(uname) == Linux ]]; then
 fi
 
 python ./configure \
-  CPPFLAGS="$CPPFLAGS" \
+  CC="mpicc" \
+  CXX="mpicxx" \
+  FC="mpifort" \
   CFLAGS="$CFLAGS" \
+  CPPFLAGS="$CPPFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
   LDFLAGS="$LDFLAGS" \
   --COPTFLAGS=-O3 \
@@ -36,12 +39,24 @@ python ./configure \
   --with-x=0 \
   --prefix=$PREFIX
 
-sedinplace() { [[ $(uname) == Darwin ]] && sed -i "" $@ || sed -i"" $@; }
+sedinplace() {
+  if [[ $(uname) == Darwin ]]; then
+    sed -i "" $@
+  else
+    sed -i"" $@
+  fi
+}
+
 for path in $PETSC_DIR $PREFIX; do
     sedinplace s%$path%\${PETSC_DIR}%g $PETSC_ARCH/include/petsc*.h
 done
 
 make
+
+for f in $(grep -l build_env -R "${PETSC_ARCH}/lib/petsc"); do
+  echo "fixing build prefix in $f"
+  sedinplace s%${BUILD_PREFIX}%${PREFIX}%g $f
+done
 
 # FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
 # See https://github.com/conda-forge/conda-smithy/pull/337

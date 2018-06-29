@@ -1,6 +1,5 @@
 {% set version = "3.9.2" %}
 {% set sha256 = '65100189796f05991bb2e746f56eec27f8425f6eb901f8f08459ffd2a5e6c69a' %}
-{% set blas = os.environ.get('BLAS') or 'openblas' %}
 
 package:
   name: petsc
@@ -13,22 +12,19 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
-  features:
-    - blas_{{ blas }}
+  number: 2
+  run_exports:
+    - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
-    - python 2.7.*
   host:
+    - python 2.7.*
     - cmake
-    - blas 1.* {{ blas }}
-    {% if blas == 'openblas' %}
     - openblas
-    {% endif %}
     - {{ mpi }}
     - hypre
     - metis
@@ -38,10 +34,7 @@ requirements:
     - mumps-mpi
     - suitesparse
   run:
-    - blas 1.* {{ blas }}
-    {% if blas == 'openblas' %}
     - openblas
-    {% endif %}
     - {{ mpi }}
     - hypre
     - metis
