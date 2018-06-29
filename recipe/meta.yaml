@@ -12,7 +12,9 @@ source:
 
 build:
   skip: true  # [win]
-  number: 2
+  number: 3
+  features:
+    - blas_openblas
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
