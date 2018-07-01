@@ -41,14 +41,23 @@ python ./configure \
 
 sedinplace() {
   if [[ $(uname) == Darwin ]]; then
-    sed -i "" $@
+    sed -i "" "$@"
   else
-    sed -i"" $@
+    sed -i"" "$@"
   fi
 }
 
 for path in $PETSC_DIR $PREFIX; do
     sedinplace s%$path%\${PETSC_DIR}%g $PETSC_ARCH/include/petsc*.h
+done
+
+# remove abspath of build_env/bin/python
+sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python2%g" $PETSC_ARCH/lib/petsc/conf/reconfigure-arch-conda-c-opt.py
+sedinplace "s%${BUILD_PREFIX}/bin/python%python2%g" $PETSC_ARCH/lib/petsc/conf/petscvariables
+
+# remove spurious linking of libgcc_ext brought in from FORTRAN_IMPLICIT_LIBS
+for f in lib/petsc/conf/petscvariables lib/pkgconfig/PETSc.pc; do
+  sedinplace "s@\-lgcc_ext[^ ]*@@g" "$PETSC_ARCH/$f"
 done
 
 make
