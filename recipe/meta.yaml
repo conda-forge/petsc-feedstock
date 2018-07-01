@@ -12,7 +12,9 @@ source:
 
 build:
   skip: true  # [win]
-  number: 3
+  number: 4
+  # we didn't need to add this feature,
+  # but we cannot remove it until blas mpkg drops track_features
   features:
     - blas_openblas
   run_exports:
@@ -23,8 +25,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
-  host:
     - python 2.7.*
+  host:
     - cmake
     - openblas
     - {{ mpi }}
