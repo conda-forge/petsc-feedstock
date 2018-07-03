@@ -37,7 +37,7 @@ python ./configure \
   --with-scalapack=1 \
   --with-suitesparse=1 \
   --with-x=0 \
-  --prefix=$PREFIX
+  --prefix=$PREFIX || (cat configure.log && exit 1)
 
 sedinplace() {
   if [[ $(uname) == Darwin ]]; then
