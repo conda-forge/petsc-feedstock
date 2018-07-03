@@ -17,12 +17,13 @@ python ./configure \
   CPPFLAGS="$CPPFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
   LDFLAGS="$LDFLAGS" \
+  LIBS="-lmpifort -lgfortran" \
   --COPTFLAGS=-O3 \
   --CXXOPTFLAGS=-O3 \
   --FOPTFLAGS=-O3 \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
-  --with-fortranlib-autodetect=0 LIBS="-lgfortran" \
+  --with-fortranlib-autodetect=0 \
   --with-debugging=0 \
   --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
   --with-hwloc=0 \
