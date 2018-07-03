@@ -9,6 +9,12 @@ if [[ $(uname) == Linux ]]; then
     export LDFLAGS="-pthread $LDFLAGS"
 fi
 
+if [[ $mpi == "openmpi" ]]; then
+  export LIBS="-lmpi_mpifh -lgfortran"
+elif [[ $mpi == "mpich" ]]; then
+  export LIBS="-lmpifort -lgfortran"
+fi
+
 python ./configure \
   CC="mpicc" \
   CXX="mpicxx" \
@@ -17,7 +23,7 @@ python ./configure \
   CPPFLAGS="$CPPFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
   LDFLAGS="$LDFLAGS" \
-  LIBS="-lmpifort -lgfortran" \
+  LIBS="$LIBS" \
   --COPTFLAGS=-O3 \
   --CXXOPTFLAGS=-O3 \
   --FOPTFLAGS=-O3 \
