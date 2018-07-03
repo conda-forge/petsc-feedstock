@@ -9,6 +9,12 @@ if [[ $(uname) == Linux ]]; then
     export LDFLAGS="-pthread $LDFLAGS"
 fi
 
+if [[ $mpi == "openmpi" ]]; then
+  export LIBS="-lmpi_mpifh -lgfortran"
+elif [[ $mpi == "mpich" ]]; then
+  export LIBS="-lmpifort -lgfortran"
+fi
+
 python ./configure \
   CC="mpicc" \
   CXX="mpicxx" \
@@ -17,12 +23,13 @@ python ./configure \
   CPPFLAGS="$CPPFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
   LDFLAGS="$LDFLAGS" \
+  LIBS="$LIBS" \
   --COPTFLAGS=-O3 \
   --CXXOPTFLAGS=-O3 \
   --FOPTFLAGS=-O3 \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
-  --with-fortranlib-autodetect=1 \
+  --with-fortranlib-autodetect=0 \
   --with-debugging=0 \
   --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
   --with-hwloc=0 \
@@ -37,7 +44,7 @@ python ./configure \
   --with-scalapack=1 \
   --with-suitesparse=1 \
   --with-x=0 \
-  --prefix=$PREFIX
+  --prefix=$PREFIX || (cat configure.log && exit 1)
 
 sedinplace() {
   if [[ $(uname) == Darwin ]]; then
@@ -55,9 +62,12 @@ done
 sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python2%g" $PETSC_ARCH/lib/petsc/conf/reconfigure-arch-conda-c-opt.py
 sedinplace "s%${BUILD_PREFIX}/bin/python%python2%g" $PETSC_ARCH/lib/petsc/conf/petscvariables
 
-# remove spurious linking of libgcc_ext brought in from FORTRAN_IMPLICIT_LIBS
+# verify that gcc_ext isn't linked
 for f in lib/petsc/conf/petscvariables lib/pkgconfig/PETSc.pc; do
-  sedinplace "s@\-lgcc_ext[^ ]*@@g" "$PETSC_ARCH/$f"
+  if grep gcc_ext $f; then
+    echo "gcc_ext found in $f"
+    exit 1
+  fi
 done
 
 make
