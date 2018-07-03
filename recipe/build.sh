@@ -56,9 +56,12 @@ done
 sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python2%g" $PETSC_ARCH/lib/petsc/conf/reconfigure-arch-conda-c-opt.py
 sedinplace "s%${BUILD_PREFIX}/bin/python%python2%g" $PETSC_ARCH/lib/petsc/conf/petscvariables
 
-# remove spurious linking of libgcc_ext brought in from FORTRAN_IMPLICIT_LIBS
+# verify that gcc_ext isn't linked
 for f in lib/petsc/conf/petscvariables lib/pkgconfig/PETSc.pc; do
-  sedinplace "s@\-lgcc_ext[^ ]*@@g" "$PETSC_ARCH/$f"
+  if grep gcc_ext $f; then
+    echo "gcc_ext found in $f"
+    exit 1
+  fi
 done
 
 make
