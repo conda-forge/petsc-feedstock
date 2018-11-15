@@ -3,6 +3,8 @@ set -eu
 export PETSC_DIR=$SRC_DIR
 export PETSC_ARCH=arch-conda-c-opt
 
+unset F90
+unset F77
 unset CC
 unset CXX
 if [[ $(uname) == Linux ]]; then
@@ -10,18 +12,20 @@ if [[ $(uname) == Linux ]]; then
 fi
 
 if [[ $mpi == "openmpi" ]]; then
-  export LIBS="-lmpi_mpifh -lgfortran"
+  export LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
 elif [[ $mpi == "mpich" ]]; then
   export LIBS="-lmpifort -lgfortran"
 fi
 
 python ./configure \
+  AR="${AR:-ar}" \
   CC="mpicc" \
   CXX="mpicxx" \
   FC="mpifort" \
   CFLAGS="$CFLAGS" \
   CPPFLAGS="$CPPFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
+  FFLAGS="$FFLAGS" \
   LDFLAGS="$LDFLAGS" \
   LIBS="$LIBS" \
   --COPTFLAGS=-O3 \
