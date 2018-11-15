@@ -9,6 +9,7 @@ unset CC
 unset CXX
 if [[ $(uname) == Linux ]]; then
     export LDFLAGS="-pthread $LDFLAGS"
+    export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
 fi
 
 if [[ $mpi == "openmpi" ]]; then
