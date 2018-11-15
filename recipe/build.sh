@@ -25,7 +25,7 @@ python ./configure \
   CFLAGS="$CFLAGS" \
   CPPFLAGS="$CPPFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
-  FFLAGS="$FFLAGS" \
+  FFLAGS="${FFLAGS:-}" \
   LDFLAGS="$LDFLAGS" \
   LIBS="$LIBS" \
   --COPTFLAGS=-O3 \
