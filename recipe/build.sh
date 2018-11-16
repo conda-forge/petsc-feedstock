@@ -3,25 +3,34 @@ set -eu
 export PETSC_DIR=$SRC_DIR
 export PETSC_ARCH=arch-conda-c-opt
 
+unset F90
+unset F77
 unset CC
 unset CXX
 if [[ $(uname) == Linux ]]; then
-    export LDFLAGS="-pthread $LDFLAGS"
+    export LDFLAGS="-pthread -fopenmp $LDFLAGS"
+    export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
+    # --as-needed appears to cause problems with fortran compiler detection
+    # due to missing libquadmath
+    # unclear why required libs are stripped but still linked
+    export FFLAGS="${FFLAGS:-} -Wl,--no-as-needed"
 fi
 
 if [[ $mpi == "openmpi" ]]; then
-  export LIBS="-lmpi_mpifh -lgfortran"
+  export LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
 elif [[ $mpi == "mpich" ]]; then
   export LIBS="-lmpifort -lgfortran"
 fi
 
 python ./configure \
+  AR="${AR:-ar}" \
   CC="mpicc" \
   CXX="mpicxx" \
   FC="mpifort" \
   CFLAGS="$CFLAGS" \
   CPPFLAGS="$CPPFLAGS" \
   CXXFLAGS="$CXXFLAGS" \
+  FFLAGS="${FFLAGS:-}" \
   LDFLAGS="$LDFLAGS" \
   LIBS="$LIBS" \
   --COPTFLAGS=-O3 \

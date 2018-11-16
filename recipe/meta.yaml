@@ -12,7 +12,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1000
   # we didn't need to add this feature,
   # but we cannot remove it until blas mpkg drops track_features
   features:
