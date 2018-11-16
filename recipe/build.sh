@@ -8,10 +8,10 @@ unset F77
 unset CC
 unset CXX
 if [[ $(uname) == Linux ]]; then
-    export LDFLAGS="-pthread $LDFLAGS"
+    export LDFLAGS="-pthread -fopenmp $LDFLAGS"
     export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
     # --as-needed appears to cause problems with fortran compiler detection
-    # due to missing but still required libquadmath
+    # due to missing libquadmath
     # unclear why required libs are stripped but still linked
     export FFLAGS="${FFLAGS:-} -Wl,--no-as-needed"
 fi
