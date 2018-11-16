@@ -10,6 +10,10 @@ unset CXX
 if [[ $(uname) == Linux ]]; then
     export LDFLAGS="-pthread $LDFLAGS"
     export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
+    # --as-needed appears to cause problems with fortran compiler detection
+    # due to missing but still required libquadmath
+    # unclear why required libs are stripped but still linked
+    export FFLAGS="${FFLAGS:-} -Wl,--no-as-needed"
 fi
 
 if [[ $mpi == "openmpi" ]]; then
