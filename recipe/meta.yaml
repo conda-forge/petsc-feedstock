@@ -12,7 +12,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1001
+  number: 1002
   # we didn't need to add this feature,
   # but we cannot remove it until blas mpkg drops track_features
   features:
@@ -50,6 +50,7 @@ requirements:
 
 test:
   requires:
+    - pkg-config
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
@@ -58,8 +59,9 @@ test:
     - tests/ex1f.F90
     - tests/makefile
   commands:
-    - conda inspect objects  petsc  # [osx]
-    - conda inspect linkages petsc  # [not win]
+    - pkg-config --validate PETSc
+    - pkg-config --cflags PETSc
+    - pkg-config --libs PETSc
 
 about:
   home: http://www.mcs.anl.gov/petsc/
