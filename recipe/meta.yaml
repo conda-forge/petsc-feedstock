@@ -9,10 +9,12 @@ source:
   fn: petsc-{{ version }}.tar.gz
   url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - ignore-not-invalid.patch
 
 build:
   skip: true  # [win]
-  number: 1002
+  number: 1003
   # we didn't need to add this feature,
   # but we cannot remove it until blas mpkg drops track_features
   features:

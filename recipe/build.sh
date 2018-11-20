@@ -54,6 +54,7 @@ python ./configure \
   --with-parmetis=1 \
   --with-pthread=1 \
   --with-ptscotch=1 \
+  --with-shared-libraries \
   --with-ssl=0 \
   --with-scalapack=1 \
   --with-suitesparse=1 \
