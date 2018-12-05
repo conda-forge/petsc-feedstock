@@ -14,11 +14,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1004
-  # we didn't need to add this feature,
-  # but we cannot remove it until blas mpkg drops track_features
-  features:
-    - blas_openblas
+  number: 1005
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
