@@ -1,5 +1,5 @@
-{% set version = "3.10.3" %}
-{% set sha256 = "f03650ea5592313dd2b8be7ae9cc498369da660185b58f9e98689a9bc355e982" %}
+{% set version = "3.10.4" %}
+{% set sha256 = "1921b2208801d6e03b44035d65d6c11901dbfa6c13a5a0f23864c04f4832613a" %}
 
 package:
   name: petsc
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1000
+  number: 0
   # we didn't need to add this feature,
   # but we cannot remove it until blas mpkg drops track_features
   features:
