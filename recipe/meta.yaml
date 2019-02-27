@@ -27,6 +27,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - pkg-config
     - python 2.7.*
   host:
     - cmake
@@ -37,6 +38,7 @@ requirements:
     - parmetis
     - ptscotch
     - scalapack
+    - scotch
     - mumps-mpi
     - suitesparse
   run:
@@ -47,6 +49,7 @@ requirements:
     - parmetis
     - ptscotch
     - scalapack
+    - scotch
     - mumps-mpi
     - suitesparse
 
