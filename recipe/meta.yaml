@@ -14,11 +14,10 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   # we didn't need to add this feature,
   # but we cannot remove it until blas mpkg drops track_features
   features:
-    - blas_openblas
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
@@ -30,8 +29,9 @@ requirements:
     - pkg-config
     - python 2.7.*
   host:
+    - libblas
+    - libcblas
     - cmake
-    - openblas
     - {{ mpi }}
     - hypre
     - metis
@@ -42,7 +42,6 @@ requirements:
     - mumps-mpi
     - suitesparse
   run:
-    - openblas
     - {{ mpi }}
     - hypre
     - metis

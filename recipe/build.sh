@@ -45,7 +45,8 @@ python ./configure \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
   --with-debugging=0 \
-  --with-blas-lapack-lib=libopenblas${SHLIB_EXT} \
+  --with-blas-lib=libblas${SHLIB_EXT} \
+  --with-lapack-lib=liblapack${SHLIB_EXT} \
   --with-hwloc=0 \
   --with-hypre=1 \
   --with-metis=1 \
