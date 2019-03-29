@@ -14,10 +14,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
-  # we didn't need to add this feature,
-  # but we cannot remove it until blas mpkg drops track_features
-  features:
+  number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
