@@ -1,5 +1,5 @@
-{% set version = "3.11.0" %}
-{% set sha256 = "9eccc9283cfca45369d8b71b4246409fc071a681c633cacbd316896e12175211" %}
+{% set version = "3.11.1" %}
+{% set sha256 = "d14ffc082bfa83cd1fc5a0486d264ef19e2e43356ed768918eaa028ebb9be9d4" %}
 
 package:
   name: petsc
