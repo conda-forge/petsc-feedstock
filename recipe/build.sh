@@ -100,6 +100,8 @@ make check MPIEXEC="${RECIPE_DIR}/mpiexec.sh"
 
 make install
 
-rm -fr $PREFIX/share/petsc/examples
+du -hs $PREFIX/share/petsc/examples/*
+rm -fr $PREFIX/share/petsc/examples/src
+du -hs $PREFIX/share/petsc/datafiles/*
 rm -fr $PREFIX/share/petsc/datafiles
 find   $PREFIX/lib/petsc -name '*.pyc' -delete
