@@ -14,7 +14,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
