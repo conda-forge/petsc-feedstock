@@ -1,6 +1,8 @@
 mpi:
   - mpich
   - openmpi
+mumps_mpi:
+  - 5.2
 
 pin_run_as_build:
   hypre:
