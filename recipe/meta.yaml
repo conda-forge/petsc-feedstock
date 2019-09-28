@@ -1,5 +1,5 @@
-{% set version = "3.11.3" %}
-{% set sha256 = "8bee4a5ad37af85938ae755be182dcea255888b4f8b3d976bedc57e959280622" %}
+{% set version = "3.11.4" %}
+{% set sha256 = "006177b4059cd40310a3e9a4bf475f3a8c276b62d8cca4df272ef88bdfc2f83a" %}
 
 package:
   name: petsc
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 3
+  number: 0
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
