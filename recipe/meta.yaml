@@ -45,6 +45,7 @@ requirements:
     - mumps-mpi
     - suitesparse
   run:
+    - blas  # blas contains `libblas.so -> libblas.so.3` symlinks
     - {{ mpi }}
     - hypre
     - metis
