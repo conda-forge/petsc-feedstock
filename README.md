@@ -43,31 +43,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_fortran_compiler_version4mpimpich</td>
+              <td>osx_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_fortran_compiler_version4mpiopenmpi</td>
+              <td>osx_mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version4mpiopenmpi" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_fortran_compiler_version7mpimpich</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpimpich" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_fortran_compiler_version7mpiopenmpi</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_fortran_compiler_version7mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr>
