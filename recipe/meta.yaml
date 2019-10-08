@@ -33,6 +33,7 @@ requirements:
   host:
     - libblas
     - libcblas
+    - liblapack
     - cmake
     - {{ mpi }}
     - hypre
