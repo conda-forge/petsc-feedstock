@@ -27,6 +27,14 @@ elif [[ $mpi == "mpich" ]]; then
   export LIBS="-lmpifort -lgfortran"
 fi
 
+if [[ $mpi == "openmpi" ]]; then
+  export OMPI_MCA_plm=isolated
+  export OMPI_MCA_rmaps_base_oversubscribe=yes
+  export OMPI_MCA_btl_vader_single_copy_mechanism=none
+elif [[ $mpi == "mpich" ]]; then
+  export HYDRA_LAUNCHER=fork
+fi
+
 python ./configure \
   AR="${AR:-ar}" \
   CC="mpicc" \
