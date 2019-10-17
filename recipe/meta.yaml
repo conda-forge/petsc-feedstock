@@ -19,7 +19,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
@@ -82,3 +82,5 @@ extra:
   recipe-maintainers:
     - dalcinl
     - minrk
+    - davidbrochart
+    - SylvainCorlay
