@@ -19,7 +19,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
@@ -45,7 +45,6 @@ requirements:
     - mumps-mpi
     - suitesparse
   run:
-    - blas  # blas contains `libblas.so -> libblas.so.3` symlinks
     - {{ mpi }}
     - hypre
     - metis
