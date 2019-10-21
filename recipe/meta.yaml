@@ -29,7 +29,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - pkg-config
-    - python 2.7.*
+    - python
   host:
     - libblas
     - libcblas
