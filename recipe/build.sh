@@ -70,6 +70,14 @@ python ./configure \
   --with-x=0 \
   --prefix=$PREFIX || (cat configure.log && exit 1)
 
+# Verify that gcc_ext isn't linked
+for f in $PETSC_ARCH/lib/petsc/conf/petscvariables $PETSC_ARCH/lib/pkgconfig/PETSc.pc; do
+  if grep gcc_ext $f; then
+    echo "gcc_ext found in $f"
+    exit 1
+  fi
+done
+
 sedinplace() {
   if [[ $(uname) == Darwin ]]; then
     sed -i "" "$@"
@@ -78,28 +86,20 @@ sedinplace() {
   fi
 }
 
-for path in $PETSC_DIR $PREFIX; do
-    sedinplace s%$path%\${PETSC_DIR}%g $PETSC_ARCH/include/petsc*.h
-done
+# Remove abspath of ${BUILD_PREFIX}/bin/python
+sedinplace "s%${BUILD_PREFIX}/bin/python%python%g" $PETSC_ARCH/include/petscconf.h
+sedinplace "s%${BUILD_PREFIX}/bin/python%python%g" $PETSC_ARCH/lib/petsc/conf/petscvariables
+sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python%g" $PETSC_ARCH/lib/petsc/conf/reconfigure-arch-conda-c-opt.py
 
-# remove abspath of build_env/bin/python
-sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python2%g" $PETSC_ARCH/lib/petsc/conf/reconfigure-arch-conda-c-opt.py
-sedinplace "s%${BUILD_PREFIX}/bin/python%python2%g" $PETSC_ARCH/lib/petsc/conf/petscvariables
-
-# verify that gcc_ext isn't linked
-for f in lib/petsc/conf/petscvariables lib/pkgconfig/PETSc.pc; do
-  if grep gcc_ext $f; then
-    echo "gcc_ext found in $f"
-    exit 1
-  fi
+# Replace abspath of ${PETSC_DIR} and ${BUILD_PREFIX} with ${PREFIX}
+for path in $PETSC_DIR $BUILD_PREFIX; do
+    for f in $(grep -l "${path}" $PETSC_ARCH/include/petsc*.h); do
+        echo "Fixing ${path} in $f"
+        sedinplace s%$path%\${PREFIX}%g $f
+    done
 done
 
 make
-
-for f in $(grep -l build_env -R "${PETSC_ARCH}/lib/petsc"); do
-  echo "fixing build prefix in $f"
-  sedinplace s%${BUILD_PREFIX}%${PREFIX}%g $f
-done
 
 # FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
 # See https://github.com/conda-forge/conda-smithy/pull/337
@@ -108,8 +108,20 @@ make check MPIEXEC="${RECIPE_DIR}/mpiexec.sh"
 
 make install
 
-du -hs $PREFIX/share/petsc/examples/*
+# Remove unneeded files
+rm -f ${PREFIX}/lib/petsc/conf/configure-hash
+find $PREFIX/lib/petsc -name '*.pyc' -delete
+
+# Replace ${BUILD_PREFIX} after installation,
+# otherwise 'make install' above may fail
+for f in $(grep -l "${BUILD_PREFIX}" -R "${PREFIX}/lib/petsc"); do
+  echo "Fixing ${BUILD_PREFIX} in $f"
+  sedinplace s%${BUILD_PREFIX}%${PREFIX}%g $f
+done
+
+echo "Removing example files"
+du -hs $PREFIX/share/petsc/examples/src
 rm -fr $PREFIX/share/petsc/examples/src
+echo "Removing data files"
 du -hs $PREFIX/share/petsc/datafiles/*
 rm -fr $PREFIX/share/petsc/datafiles
-find   $PREFIX/lib/petsc -name '*.pyc' -delete
