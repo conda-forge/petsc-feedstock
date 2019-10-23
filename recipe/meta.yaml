@@ -1,10 +1,7 @@
 {% set version = "3.12.1" %}
 {% set sha256 = "28c25cde288f689605f2160613feef45863c9ef3ceb2d1a44c2226b779938781" %}
 
-{% if not mpi %}
-{# recipe-lint doesn't read values from conda_build_config #}
-{% set mpi = 'mpich' %}
-{% endif %}
+{% set mpi = mpi or 'mpich' %}
 
 package:
   name: petsc
