@@ -13,10 +13,11 @@ source:
   sha256: {{ sha256 }}
   patches:
     - ignore-not-invalid.patch
+    - no-cppflags-in-pkgconfig-cflags.patch
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x')}}
 
