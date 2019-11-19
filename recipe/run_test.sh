@@ -2,6 +2,9 @@
 set -e
 
 export PETSC_DIR=${PREFIX}
+
+pkg-config --cflags PETSc | grep -v isystem
+
 cd tests
 make ex1
 make ex1f
