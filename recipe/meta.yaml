@@ -14,7 +14,6 @@ source:
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
-    - check-version.patch
 
 build:
   skip: true  # [win]
