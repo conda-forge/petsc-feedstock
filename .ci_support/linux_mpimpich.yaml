@@ -31,7 +31,11 @@ mumps_mpi:
 pin_run_as_build:
   metis:
     max_pin: x.x
+  suitesparse:
+    max_pin: x.x
 ptscotch:
 - 6.0.8
 scotch:
 - 6.0.8
+suitesparse:
+- '5.6'
