@@ -66,6 +66,7 @@ python ./configure \
   --with-shared-libraries \
   --with-ssl=0 \
   --with-scalapack=1 \
+  --with-superlu=1 \
   --with-suitesparse=1 \
   --with-x=0 \
   --prefix=$PREFIX || (cat configure.log && exit 1)
