@@ -1,10 +1,6 @@
 include ${PETSC_DIR}/lib/petsc/conf/variables
 include ${PETSC_DIR}/lib/petsc/conf/rules
 
-# TODO: Missing Fortran rules fixed in petsc/maint (upcoming petsc-3.12.1)
-.F90.o:
-	${PETSC_FCOMPILE} -o $@ $<
-
 ex1: ex1.o
 	${CLINKER} -o ex1 ex1.o ${PETSC_SNES_LIB}
 	${RM} ex1.o
