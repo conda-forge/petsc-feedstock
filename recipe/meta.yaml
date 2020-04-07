@@ -79,7 +79,7 @@ test:
 about:
   home: http://www.mcs.anl.gov/petsc/
   summary: 'PETSc: Portable, Extensible Toolkit for Scientific Computation'
-  license: BSD 2-Clause
+  license: BSD-2-Clause
   license_file: LICENSE
   license_family: BSD
 
