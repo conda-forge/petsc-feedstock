@@ -40,8 +40,8 @@ pin_run_as_build:
   suitesparse:
     max_pin: x.x
 ptscotch:
-- 6.0.9
+- 6.0.8
 scotch:
-- 6.0.9
+- 6.0.8
 suitesparse:
 - '5.6'
