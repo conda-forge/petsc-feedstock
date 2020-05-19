@@ -17,7 +17,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
 
@@ -47,6 +47,7 @@ requirements:
     - scotch
     - mumps-mpi
     - suitesparse
+    - hdf5
   run:
     - {{ mpi }}
     - hypre
@@ -61,6 +62,7 @@ requirements:
     - scotch
     - mumps-mpi
     - suitesparse
+    - hdf5
 
 test:
   requires:
