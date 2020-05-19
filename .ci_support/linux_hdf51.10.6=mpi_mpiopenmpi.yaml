@@ -1,31 +1,29 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
-- '9'
+- '7'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- clangxx
+- gxx
 cxx_compiler_version:
-- '9'
+- '7'
+docker_image:
+- condaforge/linux-anvil-comp7
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
 - '7'
+hdf5:
+- 1.10.6=mpi*
 libblas:
 - 3.8 *netlib
 libcblas:
 - 3.8 *netlib
 liblapack:
 - 3.8.0 *netlib
-macos_machine:
-- x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 metis:
 - '5.1'
 mpi:
@@ -36,7 +34,7 @@ pin_run_as_build:
   metis:
     max_pin: x.x
   suitesparse:
-    max_pin: x.x.x
+    max_pin: x.x
 ptscotch:
 - 6.0.9
 scotch:
