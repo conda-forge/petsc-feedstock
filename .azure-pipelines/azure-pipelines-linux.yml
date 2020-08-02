@@ -8,26 +8,31 @@ jobs:
     vmImage: ubuntu-16.04
   strategy:
     matrix:
-      linux_hdf51.10.6=mpi_mpimpich:
-        CONFIG: linux_hdf51.10.6=mpi_mpimpich
+      linux_64_hdf51.10.6=mpi_mpimpich:
+        CONFIG: linux_64_hdf51.10.6=mpi_mpimpich
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_hdf51.10.6=mpi_mpiopenmpi:
-        CONFIG: linux_hdf51.10.6=mpi_mpiopenmpi
+      linux_64_hdf51.10.6=mpi_mpiopenmpi:
+        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpi
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_hdf51.10.6mpimpich:
-        CONFIG: linux_hdf51.10.6mpimpich
+      linux_64_hdf51.10.6mpimpich:
+        CONFIG: linux_64_hdf51.10.6mpimpich
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_hdf51.10.6mpiopenmpi:
-        CONFIG: linux_hdf51.10.6mpiopenmpi
+      linux_64_hdf51.10.6mpiopenmpi:
+        CONFIG: linux_64_hdf51.10.6mpiopenmpi
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
     maxParallel: 8
   timeoutInMinutes: 360
 
   steps:
+  - script: |
+         rm -rf /opt/ghc
+         df -h
+    displayName: Manage disk space
+
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
   - script: |
@@ -39,6 +44,7 @@ jobs:
   - script: |
         export CI=azure
         export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
         .scripts/run_docker_build.sh
     displayName: Run docker build
     env:

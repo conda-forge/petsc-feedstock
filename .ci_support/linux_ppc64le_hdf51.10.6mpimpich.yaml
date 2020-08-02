@@ -41,3 +41,5 @@ scotch:
 - 6.0.9
 suitesparse:
 - '5.6'
+target_platform:
+- linux-ppc64le
