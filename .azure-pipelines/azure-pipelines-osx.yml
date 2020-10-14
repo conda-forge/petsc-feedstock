@@ -20,7 +20,6 @@ jobs:
       osx_64_hdf51.10.6mpiopenmpi:
         CONFIG: osx_64_hdf51.10.6mpiopenmpi
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 8
   timeoutInMinutes: 360
 
   steps:

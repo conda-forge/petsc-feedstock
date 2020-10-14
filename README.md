@@ -5,11 +5,9 @@ Home: http://www.mcs.anl.gov/petsc/
 
 Package license: BSD-2-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/petsc-feedstock/blob/master/LICENSE.txt)
 
 Summary: PETSc: Portable, Extensible Toolkit for Scientific Computation
-
-
 
 Current build status
 ====================
