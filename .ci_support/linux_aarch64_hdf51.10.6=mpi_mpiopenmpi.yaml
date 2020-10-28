@@ -3,7 +3,7 @@ BUILD:
 c_compiler:
 - gcc
 c_compiler_version:
-- '7.5'
+- '7'
 cdt_arch:
 - aarch64
 cdt_name:
@@ -15,13 +15,13 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '7.5'
+- '7'
 docker_image:
 - condaforge/linux-anvil-aarch64
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- 7.5.0
+- '7'
 hdf5:
 - 1.10.6=mpi*
 libblas:
@@ -34,6 +34,8 @@ metis:
 - '5.1'
 mpi:
 - openmpi
+mpich:
+- '3.3'
 mumps_mpi:
 - '5.2'
 pin_run_as_build:
@@ -49,3 +51,7 @@ suitesparse:
 - '5.6'
 target_platform:
 - linux-aarch64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+  - fortran_compiler_version
