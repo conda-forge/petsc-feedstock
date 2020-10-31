@@ -41,115 +41,227 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_hdf51.10.6=mpi_mpimpich</td>
+              <td>linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_hdf51.10.6=mpi_mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.10.6mpimpich</td>
+              <td>linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_hdf51.10.6mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.10.6mpiopenmpi</td>
+              <td>linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_hdf51.10.6mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6=mpi_mpimpich</td>
+              <td>linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_hdf51.10.6=mpi_mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6mpimpich</td>
+              <td>linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_hdf51.10.6mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6mpiopenmpi</td>
+              <td>linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_hdf51.10.6mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6=mpi_mpimpich</td>
+              <td>linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_hdf51.10.6=mpi_mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6=mpi_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6mpimpich</td>
+              <td>linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_hdf51.10.6mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6mpiopenmpi</td>
+              <td>linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_hdf51.10.6mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version7cxx_compiler_version7fortran_compiler_version7hdf51.10.6mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6=mpi_mpimpich</td>
+              <td>linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_hdf51.10.6=mpi_mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6mpimpich</td>
+              <td>linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpimpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_hdf51.10.6mpimpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpimpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6mpiopenmpi</td>
+              <td>linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpiopenmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_hdf51.10.6mpiopenmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6=mpi_mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6=mpi_mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version8cxx_compiler_version8fortran_compiler_version8hdf51.10.6mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_c_compiler_version9cxx_compiler_version9fortran_compiler_version9hdf51.10.6mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version7hdf51.10.6=mpi_mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version7hdf51.10.6=mpi_mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version7hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version7hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version7hdf51.10.6mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version7hdf51.10.6mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version7hdf51.10.6mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version7hdf51.10.6mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version9hdf51.10.6=mpi_mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version9hdf51.10.6=mpi_mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version9hdf51.10.6=mpi_mpiopenmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version9hdf51.10.6mpimpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version9hdf51.10.6mpimpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_fortran_compiler_version9hdf51.10.6mpiopenmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=master&jobName=osx&configuration=osx_64_fortran_compiler_version9hdf51.10.6mpiopenmpi" alt="variant">
                 </a>
               </td>
             </tr>
