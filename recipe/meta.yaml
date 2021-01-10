@@ -1,5 +1,5 @@
-{% set version = "3.14.2" %}
-{% set sha256 = "87a04fd05cac20a2ec47094b7d18b96e0651257d8c768ced2ef7db270ecfb9cb" %}
+{% set version = "3.14.3" %}
+{% set sha256 = "63ed7e3440f2bbc732a6c44aa878364f88f5016ab375d9b36d742893a049053d" %}
 
 {% set mpi = mpi or 'mpich' %}
 
