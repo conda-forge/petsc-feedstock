@@ -31,7 +31,7 @@ metis:
 mpi:
 - openmpi
 mpich:
-- '3.3'
+- '3'
 mumps_mpi:
 - '5.2'
 pin_run_as_build:
