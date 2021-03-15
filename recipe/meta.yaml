@@ -17,7 +17,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
 
@@ -30,6 +30,7 @@ requirements:
     - pkg-config
     - python
   host:
+    - blas-devel
     - libblas
     - libcblas
     - liblapack
@@ -49,6 +50,7 @@ requirements:
     - suitesparse
     - hdf5
   run:
+    - blas-devel
     - {{ mpi }}
     - hypre
     - metis
