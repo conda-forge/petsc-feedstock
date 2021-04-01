@@ -35,6 +35,7 @@ requirements:
     - liblapack
     - cmake
     - {{ mpi }}
+    - yaml
     - hypre
     - metis
     - parmetis
@@ -50,6 +51,7 @@ requirements:
     - hdf5
   run:
     - {{ mpi }}
+    - yaml
     - hypre
     - metis
     - parmetis

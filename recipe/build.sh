@@ -57,6 +57,7 @@ python ./configure \
   --with-debugging=0 \
   --with-blas-lib=libblas${SHLIB_EXT} \
   --with-lapack-lib=liblapack${SHLIB_EXT} \
+  --with-yaml=1 \
   --with-hdf5=1 \
   --with-hwloc=0 \
   --with-hypre=1 \
