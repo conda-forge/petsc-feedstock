@@ -1,5 +1,5 @@
-{% set version = "3.14.6" %}
-{% set sha256 = "4de0c8820419fb15bc683b780127ff57067b62ca18749e864a87c6d7c93f1230" %}
+{% set version = "3.15.0" %}
+{% set sha256 = "ac46db6bfcaaec8cd28335231076815bd5438f401a4a05e33736b4f9ff12e59a" %}
 
 {% set mpi = mpi or 'mpich' %}
 
@@ -35,6 +35,7 @@ requirements:
     - liblapack
     - cmake
     - {{ mpi }}
+    - yaml
     - hypre
     - metis
     - parmetis
@@ -50,6 +51,7 @@ requirements:
     - hdf5
   run:
     - {{ mpi }}
+    - yaml
     - hypre
     - metis
     - parmetis
