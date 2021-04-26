@@ -20,6 +20,8 @@ build:
   number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
+  track_features:
+    - petsc_complex_scalar    # [scalar == "complex"]
 
 requirements:
   build:
