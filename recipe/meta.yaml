@@ -2,6 +2,7 @@
 {% set sha256 = "ac46db6bfcaaec8cd28335231076815bd5438f401a4a05e33736b4f9ff12e59a" %}
 
 {% set mpi = mpi or 'mpich' %}
+{% set build = 1 %}
 
 package:
   name: petsc
@@ -17,7 +18,8 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
+  number: {{ build }}
+  string: {{ scalar }}_scalar_h{{ PKG_HASH }}_{{ build }}
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
   track_features:
