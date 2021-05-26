@@ -17,7 +17,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
 
@@ -29,6 +29,7 @@ requirements:
     - make
     - pkg-config
     - python
+    - gnuconfig   # [unix]
   host:
     - libblas
     - libcblas
