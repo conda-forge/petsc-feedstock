@@ -3,6 +3,9 @@
 
 {% set mpi = mpi or 'mpich' %}
 {% set build = 1 %}
+{% if scalar == "real" %}
+{% set build = build + 100 %}
+{% endif %}
 
 package:
   name: petsc
