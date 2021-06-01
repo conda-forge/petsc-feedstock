@@ -22,7 +22,7 @@ source:
 build:
   skip: true  # [win]
   number: {{ build }}
-  string: {{ scalar }}_scalar_h{{ PKG_HASH }}_{{ build }}
+  string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
   track_features:
