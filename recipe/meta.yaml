@@ -1,8 +1,8 @@
 {% set version = "3.15.0" %}
 {% set sha256 = "ac46db6bfcaaec8cd28335231076815bd5438f401a4a05e33736b4f9ff12e59a" %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
-{% set build = 1 %}
 {% if scalar == "real" %}
 {% set build = build + 100 %}
 {% endif %}
@@ -26,7 +26,7 @@ build:
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
   track_features:
-    - petsc_complex_scalar    # [scalar == "complex"]
+    - petsc_complex  # [scalar == "complex"]
 
 requirements:
   build:
