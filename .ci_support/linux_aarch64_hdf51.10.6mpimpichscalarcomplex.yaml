@@ -45,6 +45,8 @@ pin_run_as_build:
     max_pin: x.x
 ptscotch:
 - 6.0.9
+scalar:
+- complex
 scotch:
 - 6.0.9
 suitesparse:

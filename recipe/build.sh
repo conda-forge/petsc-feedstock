@@ -74,6 +74,7 @@ python ./configure \
   --with-superlu_dist=$WITH_SUPERLU_DIST \
   --with-suitesparse=1 \
   --with-x=0 \
+  --with-scalar-type=${scalar} \
   --prefix=$PREFIX || (cat configure.log && exit 1)
 
 # Verify that gcc_ext isn't linked

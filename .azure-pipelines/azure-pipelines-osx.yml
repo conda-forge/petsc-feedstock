@@ -8,17 +8,29 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_hdf51.10.6=mpi_mpimpich:
-        CONFIG: osx_64_hdf51.10.6=mpi_mpimpich
+      osx_64_hdf51.10.6=mpi_mpimpichscalarcomplex:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_hdf51.10.6=mpi_mpiopenmpi:
-        CONFIG: osx_64_hdf51.10.6=mpi_mpiopenmpi
+      osx_64_hdf51.10.6=mpi_mpimpichscalarreal:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_64_hdf51.10.6mpimpich:
-        CONFIG: osx_64_hdf51.10.6mpimpich
+      osx_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_hdf51.10.6mpiopenmpi:
-        CONFIG: osx_64_hdf51.10.6mpiopenmpi
+      osx_64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.10.6mpimpichscalarcomplex:
+        CONFIG: osx_64_hdf51.10.6mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.10.6mpimpichscalarreal:
+        CONFIG: osx_64_hdf51.10.6mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.10.6mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_hdf51.10.6mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_64_hdf51.10.6mpiopenmpiscalarreal:
+        CONFIG: osx_64_hdf51.10.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 

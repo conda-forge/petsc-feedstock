@@ -8,20 +8,36 @@ jobs:
     vmImage: ubuntu-16.04
   strategy:
     matrix:
-      linux_64_hdf51.10.6=mpi_mpimpich:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpimpich
+      linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex:
+        CONFIG: linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_hdf51.10.6=mpi_mpiopenmpi:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpi
+      linux_64_hdf51.10.6=mpi_mpimpichscalarreal:
+        CONFIG: linux_64_hdf51.10.6=mpi_mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_hdf51.10.6mpimpich:
-        CONFIG: linux_64_hdf51.10.6mpimpich
+      linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
+        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_hdf51.10.6mpiopenmpi:
-        CONFIG: linux_64_hdf51.10.6mpiopenmpi
+      linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
+        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_hdf51.10.6mpimpichscalarcomplex:
+        CONFIG: linux_64_hdf51.10.6mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_hdf51.10.6mpimpichscalarreal:
+        CONFIG: linux_64_hdf51.10.6mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_hdf51.10.6mpiopenmpiscalarcomplex:
+        CONFIG: linux_64_hdf51.10.6mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_hdf51.10.6mpiopenmpiscalarreal:
+        CONFIG: linux_64_hdf51.10.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
