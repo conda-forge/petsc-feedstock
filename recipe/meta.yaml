@@ -1,6 +1,6 @@
 {% set version = "3.15.1" %}
 {% set sha256 = "c0ac6566e69d1d70b431e07e7598e9de95e84891c2452db1367c846b75109deb" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -56,6 +56,7 @@ requirements:
     - mumps-mpi
     - suitesparse
     - hdf5
+    - fftw * mpi_{{ mpi }}_*
   run:
     - {{ mpi }}
     - yaml
@@ -72,6 +73,7 @@ requirements:
     - mumps-mpi
     - suitesparse
     - hdf5
+    - fftw * mpi_{{ mpi }}_*
 
 test:
   requires:
