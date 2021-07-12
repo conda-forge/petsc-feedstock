@@ -59,6 +59,7 @@ python ./configure \
   --with-lapack-lib=liblapack${SHLIB_EXT} \
   --with-yaml=1 \
   --with-hdf5=1 \
+  --with-fftw=1 \
   --with-hwloc=0 \
   --with-hypre=1 \
   --with-metis=1 \
