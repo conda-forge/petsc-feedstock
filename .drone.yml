@@ -124,7 +124,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_hdf51.10.6mpimpichscalarcomplex
+name: linux_aarch64_hdf51.12.1mpimpichscalarcomplex
 
 platform:
   os: linux
@@ -134,7 +134,7 @@ steps:
 - name: Install and build
   image: quay.io/condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_hdf51.10.6mpimpichscalarcomplex
+    CONFIG: linux_aarch64_hdf51.12.1mpimpichscalarcomplex
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -155,7 +155,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_hdf51.10.6mpimpichscalarreal
+name: linux_aarch64_hdf51.12.1mpimpichscalarreal
 
 platform:
   os: linux
@@ -165,7 +165,7 @@ steps:
 - name: Install and build
   image: quay.io/condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_hdf51.10.6mpimpichscalarreal
+    CONFIG: linux_aarch64_hdf51.12.1mpimpichscalarreal
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -186,7 +186,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_hdf51.10.6mpiopenmpiscalarcomplex
+name: linux_aarch64_hdf51.12.1mpiopenmpiscalarcomplex
 
 platform:
   os: linux
@@ -196,7 +196,7 @@ steps:
 - name: Install and build
   image: quay.io/condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_hdf51.10.6mpiopenmpiscalarcomplex
+    CONFIG: linux_aarch64_hdf51.12.1mpiopenmpiscalarcomplex
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -217,7 +217,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_hdf51.10.6mpiopenmpiscalarreal
+name: linux_aarch64_hdf51.12.1mpiopenmpiscalarreal
 
 platform:
   os: linux
@@ -227,7 +227,7 @@ steps:
 - name: Install and build
   image: quay.io/condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_hdf51.10.6mpiopenmpiscalarreal
+    CONFIG: linux_aarch64_hdf51.12.1mpiopenmpiscalarreal
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:

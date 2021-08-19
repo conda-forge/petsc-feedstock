@@ -17,7 +17,7 @@ fortran_compiler:
 fortran_compiler_version:
 - '9'
 hdf5:
-- 1.10.6
+- 1.12.1
 libblas:
 - 3.8 *netlib
 libcblas:
@@ -42,7 +42,7 @@ pin_run_as_build:
 ptscotch:
 - 6.0.9
 scalar:
-- real
+- complex
 scotch:
 - 6.0.9
 suitesparse:
