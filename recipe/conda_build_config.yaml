@@ -12,7 +12,7 @@ hdf5:
 
 pin_run_as_build:
   hypre:
-    max_pin: x.x
+    max_pin: x.x.x
   metis:
     max_pin: x.x
   parmetis:
