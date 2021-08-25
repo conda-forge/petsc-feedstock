@@ -1,6 +1,6 @@
-{% set version = "3.15.3" %}
+{% set version = "3.15.3" %} # REMINDER: remove hypre version constraint for 3.16
 {% set sha256 = "483028088020001e6f8d57b78a7fc880ed52d6693f57d627779c428f55cff73d" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -43,7 +43,7 @@ requirements:
     - cmake
     - {{ mpi }}
     - yaml
-    - hypre
+    - hypre <2.22.1 # REMINDER: remove version constraint for PETSc 3.16
     - metis
     - parmetis
     - ptscotch
@@ -60,7 +60,7 @@ requirements:
   run:
     - {{ mpi }}
     - yaml
-    - hypre
+    - hypre <2.22.1 # REMINDER: remove version constraint for PETSc 3.16
     - metis
     - parmetis
     - ptscotch
