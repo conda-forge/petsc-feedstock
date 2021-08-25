@@ -1,6 +1,6 @@
 {% set version = "3.15.3" %} # REMINDER: remove hypre version constraint for 3.16
 {% set sha256 = "483028088020001e6f8d57b78a7fc880ed52d6693f57d627779c428f55cff73d" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -20,9 +20,10 @@ source:
     - no-cppflags-in-pkgconfig-cflags.patch
 
 build:
+  {% set mpi_prefix = "mpi_" + mpi %}
   skip: true  # [win]
   number: {{ build }}
-  string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}
+  string: {{ scalar }}_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
   track_features:
