@@ -1,12 +1,13 @@
 diff --git a/config/BuildSystem/config/setCompilers.py b/config/BuildSystem/config/setCompilers.py
-index 57a88e7c4a..ab14caaf2f 100644
+index be96577a38..ce4c37a0cd 100644
 --- a/config/BuildSystem/config/setCompilers.py
 +++ b/config/BuildSystem/config/setCompilers.py
-@@ -1194,7 +1194,6 @@ class Configure(config.base.Configure):
-         output.find('unrecognized command line option') >= 0 or output.find('unrecognized option') >= 0 or output.find('unrecognised option') >= 0 or
-         output.find('not recognized') >= 0 or output.find('not recognised') >= 0 or
-         output.find('unknown option') >= 0 or output.find('unknown flag') >= 0 or output.find('Unknown switch') >= 0 or
--        output.find('ignoring option') >= 0 or output.find('ignored') >= 0 or
-         output.find('argument unused') >= 0 or output.find('not supported') >= 0 or
-         # When checking for the existence of 'attribute'
-         output.find('is unsupported and will be skipped') >= 0 or
+@@ -1341,7 +1341,7 @@ class Configure(config.base.Configure):
+     substrings = ('unrecognized command line option','unrecognised command line option',
+                   'unrecognized option','unrecognised option','not recognized',
+                   'not recognised','unknown option','unknown warning option',
+-                  'unknown flag','unknown switch','ignoring option','ignored','argument unused',
++                  'unknown flag','unknown switch','argument unused',
+                   'not supported','is unsupported and will be skipped','illegal option',
+                   'invalid option','invalid suboption','bad ',' option','petsc error',
+                   'unbekannte option','linker input file unused because linking not done',

@@ -1,5 +1,5 @@
-{% set version = "3.15.5" %} # REMINDER: remove hypre version constraint for 3.16
-{% set sha256 = "67dc31f1c1c941a0e45301ed4042628586e92e8c4e9b119695717ae782ef23a3" %}
+{% set version = "3.16.0" %} # REMINDER: remove hypre version constraint for 3.16
+{% set sha256 = "5aaad7deea127a4790c8aa95c42fd9451ab10b5d6c68b226b92d4853002f438d" %}
 {% set build = 0 %}
 
 {% set mpi = mpi or 'mpich' %}
@@ -18,6 +18,7 @@ source:
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
+    - no-macos-mkdtemp-fix.patch
 
 build:
   skip: true  # [win]
