@@ -1,0 +1,16 @@
+diff --git a/src/sys/fileio/fdir.c b/src/sys/fileio/fdir.c
+index 71b158a..d37b835 100644
+--- a/src/sys/fileio/fdir.c
++++ b/src/sys/fileio/fdir.c
+@@ -46,9 +46,9 @@ PetscErrorCode PetscMkdir(const char dir[])
+   PetscFunctionReturn(0);
+ }
+ 
+-#if defined(PETSC_USING_DARWIN)
++/*#if defined(PETSC_USING_DARWIN)
+ #include "apple_fdir.c"
+-#endif
++#endif*/
+ 
+ /*@C
+   PetscMkdtemp - Create a folder with a unique name given a filename template.
