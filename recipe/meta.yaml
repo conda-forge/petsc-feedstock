@@ -1,6 +1,6 @@
 {% set version = "3.16.0" %} # REMINDER: remove hypre version constraint for 3.16
 {% set sha256 = "5aaad7deea127a4790c8aa95c42fd9451ab10b5d6c68b226b92d4853002f438d" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
