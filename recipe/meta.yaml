@@ -101,6 +101,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - jan-janssen
     - dalcinl
     - minrk
     - davidbrochart
