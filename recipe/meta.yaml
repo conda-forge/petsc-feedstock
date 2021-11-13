@@ -50,9 +50,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-{% if mpi == "mpich" %}
     - superlu_dist
-{% endif %}
     - scotch
     - mumps-mpi
     - suitesparse
@@ -67,9 +65,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-{% if mpi == "mpich" %}
     - superlu_dist
-{% endif %}
     - scotch
     - mumps-mpi
     - suitesparse
