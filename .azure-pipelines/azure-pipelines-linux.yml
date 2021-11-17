@@ -40,6 +40,38 @@ jobs:
         CONFIG: linux_64_hdf51.12.1mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_aarch64_hdf51.10.6=mpi_mpimpichscalarcomplex:
+        CONFIG: linux_aarch64_hdf51.10.6=mpi_mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
+      linux_aarch64_hdf51.10.6=mpi_mpimpichscalarreal:
+        CONFIG: linux_aarch64_hdf51.10.6=mpi_mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
+      linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
+        CONFIG: linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
+      linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
+        CONFIG: linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
+      linux_aarch64_hdf51.12.1mpimpichscalarcomplex:
+        CONFIG: linux_aarch64_hdf51.12.1mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
+      linux_aarch64_hdf51.12.1mpimpichscalarreal:
+        CONFIG: linux_aarch64_hdf51.12.1mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
+      linux_aarch64_hdf51.12.1mpiopenmpiscalarcomplex:
+        CONFIG: linux_aarch64_hdf51.12.1mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
+      linux_aarch64_hdf51.12.1mpiopenmpiscalarreal:
+        CONFIG: linux_aarch64_hdf51.12.1mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64
   timeoutInMinutes: 360
 
   steps:
@@ -60,6 +92,11 @@ jobs:
         export CI=azure
         export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+        if [[ "${BUILD_REASON:-}" == "PullRequest" ]]; then
+          export IS_PR_BUILD="True"
+        else
+          export IS_PR_BUILD="False"
+        fi
         .scripts/run_docker_build.sh
     displayName: Run docker build
     env:
