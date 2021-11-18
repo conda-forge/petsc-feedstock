@@ -51,6 +51,8 @@ scotch:
 - 6.0.9
 suitesparse:
 - '5'
+superlu_dist:
+- 7.1.1
 target_platform:
 - linux-aarch64
 zip_keys:
