@@ -31,10 +31,8 @@ if [[ $mpi == "openmpi" ]]; then
   export OMPI_MCA_plm=isolated
   export OMPI_MCA_rmaps_base_oversubscribe=yes
   export OMPI_MCA_btl_vader_single_copy_mechanism=none
-  export WITH_SUPERLU_DIST=1
 elif [[ $mpi == "mpich" ]]; then
   export HYDRA_LAUNCHER=fork
-  export WITH_SUPERLU_DIST=1
 fi
 
 python ./configure \
@@ -72,7 +70,7 @@ python ./configure \
   --with-ssl=0 \
   --with-scalapack=1 \
   --with-superlu=1 \
-  --with-superlu_dist=$WITH_SUPERLU_DIST \
+  --with-superlu_dist=1 \
   --with-suitesparse=1 \
   --with-x=0 \
   --with-scalar-type=${scalar} \
