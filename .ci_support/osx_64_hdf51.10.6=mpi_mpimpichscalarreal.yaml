@@ -45,6 +45,8 @@ scotch:
 - 6.0.9
 suitesparse:
 - '5'
+superlu_dist:
+- '7'
 target_platform:
 - osx-64
 zip_keys:
