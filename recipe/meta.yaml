@@ -1,6 +1,6 @@
 {% set version = "3.16.1" %}
 {% set sha256 = "909cf7bce7b6a0ddb2580a1ac9502aa01631ec4105c716594c1804f0ee1ea06a" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -50,9 +50,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-{% if mpi == "mpich" %}
     - superlu_dist
-{% endif %}
     - scotch
     - mumps-mpi
     - suitesparse
@@ -67,9 +65,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-{% if mpi == "mpich" %}
     - superlu_dist
-{% endif %}
     - scotch
     - mumps-mpi
     - suitesparse
