@@ -50,7 +50,7 @@ scotch:
 suitesparse:
 - '5'
 superlu_dist:
-- '7'
+- 7.1.1
 target_platform:
 - linux-aarch64
 zip_keys:
