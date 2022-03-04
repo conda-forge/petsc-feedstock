@@ -1,6 +1,6 @@
-{% set version = "3.16.1" %}
-{% set sha256 = "909cf7bce7b6a0ddb2580a1ac9502aa01631ec4105c716594c1804f0ee1ea06a" %}
-{% set build = 1 %}
+{% set version = "3.16.4" %}
+{% set sha256 = "229cce22bdcfedb1fe827d306ed1afca9737786cdc3f0562b74a1966c1243caf" %}
+{% set build = 0 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -13,7 +13,7 @@ package:
 
 source:
   fn: petsc-{{ version }}.tar.gz
-  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{ version }}.tar.gz
+  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - ignore-not-invalid.patch
