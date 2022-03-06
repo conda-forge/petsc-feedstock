@@ -13,14 +13,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://travis-ci.com/conda-forge/petsc-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/petsc-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -362,6 +355,7 @@ Feedstock Maintainers
 * [@SylvainCorlay](https://github.com/SylvainCorlay/)
 * [@dalcinl](https://github.com/dalcinl/)
 * [@davidbrochart](https://github.com/davidbrochart/)
+* [@jan-janssen](https://github.com/jan-janssen/)
 * [@martinRenou](https://github.com/martinRenou/)
 * [@minrk](https://github.com/minrk/)
 
