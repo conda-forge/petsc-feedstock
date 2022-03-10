@@ -1,0 +1,17 @@
+diff -up petsc-3.16.4/src/sys/fileio/fdir.c.orig petsc-3.16.4/src/sys/fileio/fdir.c
+--- petsc-3.16.4/src/sys/fileio/fdir.c.orig	2022-03-04 12:27:16.215102456 +0300
++++ petsc-3.16.4/src/sys/fileio/fdir.c	2022-03-04 12:28:14.504478286 +0300
+@@ -46,13 +46,6 @@ PetscErrorCode PetscMkdir(const char dir
+   PetscFunctionReturn(0);
+ }
+ 
+-#if defined(PETSC_USING_DARWIN)
+-/*
+-    Apple's mkdtemp() crashes under Valgrind so this replaces it with a version that does not crash under valgrind
+-*/
+-#include "apple_fdir.h"
+-#endif
+-
+ /*@C
+   PetscMkdtemp - Create a folder with a unique name given a filename template.
+ 

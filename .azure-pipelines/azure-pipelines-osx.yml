@@ -8,29 +8,53 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_hdf51.10.6=mpi_mpimpich:
-        CONFIG: osx_64_hdf51.10.6=mpi_mpimpich
+      osx_64_hdf51.10.6=mpi_mpimpichscalarcomplex:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_hdf51.10.6=mpi_mpiopenmpi:
-        CONFIG: osx_64_hdf51.10.6=mpi_mpiopenmpi
+      osx_64_hdf51.10.6=mpi_mpimpichscalarreal:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_64_hdf51.10.6mpimpich:
-        CONFIG: osx_64_hdf51.10.6mpimpich
+      osx_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_hdf51.10.6mpiopenmpi:
-        CONFIG: osx_64_hdf51.10.6mpiopenmpi
+      osx_64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
+        CONFIG: osx_64_hdf51.10.6=mpi_mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_hdf51.10.6=mpi_mpimpich:
-        CONFIG: osx_arm64_hdf51.10.6=mpi_mpimpich
+      osx_64_hdf51.12.1mpimpichscalarcomplex:
+        CONFIG: osx_64_hdf51.12.1mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_hdf51.10.6=mpi_mpiopenmpi:
-        CONFIG: osx_arm64_hdf51.10.6=mpi_mpiopenmpi
+      osx_64_hdf51.12.1mpimpichscalarreal:
+        CONFIG: osx_64_hdf51.12.1mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_hdf51.10.6mpimpich:
-        CONFIG: osx_arm64_hdf51.10.6mpimpich
+      osx_64_hdf51.12.1mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_hdf51.12.1mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_hdf51.10.6mpiopenmpi:
-        CONFIG: osx_arm64_hdf51.10.6mpiopenmpi
+      osx_64_hdf51.12.1mpiopenmpiscalarreal:
+        CONFIG: osx_64_hdf51.12.1mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpimpichscalarcomplex:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpimpichscalarreal:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpimpichscalarcomplex:
+        CONFIG: osx_arm64_hdf51.12.1mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpimpichscalarreal:
+        CONFIG: osx_arm64_hdf51.12.1mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_hdf51.12.1mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_hdf51.12.1mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
@@ -41,6 +65,11 @@ jobs:
       export OSX_FORCE_SDK_DOWNLOAD="1"
       export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
       export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+      if [[ "${BUILD_REASON:-}" == "PullRequest" ]]; then
+        export IS_PR_BUILD="True"
+      else
+        export IS_PR_BUILD="False"
+      fi
       ./.scripts/run_osx_build.sh
     displayName: Run OSX build
     env:

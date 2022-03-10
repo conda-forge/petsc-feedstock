@@ -1,39 +1,41 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '11.0'
 c_compiler:
 - clang
 c_compiler_version:
-- '11'
+- '12'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '11'
+- '12'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '9'
+- '11'
 hdf5:
-- 1.10.6
+- 1.12.1
 libblas:
-- 3.8 *netlib
+- 3.9 *netlib
 libcblas:
-- 3.8 *netlib
+- 3.9 *netlib
 liblapack:
-- 3.8 *netlib
+- 3.9 *netlib
 macos_machine:
-- x86_64-apple-darwin13.4.0
+- arm64-apple-darwin20.0.0
 metis:
 - '5.1'
 mpi:
-- mpich
+- openmpi
 mpich:
-- '3'
+- '4'
 mumps_mpi:
 - '5.2'
+openmpi:
+- '4'
 pin_run_as_build:
   metis:
     max_pin: x.x
@@ -41,12 +43,16 @@ pin_run_as_build:
     max_pin: x.x.x
 ptscotch:
 - 6.0.9
+scalar:
+- real
 scotch:
 - 6.0.9
 suitesparse:
 - '5'
+superlu_dist:
+- 7.1.1
 target_platform:
-- osx-64
+- osx-arm64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

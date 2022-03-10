@@ -1,7 +1,11 @@
-{% set version = "3.15.0" %}
-{% set sha256 = "ac46db6bfcaaec8cd28335231076815bd5438f401a4a05e33736b4f9ff12e59a" %}
+{% set version = "3.16.4" %}
+{% set sha256 = "229cce22bdcfedb1fe827d306ed1afca9737786cdc3f0562b74a1966c1243caf" %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
+{% if scalar == "real" %}
+{% set build = build + 100 %}
+{% endif %}
 
 package:
   name: petsc
@@ -9,17 +13,21 @@ package:
 
 source:
   fn: petsc-{{ version }}.tar.gz
-  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{ version }}.tar.gz
+  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
+    - no-macos-mkdtemp-fix.patch
 
 build:
   skip: true  # [win]
-  number: 1
+  number: {{ build }}
+  string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
+  track_features:
+    - petsc_complex  # [scalar == "complex"]
 
 requirements:
   build:
@@ -43,13 +51,12 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-{% if mpi == "mpich" %}
     - superlu_dist
-{% endif %}
     - scotch
     - mumps-mpi
     - suitesparse
     - hdf5
+    - fftw * mpi_{{ mpi }}_*
   run:
     - {{ mpi }}
     - yaml
@@ -59,13 +66,12 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-{% if mpi == "mpich" %}
     - superlu_dist
-{% endif %}
     - scotch
     - mumps-mpi
     - suitesparse
     - hdf5
+    - fftw * mpi_{{ mpi }}_*
 
 test:
   requires:
@@ -92,8 +98,10 @@ about:
 
 extra:
   recipe-maintainers:
+    - jan-janssen
     - dalcinl
     - minrk
     - davidbrochart
     - SylvainCorlay
     - martinRenou
+    - matthiasdiener

@@ -2,13 +2,17 @@ mpi:
   - mpich
   - openmpi
 
+scalar:
+  - real
+  - complex
+
 hdf5:
   - 1.10.6
   - 1.10.6=mpi*
 
 pin_run_as_build:
   hypre:
-    max_pin: x.x
+    max_pin: x.x.x
   metis:
     max_pin: x.x
   parmetis:
