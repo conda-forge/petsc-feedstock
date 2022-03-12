@@ -10,7 +10,7 @@ export PETSC_ARCH=arch-conda-c-opt
 
 unset F90
 unset F77
-unset CC
+# unset CC
 unset CXX
 if [[ $(uname) == Linux ]]; then
     export LDFLAGS="-pthread -fopenmp $LDFLAGS"
