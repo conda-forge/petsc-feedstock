@@ -36,8 +36,15 @@ if [[ $mpi == "openmpi" ]]; then
   export OMPI_MCA_plm=isolated
   export OMPI_MCA_rmaps_base_oversubscribe=yes
   export OMPI_MCA_btl_vader_single_copy_mechanism=none
+
+  export OMPI_CC=$CC
+  export OPAL_PREFIX=$PREFIX
 elif [[ $mpi == "mpich" ]]; then
   export HYDRA_LAUNCHER=fork
+fi
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+  extra_opts="--with-batch"
 fi
 
 python ./configure \
@@ -79,6 +86,7 @@ python ./configure \
   --with-suitesparse=1 \
   --with-x=0 \
   --with-scalar-type=${scalar} \
+  $extra_opts \
   --prefix=$PREFIX || (cat configure.log && exit 1)
 
 # Verify that gcc_ext isn't linked
@@ -112,10 +120,13 @@ done
 
 make
 
-# FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
-# See https://github.com/conda-forge/conda-smithy/pull/337
-# See https://github.com/pmodels/mpich/pull/2755
-make check MPIEXEC="${RECIPE_DIR}/mpiexec.sh"
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+  # FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
+  # See https://github.com/conda-forge/conda-smithy/pull/337
+  # See https://github.com/pmodels/mpich/pull/2755
+  make check MPIEXEC="${RECIPE_DIR}/mpiexec.sh"
+fi
 
 make install
 

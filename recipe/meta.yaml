@@ -38,6 +38,7 @@ requirements:
     - pkg-config
     - python
     - gnuconfig   # [unix]
+    - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]
   host:
     - libblas
     - libcblas
