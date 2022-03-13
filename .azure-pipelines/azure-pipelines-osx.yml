@@ -32,6 +32,30 @@ jobs:
       osx_64_hdf51.12.1mpiopenmpiscalarreal:
         CONFIG: osx_64_hdf51.12.1mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpimpichscalarcomplex:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpimpichscalarreal:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpimpichscalarcomplex:
+        CONFIG: osx_arm64_hdf51.12.1mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpimpichscalarreal:
+        CONFIG: osx_arm64_hdf51.12.1mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_hdf51.12.1mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.12.1mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_hdf51.12.1mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:

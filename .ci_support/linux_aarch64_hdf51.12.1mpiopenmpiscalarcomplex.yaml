@@ -34,8 +34,12 @@ metis:
 - '5.1'
 mpi:
 - openmpi
+mpich:
+- '4'
 mumps_mpi:
 - '5.2'
+openmpi:
+- '4'
 pin_run_as_build:
   metis:
     max_pin: x.x

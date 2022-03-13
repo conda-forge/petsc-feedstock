@@ -1,6 +1,6 @@
 {% set version = "3.16.4" %}
 {% set sha256 = "229cce22bdcfedb1fe827d306ed1afca9737786cdc3f0562b74a1966c1243caf" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -37,6 +37,8 @@ requirements:
     - make
     - pkg-config
     - python
+    - gnuconfig   # [unix]
+    - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]
   host:
     - libblas
     - libcblas
@@ -103,3 +105,4 @@ extra:
     - davidbrochart
     - SylvainCorlay
     - martinRenou
+    - matthiasdiener
