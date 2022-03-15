@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 # Fix gethostbyname() issues in Azure Pipelines
 if [[ $(uname) == Darwin ]]; then
