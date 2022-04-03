@@ -11,7 +11,7 @@ unset F90
 unset F77
 # unset CC
 unset CXX
-if [[ $(uname) == Linux ]]; then
+if [[ "$target_platform" == linux-* ]]; then
     export LDFLAGS="-pthread -fopenmp $LDFLAGS"
     export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
     # --as-needed appears to cause problems with fortran compiler detection
@@ -117,8 +117,7 @@ for path in $PETSC_DIR $BUILD_PREFIX; do
     done
 done
 
-make
-
+make MAKE_NP=${CPU_COUNT}
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
   # FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
