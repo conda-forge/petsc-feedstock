@@ -117,7 +117,7 @@ for path in $PETSC_DIR $BUILD_PREFIX; do
     done
 done
 
-make -j${CPU_COUNT}
+make MAKE_NP=${CPU_COUNT}
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
   # FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
