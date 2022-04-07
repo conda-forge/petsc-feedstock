@@ -1,7 +1,8 @@
-diff -up petsc-3.16.4/src/sys/fileio/fdir.c.orig petsc-3.16.4/src/sys/fileio/fdir.c
---- petsc-3.16.4/src/sys/fileio/fdir.c.orig	2022-03-04 12:27:16.215102456 +0300
-+++ petsc-3.16.4/src/sys/fileio/fdir.c	2022-03-04 12:28:14.504478286 +0300
-@@ -46,13 +46,6 @@ PetscErrorCode PetscMkdir(const char dir
+diff --git a/src/sys/fileio/fdir.c b/src/sys/fileio/fdir.c
+index 44d251144f..de491cc239 100644
+--- a/src/sys/fileio/fdir.c
++++ b/src/sys/fileio/fdir.c
+@@ -44,13 +44,6 @@ PetscErrorCode PetscMkdir(const char dir[])
    PetscFunctionReturn(0);
  }
  

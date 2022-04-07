@@ -1,8 +1,8 @@
 diff --git a/config/BuildSystem/config/setCompilers.py b/config/BuildSystem/config/setCompilers.py
-index be96577a38..ce4c37a0cd 100644
+index 089f47354f..3bd3c3a8f7 100644
 --- a/config/BuildSystem/config/setCompilers.py
 +++ b/config/BuildSystem/config/setCompilers.py
-@@ -1341,7 +1341,7 @@ class Configure(config.base.Configure):
+@@ -1816,7 +1816,7 @@ class Configure(config.base.Configure):
      substrings = ('unrecognized command line option','unrecognised command line option',
                    'unrecognized option','unrecognised option','not recognized',
                    'not recognised','unknown option','unknown warning option',
