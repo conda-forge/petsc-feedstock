@@ -8,36 +8,36 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex
+      linux_64_hdf5_variantmpimpimpichscalarcomplex:
+        CONFIG: linux_64_hdf5_variantmpimpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.10.6=mpi_mpimpichscalarreal:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpimpichscalarreal
+      linux_64_hdf5_variantmpimpimpichscalarreal:
+        CONFIG: linux_64_hdf5_variantmpimpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
+      linux_64_hdf5_variantmpimpiopenmpiscalarcomplex:
+        CONFIG: linux_64_hdf5_variantmpimpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal
+      linux_64_hdf5_variantmpimpiopenmpiscalarreal:
+        CONFIG: linux_64_hdf5_variantmpimpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpimpichscalarcomplex:
-        CONFIG: linux_64_hdf51.12.1mpimpichscalarcomplex
+      linux_64_hdf5_variantnompimpimpichscalarcomplex:
+        CONFIG: linux_64_hdf5_variantnompimpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpimpichscalarreal:
-        CONFIG: linux_64_hdf51.12.1mpimpichscalarreal
+      linux_64_hdf5_variantnompimpimpichscalarreal:
+        CONFIG: linux_64_hdf5_variantnompimpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpiopenmpiscalarcomplex:
-        CONFIG: linux_64_hdf51.12.1mpiopenmpiscalarcomplex
+      linux_64_hdf5_variantnompimpiopenmpiscalarcomplex:
+        CONFIG: linux_64_hdf5_variantnompimpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpiopenmpiscalarreal:
-        CONFIG: linux_64_hdf51.12.1mpiopenmpiscalarreal
+      linux_64_hdf5_variantnompimpiopenmpiscalarreal:
+        CONFIG: linux_64_hdf5_variantnompimpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360

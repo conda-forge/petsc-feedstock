@@ -38,283 +38,283 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex</td>
+              <td>linux_64_hdf5_variantmpimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantmpimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.10.6=mpi_mpimpichscalarreal</td>
+              <td>linux_64_hdf5_variantmpimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.6=mpi_mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantmpimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex</td>
+              <td>linux_64_hdf5_variantmpimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantmpimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal</td>
+              <td>linux_64_hdf5_variantmpimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantmpimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.12.1mpimpichscalarcomplex</td>
+              <td>linux_64_hdf5_variantnompimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.12.1mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantnompimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.12.1mpimpichscalarreal</td>
+              <td>linux_64_hdf5_variantnompimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.12.1mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantnompimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.12.1mpiopenmpiscalarcomplex</td>
+              <td>linux_64_hdf5_variantnompimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.12.1mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantnompimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_hdf51.12.1mpiopenmpiscalarreal</td>
+              <td>linux_64_hdf5_variantnompimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.12.1mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf5_variantnompimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6=mpi_mpimpichscalarcomplex</td>
+              <td>linux_aarch64_hdf5_variantmpimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.10.6=mpi_mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantmpimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6=mpi_mpimpichscalarreal</td>
+              <td>linux_aarch64_hdf5_variantmpimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.10.6=mpi_mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantmpimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex</td>
+              <td>linux_aarch64_hdf5_variantmpimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantmpimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarreal</td>
+              <td>linux_aarch64_hdf5_variantmpimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.10.6=mpi_mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantmpimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.12.1mpimpichscalarcomplex</td>
+              <td>linux_aarch64_hdf5_variantnompimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.12.1mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantnompimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.12.1mpimpichscalarreal</td>
+              <td>linux_aarch64_hdf5_variantnompimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.12.1mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantnompimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.12.1mpiopenmpiscalarcomplex</td>
+              <td>linux_aarch64_hdf5_variantnompimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.12.1mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantnompimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_hdf51.12.1mpiopenmpiscalarreal</td>
+              <td>linux_aarch64_hdf5_variantnompimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf51.12.1mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_aarch64_hdf5_variantnompimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6=mpi_mpimpichscalarcomplex</td>
+              <td>linux_ppc64le_hdf5_variantmpimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.10.6=mpi_mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantmpimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6=mpi_mpimpichscalarreal</td>
+              <td>linux_ppc64le_hdf5_variantmpimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.10.6=mpi_mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantmpimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6=mpi_mpiopenmpiscalarcomplex</td>
+              <td>linux_ppc64le_hdf5_variantmpimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.10.6=mpi_mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantmpimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.10.6=mpi_mpiopenmpiscalarreal</td>
+              <td>linux_ppc64le_hdf5_variantmpimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.10.6=mpi_mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantmpimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.12.1mpimpichscalarcomplex</td>
+              <td>linux_ppc64le_hdf5_variantnompimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.12.1mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantnompimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.12.1mpimpichscalarreal</td>
+              <td>linux_ppc64le_hdf5_variantnompimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.12.1mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantnompimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.12.1mpiopenmpiscalarcomplex</td>
+              <td>linux_ppc64le_hdf5_variantnompimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.12.1mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantnompimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_hdf51.12.1mpiopenmpiscalarreal</td>
+              <td>linux_ppc64le_hdf5_variantnompimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf51.12.1mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux_ppc64le_hdf5_variantnompimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6=mpi_mpimpichscalarcomplex</td>
+              <td>osx_64_hdf5_variantmpimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.10.6=mpi_mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantmpimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6=mpi_mpimpichscalarreal</td>
+              <td>osx_64_hdf5_variantmpimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.10.6=mpi_mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantmpimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex</td>
+              <td>osx_64_hdf5_variantmpimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantmpimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.10.6=mpi_mpiopenmpiscalarreal</td>
+              <td>osx_64_hdf5_variantmpimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.10.6=mpi_mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantmpimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.12.1mpimpichscalarcomplex</td>
+              <td>osx_64_hdf5_variantnompimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.12.1mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantnompimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.12.1mpimpichscalarreal</td>
+              <td>osx_64_hdf5_variantnompimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.12.1mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantnompimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.12.1mpiopenmpiscalarcomplex</td>
+              <td>osx_64_hdf5_variantnompimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.12.1mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantnompimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.12.1mpiopenmpiscalarreal</td>
+              <td>osx_64_hdf5_variantnompimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf51.12.1mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_64_hdf5_variantnompimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.10.6=mpi_mpimpichscalarcomplex</td>
+              <td>osx_arm64_hdf5_variantmpimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.10.6=mpi_mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantmpimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.10.6=mpi_mpimpichscalarreal</td>
+              <td>osx_arm64_hdf5_variantmpimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.10.6=mpi_mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantmpimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex</td>
+              <td>osx_arm64_hdf5_variantmpimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantmpimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarreal</td>
+              <td>osx_arm64_hdf5_variantmpimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.10.6=mpi_mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantmpimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.12.1mpimpichscalarcomplex</td>
+              <td>osx_arm64_hdf5_variantnompimpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.12.1mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantnompimpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.12.1mpimpichscalarreal</td>
+              <td>osx_arm64_hdf5_variantnompimpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.12.1mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantnompimpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.12.1mpiopenmpiscalarcomplex</td>
+              <td>osx_arm64_hdf5_variantnompimpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.12.1mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantnompimpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.12.1mpiopenmpiscalarreal</td>
+              <td>osx_arm64_hdf5_variantnompimpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf51.12.1mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_hdf5_variantnompimpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr>

@@ -1,0 +1,61 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
+c_compiler:
+- clang
+c_compiler_version:
+- '13'
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '13'
+fortran_compiler:
+- gfortran
+fortran_compiler_version:
+- '9'
+hdf5:
+- 1.12.1
+hdf5_variant:
+- nompi
+libblas:
+- 3.8 *netlib
+libcblas:
+- 3.8 *netlib
+liblapack:
+- 3.8 *netlib
+macos_machine:
+- x86_64-apple-darwin13.4.0
+metis:
+- '5.1'
+mpi:
+- mpich
+mpich:
+- '4'
+mumps_mpi:
+- '5.2'
+openmpi:
+- '4'
+pin_run_as_build:
+  metis:
+    max_pin: x.x
+  suitesparse:
+    max_pin: x.x.x
+ptscotch:
+- 6.0.9
+scalar:
+- complex
+scotch:
+- 6.0.9
+suitesparse:
+- '5'
+superlu_dist:
+- 7.1.1
+target_platform:
+- osx-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+  - fortran_compiler_version
