@@ -6,9 +6,9 @@ scalar:
   - real
   - complex
 
-hdf5:
-  - 1.10.6
-  - 1.10.6=mpi*
+hdf5_variant:
+  - nompi
+  - mpi
 
 pin_run_as_build:
   hypre:
