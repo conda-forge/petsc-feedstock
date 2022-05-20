@@ -8,36 +8,20 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpimpichscalarcomplex
+      linux_64_mpimpichscalarcomplex:
+        CONFIG: linux_64_mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.10.6=mpi_mpimpichscalarreal:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpimpichscalarreal
+      linux_64_mpimpichscalarreal:
+        CONFIG: linux_64_mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpiscalarcomplex
+      linux_64_mpiopenmpiscalarcomplex:
+        CONFIG: linux_64_mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal:
-        CONFIG: linux_64_hdf51.10.6=mpi_mpiopenmpiscalarreal
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpimpichscalarcomplex:
-        CONFIG: linux_64_hdf51.12.1mpimpichscalarcomplex
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpimpichscalarreal:
-        CONFIG: linux_64_hdf51.12.1mpimpichscalarreal
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpiopenmpiscalarcomplex:
-        CONFIG: linux_64_hdf51.12.1mpiopenmpiscalarcomplex
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_hdf51.12.1mpiopenmpiscalarreal:
-        CONFIG: linux_64_hdf51.12.1mpiopenmpiscalarreal
+      linux_64_mpiopenmpiscalarreal:
+        CONFIG: linux_64_mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360
