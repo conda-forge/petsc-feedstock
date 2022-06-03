@@ -1,12 +1,12 @@
 diff --git a/src/sys/fileio/fdir.c b/src/sys/fileio/fdir.c
-index 44d251144f..de491cc239 100644
+index d1b621b1852..de491cc2399 100644
 --- a/src/sys/fileio/fdir.c
 +++ b/src/sys/fileio/fdir.c
 @@ -44,13 +44,6 @@ PetscErrorCode PetscMkdir(const char dir[])
    PetscFunctionReturn(0);
  }
  
--#if defined(PETSC_USING_DARWIN)
+-#if defined(PETSC_USING_DARWIN) && defined(PETSC_HAVE_FSTATAT)
 -/*
 -    Apple's mkdtemp() crashes under Valgrind so this replaces it with a version that does not crash under valgrind
 -*/
