@@ -1,5 +1,5 @@
 {% set version = "3.17.2" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -24,7 +24,7 @@ build:
   number: {{ build }}
   string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}
   run_exports:
-    - {{ pin_subpackage('petsc', max_pin='x.x') }}
+    - {{ pin_subpackage('petsc', max_pin='x.x') }} {{ scalar }}_*
   track_features:
     - petsc_complex  # [scalar == "complex"]
 
