@@ -17,7 +17,6 @@ source:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - no-macos-mkdtemp-fix.patch
-    - mpi-check.patch
 
 build:
   skip: true  # [win]
