@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-{{ version }}.tar.gz
-  sha256: 5b11a34441f979b9cb0738a3963dc8d5be0a6a9ff90f3583bdf8997028bd64b2
+  sha256: 9da802e703ad79fb7ef0007d17f68916573011073ee9712dcd1673537f6a5f68
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
