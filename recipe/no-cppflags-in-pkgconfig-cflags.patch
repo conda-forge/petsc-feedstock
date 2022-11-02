@@ -1,5 +1,5 @@
 diff --git a/config/PETSc/Configure.py b/config/PETSc/Configure.py
-index 2ccc9962d37..1b2c3858f79 100644
+index edafcfed15a..323f685c4db 100644
 --- a/config/PETSc/Configure.py
 +++ b/config/PETSc/Configure.py
 @@ -188,7 +188,7 @@ class Configure(config.base.Configure):
