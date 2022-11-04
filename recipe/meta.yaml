@@ -17,9 +17,6 @@ source:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - no-macos-mkdtemp-fix.patch
-    - ptscotch-bison.patch  # FIXME: Remove once release 3.18.1 is out
-    - bison.patch           # FIXME: Remove once release 3.18.1 is out
-    - ftn-line-trunc.patch  # FIXME: Remove once release 3.18.1 is out
     - bldsys-withpkg.patch  # FIXME: Remove once release 3.18.2 is out
 
 build:
