@@ -1,4 +1,4 @@
-{% set version = "3.18.1" %}
+{% set version = "3.18.2" %}
 {% set build = 0 %}
 
 {% set mpi = mpi or 'mpich' %}
@@ -12,12 +12,11 @@ package:
 
 source:
   url: https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-{{ version }}.tar.gz
-  sha256: 02f5979a22f5961bb775d527f8450db77bc6a8d2541f3b05fb586829b82e9bc8
+  sha256: 4e055f92f3d5123d415f6f3ccf5ede9989f16d9e1f71cc7998ad244a3d3562f4
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - no-macos-mkdtemp-fix.patch
-    - bldsys-withpkg.patch  # FIXME: Remove once release 3.18.2 is out
 
 build:
   skip: true  # [win]
