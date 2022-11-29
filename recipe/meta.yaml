@@ -17,7 +17,6 @@ source:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - no-macos-mkdtemp-fix.patch
-    - bldsys-withpkg.patch  # FIXME: Remove once release 3.18.2 is out
 
 build:
   skip: true  # [win]
