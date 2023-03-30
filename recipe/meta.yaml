@@ -1,4 +1,4 @@
-{% set version = "3.18.5" %}
+{% set version = "3.19.0" %}
 {% set build = 0 %}
 
 {% set mpi = mpi or 'mpich' %}
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-{{ version }}.tar.gz
-  sha256: df73ae13a4c5758325a9d69350cac423742657d8a8fc5782504b0e469ce46499
+  sha256: 8ced753e4d2fb6565662b2b1fbba75a426cbf8438203f82717ce270f0591322c
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
