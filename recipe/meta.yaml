@@ -16,7 +16,6 @@ source:
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
-    - no-static-assert.patch
 
 build:
   skip: true  # [win]
