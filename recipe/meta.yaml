@@ -1,5 +1,5 @@
 {% set version = "3.19.2" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -16,6 +16,7 @@ source:
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
+    - hypre-error.patch
 
 build:
   skip: true  # [win]
@@ -43,7 +44,8 @@ requirements:
     - cmake
     - {{ mpi }}
     - yaml
-    - hypre
+    # FIXME: unpin hypre after next petsc release
+    - hypre 2.28
     - metis
     - parmetis
     - ptscotch
