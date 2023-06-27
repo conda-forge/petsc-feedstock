@@ -16,6 +16,7 @@ source:
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
+    - hypre-error.patch
 
 build:
   skip: true  # [win]
