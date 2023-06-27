@@ -44,7 +44,8 @@ requirements:
     - cmake
     - {{ mpi }}
     - yaml
-    - hypre
+    # FIXME: unpin hypre after next petsc release
+    - hypre 2.28
     - metis
     - parmetis
     - ptscotch
