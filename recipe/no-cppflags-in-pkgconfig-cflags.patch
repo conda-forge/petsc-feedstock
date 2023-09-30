@@ -1,8 +1,8 @@
 diff --git a/config/PETSc/Configure.py b/config/PETSc/Configure.py
-index 652a2872b77..f603e69e497 100644
+index 735e2c5bcfc..68d61b0c653 100644
 --- a/config/PETSc/Configure.py
 +++ b/config/PETSc/Configure.py
-@@ -199,7 +199,7 @@ class Configure(config.base.Configure):
+@@ -201,7 +201,7 @@ class Configure(config.base.Configure):
        fd.write('Name: PETSc\n')
        fd.write('Description: Library to solve ODEs and algebraic equations\n')
        fd.write('Version: %s\n' % self.petscdir.version)
