@@ -1,5 +1,5 @@
-{% set version = "3.20.0" %}
-{% set build = 1 %}
+{% set version = "3.20.1" %}
+{% set build = 0 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-{{ version }}.tar.gz
-  sha256: c152ccb12cb2353369d27a65470d4044a0c67e0b69814368249976f5bb232bd4
+  sha256: 3d54f13000c9c8ceb13ca4f24f93d838319019d29e6de5244551a3ec22704f32
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
