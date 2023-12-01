@@ -46,7 +46,7 @@ ptscotch:
 scalar:
 - real
 scotch:
-- 6.0.9
+- 6.1.3
 suitesparse:
 - '5'
 superlu_dist:
