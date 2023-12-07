@@ -31,7 +31,7 @@ libcblas:
 liblapack:
 - 3.9 *netlib
 metis:
-- '5.1'
+- 5.1.1
 mpi:
 - mpich
 mpich:
