@@ -1,5 +1,5 @@
 {% set version = "3.20.2" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -50,7 +50,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-    - superlu_dist
+    # - superlu_dist  # unmaintained
     - scotch
     - mumps-mpi
     - suitesparse
@@ -66,7 +66,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-    - superlu_dist
+    # - superlu_dist  # unmaintained
     - scotch
     - mumps-mpi
     - suitesparse

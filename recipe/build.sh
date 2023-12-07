@@ -81,7 +81,7 @@ python ./configure \
   --with-ssl=0 \
   --with-scalapack=1 \
   --with-superlu=1 \
-  --with-superlu_dist=1 \
+  --with-superlu_dist=0 \
   --with-suitesparse=1 \
   --with-x=0 \
   --with-scalar-type=${scalar} \
