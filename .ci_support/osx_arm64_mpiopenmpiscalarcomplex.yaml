@@ -27,7 +27,7 @@ liblapack:
 macos_machine:
 - arm64-apple-darwin20.0.0
 metis:
-- '5.1'
+- 5.1.1
 mpi:
 - openmpi
 mpich:
