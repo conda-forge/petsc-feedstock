@@ -22,7 +22,8 @@ build:
   number: {{ build }}
   string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}
   run_exports:
-    - {{ pin_subpackage('petsc', max_pin='x.x') }} {{ scalar }}_*
+    - {{ pin_subpackage('petsc', max_pin='x.x') }}
+    - petsc * {{ scalar }}_*
   track_features:
     - petsc_complex  # [scalar == "complex"]
 
