@@ -46,11 +46,11 @@ pin_run_as_build:
   suitesparse:
     max_pin: x.x
 ptscotch:
-- 7.0.2
+- 7.0.4
 scalar:
 - complex
 scotch:
-- 7.0.2
+- 7.0.4
 suitesparse:
 - '5'
 superlu_dist:
