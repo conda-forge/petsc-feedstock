@@ -82,6 +82,7 @@ python ./configure \
   --with-scalapack=1 \
   --with-superlu=1 \
   --with-superlu_dist=1 \
+  --with-superlu_dist-include=$PREFIX/include/superlu-dist \
   --with-suitesparse=1 \
   --with-x=0 \
   --with-scalar-type=${scalar} \
