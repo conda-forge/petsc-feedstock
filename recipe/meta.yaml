@@ -1,5 +1,5 @@
 {% set version = "3.20.2" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -22,7 +22,8 @@ build:
   number: {{ build }}
   string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}
   run_exports:
-    - {{ pin_subpackage('petsc', max_pin='x.x') }} {{ scalar }}_*
+    - {{ pin_subpackage('petsc', max_pin='x.x') }}
+    - petsc * {{ scalar }}_*
   track_features:
     - petsc_complex  # [scalar == "complex"]
 
@@ -50,7 +51,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-    # - superlu_dist  # unmaintained
+    - superlu_dist
     - scotch
     - mumps-mpi
     - suitesparse
@@ -66,7 +67,7 @@ requirements:
     - ptscotch
     - scalapack
     - superlu
-    # - superlu_dist  # unmaintained
+    - superlu_dist
     - scotch
     - mumps-mpi
     - suitesparse
