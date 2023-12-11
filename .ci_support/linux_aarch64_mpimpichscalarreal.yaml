@@ -30,6 +30,10 @@ libcblas:
 - 3.9 *netlib
 liblapack:
 - 3.9 *netlib
+libptscotch:
+- 7.0.4
+libscotch:
+- 7.0.4
 metis:
 - 5.1.1
 mpi:
@@ -45,12 +49,8 @@ pin_run_as_build:
     max_pin: x.x
   suitesparse:
     max_pin: x.x
-ptscotch:
-- 7.0.2
 scalar:
 - real
-scotch:
-- 7.0.2
 suitesparse:
 - '5'
 superlu_dist:

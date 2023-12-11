@@ -24,6 +24,10 @@ libcblas:
 - 3.9 *netlib
 liblapack:
 - 3.9 *netlib
+libptscotch:
+- 7.0.4
+libscotch:
+- 7.0.4
 macos_machine:
 - x86_64-apple-darwin13.4.0
 metis:
@@ -41,12 +45,8 @@ pin_run_as_build:
     max_pin: x.x
   suitesparse:
     max_pin: x.x.x
-ptscotch:
-- 7.0.2
 scalar:
 - real
-scotch:
-- 7.0.2
 suitesparse:
 - '5'
 superlu_dist:
