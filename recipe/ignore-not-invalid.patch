@@ -1,13 +1,13 @@
 diff --git a/config/BuildSystem/config/setCompilers.py b/config/BuildSystem/config/setCompilers.py
-index ed1a74df373..d8ef64f0e80 100644
+index 58c9c43d4bb..91df5fae8f2 100644
 --- a/config/BuildSystem/config/setCompilers.py
 +++ b/config/BuildSystem/config/setCompilers.py
-@@ -1945,7 +1945,7 @@ class Configure(config.base.Configure):
+@@ -1960,7 +1960,7 @@ class Configure(config.base.Configure):
      substrings = ('unknown argument', 'ignoring unsupported linker flag', 'unrecognized command line option','unrecognised command line option',
                    'unrecognized option','unrecognised option','not recognized',
                    'not recognised','unknown option','unknown warning option',
 -                  'unknown flag','unknown switch','ignoring option','ignored','argument unused',
 +                  'unknown flag','unknown switch','argument unused',
+                   'unsupported command line options encountered',
                    'not supported','is unsupported and will be skipped','illegal option',
                    'invalid option','invalid suboption','bad ',' option','petsc error',
-                   'unbekannte option','linker input file unused because linking not done',

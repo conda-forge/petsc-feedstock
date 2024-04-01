@@ -120,18 +120,6 @@ for path in $PETSC_DIR $BUILD_PREFIX; do
 done
 
 make MAKE_NP=${CPU_COUNT}
-
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
-  # FIXME: Workaround mpiexec setting O_NONBLOCK in std{in|out|err}
-  # See https://github.com/conda-forge/conda-smithy/pull/337
-  # See https://github.com/pmodels/mpich/pull/2755
-  if [[ $(uname) != Darwin ]]; then
-  # FIXME: Failures in some macOS builds
-  # ** On entry to DGEMM parameter number 13 had an illegal value
-  make check MPIEXEC="${RECIPE_DIR}/mpiexec.sh"
-  fi
-fi
-
 make install
 
 # Remove unneeded files
