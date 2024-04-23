@@ -46,6 +46,22 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   extra_opts="--with-batch"
 fi
 
+if [[ "${cuda_compiler_version}" != "None" ]]; then
+  cuda_opts="--with-cuda=1 --with-cuda-dir=$CUDA_HOME --with-cuda-arch=all-major"
+  # nvcc in the build stage is a script that adds
+  # -ccbin ${CXX} if not provided, but ${CXX} from
+  # the environment is not propagated inside PETSc's
+  # configure. We will thus end up with running
+  # $ /usr/local/cuda/bin/nvcc -ccbin empty_variable <other_options>
+  # which will make PETSc configure fail with
+  # an obscure message from nvcc
+  # No such file or directory
+  # nvcc fatal   : Failed to preprocess host compiler properties.
+  cuda_c="--with-cudac=nvcc -ccbin mpicxx"
+else
+  cuda_opts="--with-cuda=0"
+fi
+
 python ./configure \
   AR="${AR:-ar}" \
   CC="mpicc" \
@@ -87,6 +103,8 @@ python ./configure \
   --with-suitesparse=1 \
   --with-x=0 \
   --with-scalar-type=${scalar} \
+  "$cuda_c" \
+  $cuda_opts \
   $extra_opts \
   --prefix=$PREFIX || (cat configure.log && exit 1)
 
