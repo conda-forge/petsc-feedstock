@@ -11,4 +11,7 @@ github:
 provider:
   linux_aarch64: default
   linux_ppc64le: default
+azure:
+  store_build_artifacts: false
+  free_disk_space: true
 test: native_and_emulated
