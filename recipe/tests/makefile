@@ -1,6 +1,10 @@
 include ${PETSC_DIR}/lib/petsc/conf/variables
 include ${PETSC_DIR}/lib/petsc/conf/rules
 
+testdlopen: testdlopen.o
+	${CLINKER} -o testdlopen testdlopen.o -lpetsc -ldl
+	${RM} testdlopen.o
+
 ex1: ex1.o
 	${CLINKER} -o ex1 ex1.o ${PETSC_LIB}
 	${RM} ex1.o

@@ -1,9 +1,21 @@
 {% set version = "3.21.1" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
 {% set build = build + 100 %}
+{% endif %}
+{% set build = build + 200 %}  # [cuda_compiler_version == "None"]
+
+{% set cuda_target_name = "x86_64-linux" %}  # [linux64]
+{% set cuda_target_name = "ppc64le-linux" %}  # [ppc64le]
+{% set cuda_target_name = "sbsa-linux" %}  # [aarch64]
+{% set cuda_target_name = "" %}  # [osx]
+
+{% if cuda_compiler_version == "None" %}
+{% set cuda_major = 0 %}
+{% else %}
+{% set cuda_major = environ.get("cuda_compiler_version", "11.8").split(".")[0] | int %}
 {% endif %}
 
 package:
@@ -16,23 +28,43 @@ source:
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
+    - target-cudadir.patch
 
 build:
   skip: true  # [win]
+  skip: true  # [cuda_compiler_version not in ("None", "11.8", "12.4")]
   number: {{ build }}
-  string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}
+  # Allow petsc4py to use the cuda variant
+  string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}                       # [cuda_compiler_version == "None"]
+  string: {{ scalar }}_cuda{{ cuda_major }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version != "None"]
+  script_env:
+    - CUDA_CONDA_TARGET_NAME={{ cuda_target_name }}
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
     - petsc * {{ scalar }}_*
   track_features:
     - petsc_complex  # [scalar == "complex"]
+  # Allow using 11.2 with 11.8 or 12.x with 12.4
+  ignore_run_exports_from:
+    - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
+    - cudatoolkit             # [(cuda_compiler_version or "").startswith("11")]
+    {% if cuda_major >= 12 %}
+    - cuda-cudart-dev
+    - cuda-nvtx-dev
+    - libcublas-dev
+    - libcufft-dev
+    - libcurand-dev
+    - libcusolver-dev
+    - libcusparse-dev
+    {% endif %}
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
     - make
     - pkg-config
     - python
@@ -45,8 +77,7 @@ requirements:
     - cmake
     - {{ mpi }}
     - yaml
-    # FIXME: unpin hypre after next petsc release
-    - hypre 2.28
+    - hypre
     - metis
     - parmetis
     - libptscotch
@@ -59,6 +90,17 @@ requirements:
     - hdf5
     - hdf5 * mpi_{{ mpi }}_*
     - fftw * mpi_{{ mpi }}_*
+    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version != "None"]
+    - cudatoolkit                               # [(cuda_compiler_version or "").startswith("11")]
+    {% if cuda_major >= 12 %}
+    - cuda-cudart-dev
+    - cuda-nvtx-dev
+    - libcublas-dev
+    - libcufft-dev
+    - libcurand-dev
+    - libcusolver-dev
+    - libcusparse-dev
+    {% endif %}
   run:
     - {{ mpi }}
     - yaml
@@ -75,17 +117,37 @@ requirements:
     - hdf5
     - hdf5 * mpi_{{ mpi }}_*
     - fftw * mpi_{{ mpi }}_*
+    - cuda-version >={{ cuda_major }}.2,<{{ cuda_major+1 }}  # [(cuda_compiler_version or "").startswith("11")]
+    - cudatoolkit >={{ cuda_major }}.2,<{{ cuda_major+1 }}   # [(cuda_compiler_version or "").startswith("11")]
+    {% if cuda_major >= 12 %}
+    - cuda-version >={{ cuda_major }}.0,<{{ cuda_major+1 }}
+    - cuda-cudart
+    - cuda-nvtx
+    - libcublas
+    - libcufft
+    - libcurand
+    - libcusolver
+    - libcusparse
+    - {{ pin_compatible('cuda-nvtx', min_pin='x', max_pin='x') }}
+    - {{ pin_compatible('cuda-cudart', min_pin='x', max_pin='x') }}
+    - {{ pin_compatible('libcublas', min_pin='x', max_pin='x') }}
+    - {{ pin_compatible('libcufft', min_pin='x', max_pin='x') }}
+    - {{ pin_compatible('libcurand', min_pin='x', max_pin='x') }}
+    - {{ pin_compatible('libcusolver', min_pin='x', max_pin='x') }}
+    - {{ pin_compatible('libcusparse', min_pin='x', max_pin='x') }}
+    {% endif %}
 
 test:
   requires:
     - pkg-config
+    - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
-    - make
   files:
     - tests/ex1.c
     - tests/ex1f.F90
+    - tests/testdlopen.c
     - tests/makefile
   commands:
     - pkg-config --validate PETSc
@@ -110,3 +172,4 @@ extra:
     - SylvainCorlay
     - martinRenou
     - matthiasdiener
+    - stefanozampini

@@ -46,6 +46,34 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   extra_opts="--with-batch"
 fi
 
+if [[ "${cuda_compiler_version}" != "None" ]]; then
+  if [[ -n "$CUDA_HOME" ]]; then # cuda 11.8
+    # CUDA in $CUDA_HOME/targets/xxx
+    cuda_dir=$CUDA_HOME
+    # nvcc in the build stage is a script that adds
+    # -ccbin ${CXX} if not provided, but ${CXX} from
+    # the environment is not propagated inside PETSc's
+    # configure. We will thus end up with running
+    # $ /usr/local/cuda/bin/nvcc -ccbin empty_variable <other_options>
+    # which will make PETSc configure fail with
+    # an obscure message from nvcc
+    # No such file or directory
+    # nvcc fatal   : Failed to preprocess host compiler properties.
+    cuda_c="--with-cudac=nvcc -ccbin mpicxx"
+  else
+    # CUDA in $PREFIX/targets/xxx
+    cuda_dir=$PREFIX # cuda 12 and later
+    # already providing ccbin in prepend flags
+    cuda_c="--with-cudac=nvcc"
+  fi
+  export CUDA_CONDA_HOME=$cuda_dir
+  cuda_incl=$cuda_dir/targets/$CUDA_CONDA_TARGET_NAME
+  cuda_libs="--with-cuda-lib=-lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda"
+  cuda_opts="--with-cuda=1 --with-cuda-include=$cuda_incl --with-cuda-arch=all-major"
+else
+  cuda_opts="--with-cuda=0"
+fi
+
 python ./configure \
   AR="${AR:-ar}" \
   CC="mpicc" \
@@ -87,6 +115,9 @@ python ./configure \
   --with-suitesparse=1 \
   --with-x=0 \
   --with-scalar-type=${scalar} \
+  "$cuda_c" \
+  "$cuda_libs" \
+  $cuda_opts \
   $extra_opts \
   --prefix=$PREFIX || (cat configure.log && exit 1)
 
@@ -126,8 +157,16 @@ make install
 rm -f ${PREFIX}/lib/petsc/conf/configure-hash
 find $PREFIX/lib/petsc -name '*.pyc' -delete
 
-# Replace ${BUILD_PREFIX} after installation,
-# otherwise 'make install' above may fail
+# Replace ${BUILD_PREFIX} and CUDA temporary information
+# after installation, otherwise 'make install' above may fail
+if [[ -n "$cuda_dir" ]]; then
+  for s in $cuda_incl $cuda_dir; do
+    for f in $(grep -l "${s}" -R "${PREFIX}/lib/petsc"); do
+      echo "Fixing ${s} in $f"
+      sedinplace s%${s}%${PREFIX}%g $f
+    done
+  done
+fi
 for f in $(grep -l "${BUILD_PREFIX}" -R "${PREFIX}/lib/petsc"); do
   echo "Fixing ${BUILD_PREFIX} in $f"
   sedinplace s%${BUILD_PREFIX}%${PREFIX}%g $f
