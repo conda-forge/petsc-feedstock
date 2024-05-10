@@ -1,11 +1,10 @@
 {% set version = "3.21.1" %}
-{% set build = 3 %}
+{% set build = 4 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
 {% set build = build + 100 %}
 {% endif %}
-{% set build = build + 200 %}  # [cuda_compiler_version == "None"]
 
 {% set cuda_target_name = "x86_64-linux" %}  # [linux64]
 {% set cuda_target_name = "ppc64le-linux" %}  # [ppc64le]
@@ -34,14 +33,14 @@ build:
   skip: true  # [win]
   skip: true  # [cuda_compiler_version not in ("None", "11.8", "12.4")]
   number: {{ build }}
-  # Allow petsc4py to use the cuda variant
   string: {{ scalar }}_h{{ PKG_HASH }}_{{ build }}                       # [cuda_compiler_version == "None"]
-  string: {{ scalar }}_cuda{{ cuda_major }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version != "None"]
+  string: cuda{{ cuda_major }}_{{ scalar }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version != "None"]
   script_env:
     - CUDA_CONDA_TARGET_NAME={{ cuda_target_name }}
   run_exports:
     - {{ pin_subpackage('petsc', max_pin='x.x') }}
-    - petsc * {{ scalar }}_*
+    - petsc * {{ scalar }}_*                       # [cuda_compiler_version == "None"]
+    - petsc * cuda{{ cuda_major }}_{{ scalar }}_*  # [cuda_compiler_version != "None"]
   track_features:
     - petsc_complex  # [scalar == "complex"]
   # Allow using 11.2 with 11.8 or 12.x with 12.4
