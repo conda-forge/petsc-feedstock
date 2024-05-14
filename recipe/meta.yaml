@@ -43,6 +43,7 @@ build:
     - petsc * cuda{{ cuda_major }}_{{ scalar }}_*  # [cuda_compiler_version != "None"]
   track_features:
     - petsc_complex  # [scalar == "complex"]
+    - petsc_cuda  # [cuda_compiler_version != "None"]
   # Allow using 11.2 with 11.8 or 12.x with 12.4
   ignore_run_exports_from:
     - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
