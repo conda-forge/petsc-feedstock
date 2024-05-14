@@ -113,6 +113,7 @@ python ./configure \
   --with-superlu_dist-include=$PREFIX/include/superlu-dist \
   --with-superlu_dist-lib=-lsuperlu_dist \
   --with-suitesparse=1 \
+  --with-suitesparse-dir=$PREFIX \
   --with-x=0 \
   --with-scalar-type=${scalar} \
   "$cuda_c" \
