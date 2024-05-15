@@ -60,7 +60,7 @@ pin_run_as_build:
 scalar:
 - real
 suitesparse:
-- '5'
+- '7'
 superlu_dist:
 - '8'
 target_platform:
