@@ -1,3 +1,7 @@
+# need newer glibc for openmpi 5
+c_stdlib_version:  # [linux]
+  - 2.17           # [linux]
+
 mpi:
   - mpich
   - openmpi
