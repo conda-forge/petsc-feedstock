@@ -5,9 +5,9 @@ c_compiler_version:
 c_stdlib:
 - sysroot
 c_stdlib_version:
-- '2.12'
+- '2.17'
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
@@ -41,7 +41,7 @@ libscotch:
 metis:
 - 5.1.0
 mpi:
-- mpich
+- openmpi
 mpich:
 - '4'
 mumps_mpi:
@@ -54,7 +54,7 @@ pin_run_as_build:
   suitesparse:
     max_pin: x.x
 scalar:
-- complex
+- real
 suitesparse:
 - '7'
 superlu_dist:
