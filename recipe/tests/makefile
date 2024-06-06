@@ -14,9 +14,9 @@ ex1f: ex1f.o
 	${RM} ex1f.o
 
 runex1:
-	@${MPIEXEC} -n 1 ./ex1
+	${MPIEXEC} -n 1 ./ex1
 
 runex1f:
-	@${MPIEXEC} -n 1 ./ex1f
+	${MPIEXEC} -n 1 ./ex1f
 
 include ${PETSC_DIR}/lib/petsc/conf/test

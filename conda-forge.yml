@@ -11,6 +11,9 @@ conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+os_version:
+  # cos7 required for updated glibc
+  linux_64: cos7
 provider:
   linux_aarch64: default
   linux_ppc64le: default
