@@ -58,7 +58,7 @@ scalar:
 suitesparse:
 - '7'
 superlu_dist:
-- '8'
+- '9'
 target_platform:
 - linux-ppc64le
 zip_keys:

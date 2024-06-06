@@ -60,7 +60,7 @@ scalar:
 suitesparse:
 - '7'
 superlu_dist:
-- '8'
+- '9'
 target_platform:
 - osx-64
 zip_keys:
