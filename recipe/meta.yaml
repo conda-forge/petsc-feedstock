@@ -9,7 +9,7 @@
 {% set cuda_target_name = "x86_64-linux" %}  # [linux64]
 {% set cuda_target_name = "ppc64le-linux" %}  # [ppc64le]
 {% set cuda_target_name = "sbsa-linux" %}  # [aarch64]
-{% set cuda_target_name = "" %}  # [osx]
+{% set cuda_target_name = "" %}  # [osx or win]
 
 {% if cuda_compiler_version == "None" %}
 {% set cuda_major = 0 %}
