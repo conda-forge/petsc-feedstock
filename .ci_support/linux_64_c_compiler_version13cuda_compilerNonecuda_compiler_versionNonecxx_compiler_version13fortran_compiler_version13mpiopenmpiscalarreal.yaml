@@ -45,7 +45,7 @@ mpi:
 mpich:
 - '4'
 mumps_mpi:
-- 5.7.2
+- 5.7.3
 openmpi:
 - '5'
 pin_run_as_build:
