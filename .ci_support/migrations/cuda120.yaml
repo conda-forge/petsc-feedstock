@@ -67,6 +67,7 @@ __migrator:
       - 11.1                       # [(linux64 or win64) and os.environ.get("CF_CUDA_ENABLED", "False") == "True"]
       - 11.2                       # [(linux or win64) and os.environ.get("CF_CUDA_ENABLED", "False") == "True"]
       - 11.8                       # [(linux or win64) and os.environ.get("CF_CUDA_ENABLED", "False") == "True"]
+      - 12.0                       # [(linux or win64) and os.environ.get("CF_CUDA_ENABLED", "False") == "True"]
       - 12.4                       # [(linux or win64) and os.environ.get("CF_CUDA_ENABLED", "False") == "True"]
   commit_message: |
     Rebuild for CUDA 12 w/arch + Windows support
