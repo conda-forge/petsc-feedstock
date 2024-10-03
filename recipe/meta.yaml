@@ -1,5 +1,5 @@
 {% set version = "3.22.0" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -28,6 +28,7 @@ source:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - target-cudadir.patch
+    - mr7912.patch
 
 build:
   skip: true  # [win]
