@@ -1,0 +1,36 @@
+From 4ba2be3cf25884919d5c5b8352272be61e7c640a Mon Sep 17 00:00:00 2001
+From: Min RK <benjaminrk@gmail.com>
+Date: Thu, 31 Oct 2024 08:44:06 +0100
+Subject: [PATCH] resolve install_name_tool on $PATH
+
+Many other invocations already do this, but there is one hardcoded absolute path left
+
+The active SDK may be ahead of /usr/bin on $PATH, and /usr/bin may be an install-requesting proxy,
+not the actual tool
+
+e.g. builds on Azure macOS-13
+---
+ config/install.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/config/install.py b/config/install.py
+index c5fa62c..cf7705c 100755
+--- a/config/install.py
++++ b/config/install.py
+@@ -509,11 +509,11 @@ for file in files:
+     shutil.copy2(src, dst)
+     if self.setCompilers.getCompiler().find('win32fe') < 0 and os.path.splitext(dst)[1] == '.'+self.arLibSuffix:
+       self.executeShellCommand(self.ranlib+' '+dst)
+-    if os.path.splitext(dst)[1] == '.dylib' and os.path.isfile('/usr/bin/install_name_tool'):
++    if os.path.splitext(dst)[1] == '.dylib' and shutil.which('install_name_tool'):
+       [output,err,flg] = self.executeShellCommand("otool -D "+src)
+       oldname = output[output.find("\n")+1:]
+       installName = oldname.replace(os.path.realpath(self.archDir), self.installDir)
+-      self.executeShellCommand('/usr/bin/install_name_tool -id ' + installName + ' ' + dst)
++      self.executeShellCommand('install_name_tool -id ' + installName + ' ' + dst)
+     # preserve the original timestamps - so that the .a vs .so time order is preserved
+     shutil.copystat(src,dst)
+     return
+-- 
+2.45.0
+
