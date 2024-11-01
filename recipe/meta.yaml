@@ -74,7 +74,6 @@ requirements:
     - {{ mpi }}  # [mpi == 'openmpi' and build_platform != target_platform]
   host:
     - libblas
-    - libcblas
     - liblapack
     - cmake
     - {{ mpi }}
