@@ -1,5 +1,5 @@
 {% set version = "3.22.1" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'mpich' %}
 {% if scalar == "real" %}
@@ -91,6 +91,7 @@ requirements:
     - suitesparse
     - hdf5
     - hdf5 * mpi_{{ mpi }}_*
+    - fftw
     - fftw * mpi_{{ mpi }}_*
     - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version != "None"]
     - cudatoolkit                               # [(cuda_compiler_version or "").startswith("11")]
@@ -104,21 +105,6 @@ requirements:
     - libcusparse-dev
     {% endif %}
   run:
-    - {{ mpi }}
-    - yaml
-    - hypre
-    - metis
-    - parmetis
-    - libptscotch
-    - scalapack
-    - superlu
-    - superlu_dist
-    - libscotch
-    - mumps-mpi
-    - suitesparse
-    - hdf5
-    - hdf5 * mpi_{{ mpi }}_*
-    - fftw * mpi_{{ mpi }}_*
     - cuda-version >={{ cuda_major }}.2,<{{ cuda_major+1 }}  # [(cuda_compiler_version or "").startswith("11")]
     - cudatoolkit >={{ cuda_major }}.2,<{{ cuda_major+1 }}   # [(cuda_compiler_version or "").startswith("11")]
     {% if cuda_major >= 12 %}
