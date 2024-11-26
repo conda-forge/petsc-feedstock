@@ -32,8 +32,6 @@ hdf5:
 - 1.14.4
 libblas:
 - 3.9 *netlib
-libcblas:
-- 3.9 *netlib
 liblapack:
 - 3.9 *netlib
 libptscotch:

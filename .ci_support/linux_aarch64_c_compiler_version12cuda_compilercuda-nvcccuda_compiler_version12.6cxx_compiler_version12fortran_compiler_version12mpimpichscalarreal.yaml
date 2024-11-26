@@ -11,7 +11,7 @@ c_stdlib_version:
 cdt_arch:
 - aarch64
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -19,13 +19,13 @@ channel_targets:
 cuda_compiler:
 - cuda-nvcc
 cuda_compiler_version:
-- '12.4'
+- '12.6'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '12'
 docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
+- quay.io/condaforge/linux-anvil-x86_64:cos7
 fftw:
 - '3'
 fortran_compiler:
@@ -35,8 +35,6 @@ fortran_compiler_version:
 hdf5:
 - 1.14.4
 libblas:
-- 3.9 *netlib
-libcblas:
 - 3.9 *netlib
 liblapack:
 - 3.9 *netlib
@@ -55,7 +53,7 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- complex
+- real
 suitesparse:
 - '7'
 superlu_dist:
@@ -66,8 +64,6 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
-  - c_stdlib_version
-  - cdt_name
   - cuda_compiler
   - cuda_compiler_version
   - docker_image
