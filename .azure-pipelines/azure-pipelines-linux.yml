@@ -11,147 +11,147 @@ jobs:
       ? linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarcomplex
       : CONFIG: linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:cos7
       ? linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarreal
       : CONFIG: linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:cos7
       ? linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarcomplex
       : CONFIG: linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:cos7
       ? linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarreal
       : CONFIG: linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
-      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
-      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:cos7
+      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
+      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
-      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
+      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
+      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
-      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
+      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
+      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
-      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
+      ? linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
+      : CONFIG: linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex
       : CONFIG: linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal
       : CONFIG: linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex
       : CONFIG: linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal
       : CONFIG: linux_64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarcomplex
       : CONFIG: linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
       ? linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarreal
       : CONFIG: linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
       ? linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarcomplex
       : CONFIG: linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
       ? linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarreal
       : CONFIG: linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
-      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
-      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
+      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
+      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
-      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
+      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
+      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
-      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
+      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
+      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
-      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
+      ? linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
+      : CONFIG: linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex
       : CONFIG: linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal
       : CONFIG: linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex
       : CONFIG: linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal
       : CONFIG: linux_aarch64_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarcomplex
       : CONFIG: linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
       ? linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarreal
       : CONFIG: linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
       ? linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarcomplex
       : CONFIG: linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
       ? linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarreal
       : CONFIG: linux_ppc64le_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8cxx_compiler_version11fortran_compiler_version11mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.8
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
       ? linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
       : CONFIG: linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
       : CONFIG: linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
       : CONFIG: linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
       : CONFIG: linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.4cxx_compiler_version12fortran_compiler_version12mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex
       : CONFIG: linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal
       : CONFIG: linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex
       : CONFIG: linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
       ? linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal
       : CONFIG: linux_ppc64le_c_compiler_version13cuda_compilerNonecuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
   timeoutInMinutes: 360
   variables: {}
 
