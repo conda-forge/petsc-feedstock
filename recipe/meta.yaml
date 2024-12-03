@@ -42,8 +42,6 @@ source:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - target-cudadir.patch
-    - mr7912.patch
-    - install_name_path.patch  # [osx]
 
 build:
   skip: true  # [win]
