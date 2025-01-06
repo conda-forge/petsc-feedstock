@@ -8,30 +8,55 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_mpimpichscalarcomplex:
-        CONFIG: osx_64_mpimpichscalarcomplex
+      osx_64_hdf51.14.3mpimpichscalarcomplex:
+        CONFIG: osx_64_hdf51.14.3mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichscalarreal:
-        CONFIG: osx_64_mpimpichscalarreal
+      osx_64_hdf51.14.3mpimpichscalarreal:
+        CONFIG: osx_64_hdf51.14.3mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpiscalarcomplex:
-        CONFIG: osx_64_mpiopenmpiscalarcomplex
+      osx_64_hdf51.14.3mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_hdf51.14.3mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpiscalarreal:
-        CONFIG: osx_64_mpiopenmpiscalarreal
+      osx_64_hdf51.14.3mpiopenmpiscalarreal:
+        CONFIG: osx_64_hdf51.14.3mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpimpichscalarcomplex:
-        CONFIG: osx_arm64_mpimpichscalarcomplex
+      osx_64_hdf51.14.4mpimpichscalarcomplex:
+        CONFIG: osx_64_hdf51.14.4mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpimpichscalarreal:
-        CONFIG: osx_arm64_mpimpichscalarreal
+      osx_64_hdf51.14.4mpimpichscalarreal:
+        CONFIG: osx_64_hdf51.14.4mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpiopenmpiscalarcomplex:
-        CONFIG: osx_arm64_mpiopenmpiscalarcomplex
+      osx_64_hdf51.14.4mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_hdf51.14.4mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpiopenmpiscalarreal:
-        CONFIG: osx_arm64_mpiopenmpiscalarreal
+      osx_64_hdf51.14.4mpiopenmpiscalarreal:
+        CONFIG: osx_64_hdf51.14.4mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.3mpimpichscalarcomplex:
+        CONFIG: osx_arm64_hdf51.14.3mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.3mpimpichscalarreal:
+        CONFIG: osx_arm64_hdf51.14.3mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.3mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_hdf51.14.3mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.3mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_hdf51.14.3mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.4mpimpichscalarcomplex:
+        CONFIG: osx_arm64_hdf51.14.4mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.4mpimpichscalarreal:
+        CONFIG: osx_arm64_hdf51.14.4mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.4mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_hdf51.14.4mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.4mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_hdf51.14.4mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+    maxParallel: 9
   timeoutInMinutes: 360
   variables: {}
 
