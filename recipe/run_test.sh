@@ -1,20 +1,22 @@
 #!/bin/bash
-set -ex
+set -exu
 
 export PETSC_DIR=${PREFIX}
 
+pkg-config --validate PETSc
 pkg-config --cflags PETSc | grep -v isystem
+pkg-config --libs PETSc
 
 cd tests
 
 # There are so many hiccups when compiling with cuda
 # on the CI testing machines that we only test for
 # dynamic loading
-if [[ -n "$CUDA_CONDA_TARGET_NAME" ]]; then
+if [[ "${cuda_compiler_version}" != "None" ]]; then
     make testdlopen
     # aarch64 failing tests
     # ./testdlopen: /lib64/libm.so.6: version `GLIBC_2.27' not found (required by $PREFIX/lib/./libcurand.so.10)
-    if [[ "$CUDA_CONDA_TARGET_NAME" != "sbsa-linux" ]]; then
+    if [[ "${target_platform}" != "linux-aarch64" ]]; then
         ./testdlopen
     fi
 else

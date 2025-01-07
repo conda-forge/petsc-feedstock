@@ -20,6 +20,17 @@ if [[ "$target_platform" == linux-* ]]; then
     export FFLAGS="${FFLAGS:-} -Wl,--no-as-needed"
 fi
 
+if [[ "$target_platform" == osx-* ]]; then
+  # need otool symlink on $PATH
+  # not sure if/how/why rattler-build is doing anything different
+  # to conda-build here, or if it's an unrelated host image change
+  if [[ ! -f $BUILD_PREFIX/bin/otool ]]; then
+    ln -s $OTOOL $BUILD_PREFIX/bin/otool
+  fi
+  which -a otool
+  otool --version
+fi
+
 # scrub debug-prefix-map args, which cause problems in pkg-config
 export CFLAGS=$(echo ${CFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
@@ -60,8 +71,18 @@ if [[ "${cuda_compiler_version}" != "None" ]]; then
     # already providing ccbin in prepend flags
     cuda_c="--with-cudac=nvcc"
   fi
+  if [[ "${target_platform}" == "linux-64" ]]; then
+    export CUDA_CONDA_TARGET_NAME=x86_64-linux
+  elif [[ "${target_platform}" == "linux-aarch64" ]]; then
+    export CUDA_CONDA_TARGET_NAME=sbsa-linux
+  elif [[ "${target_platform}" == "linux-ppc64le" ]]; then
+    export CUDA_CONDA_TARGET_NAME=ppc64le-linux
+  else
+    echo "unexpected cuda target_platform=${target_platform}"
+    exit 1
+  fi
   export CUDA_CONDA_HOME=$cuda_dir
-  cuda_incl=$cuda_dir/targets/$CUDA_CONDA_TARGET_NAME
+  cuda_incl=$cuda_dir/targets/${CUDA_CONDA_TARGET_NAME}/include
   cuda_libs="--with-cuda-lib=-lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda"
   cuda_opts="--with-cuda=1 --with-cuda-include=$cuda_incl --with-cuda-arch=all-major"
 else
