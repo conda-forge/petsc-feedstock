@@ -30,14 +30,24 @@ fortran_compiler_version:
 - '12'
 hdf5:
 - 1.14.3
+libamd:
+- '3'
 libblas:
 - 3.9 *netlib
+libcholmod:
+- '5'
+libklu:
+- '2'
 liblapack:
 - 3.9 *netlib
 libptscotch:
 - 7.0.5
 libscotch:
 - 7.0.5
+libspqr:
+- '4'
+libumfpack:
+- '6'
 metis:
 - 5.1.0
 mpi:
@@ -48,12 +58,8 @@ mumps_mpi:
 - 5.7.3
 openmpi:
 - '5'
-petsc:
-- '3.21'
 scalar:
 - real
-suitesparse:
-- '7'
 superlu_dist:
 - '9'
 target_platform:

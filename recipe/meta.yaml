@@ -1,5 +1,5 @@
 {% set version = "3.22.2" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 # make sure things are defined during conda-smithy operations
 # These will never be undefined during build
@@ -94,7 +94,14 @@ requirements:
     - superlu_dist
     - libscotch
     - mumps-mpi
-    - suitesparse
+
+    # suitesparse
+    - libamd
+    - libcholmod
+    - libklu
+    - libspqr
+    - libumfpack
+
     - hdf5
     - hdf5 * mpi_{{ mpi }}_*
     - fftw
