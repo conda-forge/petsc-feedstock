@@ -1,5 +1,5 @@
 {% set version = "3.22.2" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 # make sure things are defined during conda-smithy operations
 # These will never be undefined during build
