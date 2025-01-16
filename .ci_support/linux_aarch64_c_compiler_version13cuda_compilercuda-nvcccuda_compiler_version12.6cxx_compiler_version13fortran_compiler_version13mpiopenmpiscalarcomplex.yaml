@@ -33,13 +33,13 @@ hdf5:
 libamd:
 - '3'
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 libcholmod:
 - '5'
 libklu:
 - '2'
 liblapack:
-- 3.9 *netlib
+- 3.9.* *netlib
 libptscotch:
 - 7.0.6
 libscotch:
@@ -58,8 +58,6 @@ mumps_mpi:
 - 5.7.3
 openmpi:
 - '5'
-petsc:
-- '3.21'
 scalar:
 - complex
 superlu_dist:
