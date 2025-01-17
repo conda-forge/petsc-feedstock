@@ -20,17 +20,6 @@ if [[ "$target_platform" == linux-* ]]; then
     export FFLAGS="${FFLAGS:-} -Wl,--no-as-needed"
 fi
 
-if [[ "$target_platform" == osx-* ]]; then
-  # need otool symlink on $PATH
-  # not sure if/how/why rattler-build is doing anything different
-  # to conda-build here, or if it's an unrelated host image change
-  if [[ ! -f $BUILD_PREFIX/bin/otool ]]; then
-    ln -s $OTOOL $BUILD_PREFIX/bin/otool
-  fi
-  which -a otool
-  otool --version
-fi
-
 # scrub debug-prefix-map args, which cause problems in pkg-config
 export CFLAGS=$(echo ${CFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')

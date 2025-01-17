@@ -54,6 +54,11 @@ requirements:
     - ${{ compiler('fortran') }}
     - if: with_cuda
       then: ${{ compiler('cuda') }}
+    - if: osx
+      then:
+        # has symlinks for 'otool', 'install_name_tool', etc.
+        # otherwise, we only have 'arm64-apple-darwin20.0.0-install_name_tool'
+        - cctools
     - make
     - pkg-config
     - python 3.12.*
