@@ -130,7 +130,7 @@ requirements:
     from_package:
       - if: with_cuda
         then:
-          - ${{ cuda_compiler }}
+          - ${{ compiler("cuda") | split | first }}
       - cudatoolkit
       - cuda-cudart-dev
       - cuda-nvtx-dev
