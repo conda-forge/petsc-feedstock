@@ -60,8 +60,6 @@ mumps_mpi:
 - 5.7.3
 openmpi:
 - '5'
-petsc:
-- '3.21'
 scalar:
 - real
 superlu_dist:
