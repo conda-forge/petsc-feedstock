@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   version: 3.22.3
-  build: 101
+  build: 102
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
@@ -72,6 +72,7 @@ requirements:
     - ${{ mpi }}
     - yaml
     - hypre
+    - libhwloc
     - metis
     - parmetis
     - libptscotch
