@@ -12,7 +12,6 @@ unset F77
 # unset CC
 unset CXX
 if [[ "$target_platform" == linux-* ]]; then
-    export LDFLAGS="-pthread -fopenmp $LDFLAGS"
     export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
     # --as-needed appears to cause problems with fortran compiler detection
     # due to missing libquadmath
@@ -101,7 +100,8 @@ python ./configure \
   --with-yaml=1 \
   --with-hdf5=1 \
   --with-fftw=1 \
-  --with-hwloc=0 \
+  --with-hwloc=1 \
+  --with-openmp=1 \
   --with-hypre=1 \
   --with-metis=1 \
   --with-mpi=1 \
