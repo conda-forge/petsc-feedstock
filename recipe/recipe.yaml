@@ -72,6 +72,7 @@ requirements:
     - ${{ mpi }}
     - yaml
     - hypre
+    - libhwloc
     - metis
     - parmetis
     - libptscotch
