@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   version: 3.22.3
-  build: 102
+  build: 103
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
@@ -125,8 +125,9 @@ requirements:
           - ${{ pin_compatible('libcusolver', lower_bound='x', upper_bound='x') }}
           - ${{ pin_compatible('libcusparse', lower_bound='x', upper_bound='x') }}
   run_exports:
-    - ${{ pin_subpackage('petsc', upper_bound='x.x') }}
-    - petsc * ${{ build_prefix }}_*
+    weak:
+      - ${{ pin_subpackage('petsc', upper_bound='x.x') }}
+      - petsc * ${{ build_prefix }}_*
   ignore_run_exports:
     from_package:
       - if: with_cuda
