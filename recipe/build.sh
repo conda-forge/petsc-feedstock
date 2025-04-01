@@ -24,9 +24,6 @@ export CFLAGS=$(echo ${CFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 export FFLAGS=$(echo ${FFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 
-# petsc doesn't compile with default fortran line length
-export FFLAGS="$FFLAGS -ffree-line-length-none"
-
 if [[ $mpi == "openmpi" ]]; then
   export LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
 elif [[ $mpi == "mpich" ]]; then
@@ -80,20 +77,19 @@ else
   cuda_opts="--with-cuda=0"
 fi
 
+# petsc doesn't want us to set CFLAGS, etc.
+
 python ./configure \
   AR="${AR:-ar}" \
   CC="mpicc" \
   CXX="mpicxx" \
   FC="mpifort" \
-  CFLAGS="$CFLAGS" \
   CPPFLAGS="$CPPFLAGS" \
-  CXXFLAGS="$CXXFLAGS" \
-  FFLAGS="$FFLAGS" \
   LDFLAGS="$LDFLAGS" \
   LIBS="$LIBS" \
-  --COPTFLAGS=-O3 \
-  --CXXOPTFLAGS=-O3 \
-  --FOPTFLAGS=-O3 \
+  --COPTFLAGS="-O3 $CFLAGS" \
+  --CXXOPTFLAGS="-O3 $CXXFLAGS" \
+  --FOPTFLAGS="-O3 $FFLAGS" \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
@@ -158,7 +154,7 @@ for path in $PETSC_DIR $BUILD_PREFIX; do
     done
 done
 
-make MAKE_NP=${CPU_COUNT}
+make MAKE_NP=${CPU_COUNT} V=1
 make install
 
 # Remove unneeded files
