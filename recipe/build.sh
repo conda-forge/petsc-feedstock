@@ -8,12 +8,6 @@ export PETSC_DIR=$SRC_DIR
 export PETSC_ARCH=arch-conda-c-opt
 
 if [[ $mpi == "openmpi" ]]; then
-  LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
-elif [[ $mpi == "mpich" ]]; then
-  LIBS="-lmpifort -lgfortran"
-fi
-
-if [[ $mpi == "openmpi" ]]; then
   export OMPI_CC=$CC
   export OPAL_PREFIX=$PREFIX
 fi
@@ -60,10 +54,10 @@ else
   cuda_opts="--with-cuda=0"
 fi
 
-# unexport the variables to reduce warnings about config we know isn't used
+# unexport compiler variables to reduce warnings about config we know isn't used
 # (This doesn't unset variables, just prevents the export for subprocesses)
-export -n AR FC F90 F77 CC CXX
-export -n CFLAGS CXXFLAGS CPPFLAGS LDFLAGS
+export -n AR FC F90 F77 CC CXX CPP RANLIB
+export -n CFLAGS CXXFLAGS CPPFLAGS FFLAGS LDFLAGS
 
 # petsc doesn't want us to set CFLAGS, etc.
 # pass compiler flags via {C,CXX,F}OPTFLAGS to extend defaults
@@ -71,12 +65,13 @@ export -n CFLAGS CXXFLAGS CPPFLAGS LDFLAGS
 
 python ./configure \
   AR="${AR:-ar}" \
+  CPP="$CPP" \
+  RANLIB="$RANLIB" \
   CC="mpicc" \
   CXX="mpicxx" \
   FC="mpifort" \
   CPPFLAGS="$CPPFLAGS" \
   LDFLAGS="$LDFLAGS" \
-  LIBS="$LIBS" \
   --COPTFLAGS="$CFLAGS -O3" \
   --CXXOPTFLAGS="$CXXFLAGS -O3" \
   --FOPTFLAGS="$FFLAGS -O3" \
