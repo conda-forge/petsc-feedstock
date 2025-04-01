@@ -7,6 +7,9 @@ pkg-config --validate PETSc
 pkg-config --cflags PETSc | grep -v isystem
 pkg-config --libs PETSc
 
+# show petscvariables, etc.
+cat $PREFIX/lib/petsc/conf/petscvariables
+
 cd tests
 
 # There are so many hiccups when compiling with cuda

@@ -7,10 +7,12 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 export PETSC_DIR=$SRC_DIR
 export PETSC_ARCH=arch-conda-c-opt
 
+unset FC
 unset F90
 unset F77
-# unset CC
+unset CC
 unset CXX
+
 if [[ "$target_platform" == linux-* ]]; then
     export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
     # --as-needed appears to cause problems with fortran compiler detection
@@ -20,14 +22,14 @@ if [[ "$target_platform" == linux-* ]]; then
 fi
 
 # scrub debug-prefix-map args, which cause problems in pkg-config
-export CFLAGS=$(echo ${CFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
-export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
-export FFLAGS=$(echo ${FFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
+CFLAGS=$(echo ${CFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
+CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
+FFLAGS=$(echo ${FFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 
 if [[ $mpi == "openmpi" ]]; then
-  export LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
+  LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
 elif [[ $mpi == "mpich" ]]; then
-  export LIBS="-lmpifort -lgfortran"
+  LIBS="-lmpifort -lgfortran"
 fi
 
 if [[ $mpi == "openmpi" ]]; then
@@ -77,7 +79,13 @@ else
   cuda_opts="--with-cuda=0"
 fi
 
+# unexport the variables to reduce warnings about config we know isn't used
+# (This doesn't unset variables, just prevents the export for subprocesses)
+export -n AR CFLAGS CXXFLAGS CPPFLAGS LDFLAGS
+
 # petsc doesn't want us to set CFLAGS, etc.
+# pass compiler flags via {C,CXX,F}OPTFLAGS to extend defaults
+# instead of clobbering
 
 python ./configure \
   AR="${AR:-ar}" \
@@ -87,9 +95,9 @@ python ./configure \
   CPPFLAGS="$CPPFLAGS" \
   LDFLAGS="$LDFLAGS" \
   LIBS="$LIBS" \
-  --COPTFLAGS="-O3 $CFLAGS" \
-  --CXXOPTFLAGS="-O3 $CXXFLAGS" \
-  --FOPTFLAGS="-O3 $FFLAGS" \
+  --COPTFLAGS="$CFLAGS -O3" \
+  --CXXOPTFLAGS="$CXXFLAGS -O3" \
+  --FOPTFLAGS="$FFLAGS -O3" \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
@@ -154,7 +162,7 @@ for path in $PETSC_DIR $BUILD_PREFIX; do
     done
 done
 
-make MAKE_NP=${CPU_COUNT} V=1
+make MAKE_NP=${CPU_COUNT}
 make install
 
 # Remove unneeded files
