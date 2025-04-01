@@ -24,6 +24,9 @@ export CFLAGS=$(echo ${CFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 export FFLAGS=$(echo ${FFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
 
+# petsc doesn't compile with default fortran line length
+export FFLAGS="$FFLAGS -ffree-line-length-none"
+
 if [[ $mpi == "openmpi" ]]; then
   export LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
 elif [[ $mpi == "mpich" ]]; then
