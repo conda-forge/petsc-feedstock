@@ -7,29 +7,6 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 export PETSC_DIR=$SRC_DIR
 export PETSC_ARCH=arch-conda-c-opt
 
-unset F90
-unset F77
-# unset CC
-unset CXX
-if [[ "$target_platform" == linux-* ]]; then
-    export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
-    # --as-needed appears to cause problems with fortran compiler detection
-    # due to missing libquadmath
-    # unclear why required libs are stripped but still linked
-    export FFLAGS="${FFLAGS:-} -Wl,--no-as-needed"
-fi
-
-# scrub debug-prefix-map args, which cause problems in pkg-config
-export CFLAGS=$(echo ${CFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
-export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
-export FFLAGS=$(echo ${FFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
-
-if [[ $mpi == "openmpi" ]]; then
-  export LIBS="-Wl,-rpath,$PREFIX/lib -lmpi_mpifh -lgfortran"
-elif [[ $mpi == "mpich" ]]; then
-  export LIBS="-lmpifort -lgfortran"
-fi
-
 if [[ $mpi == "openmpi" ]]; then
   export OMPI_CC=$CC
   export OPAL_PREFIX=$PREFIX
@@ -77,20 +54,27 @@ else
   cuda_opts="--with-cuda=0"
 fi
 
+# unexport compiler variables to reduce warnings about config we know isn't used
+# (This doesn't unset variables, just prevents the export for subprocesses)
+export -n AR FC F90 F77 CC CXX CPP RANLIB
+export -n CFLAGS CXXFLAGS CPPFLAGS FFLAGS LDFLAGS
+
+# petsc doesn't want us to set CFLAGS, etc.
+# pass compiler flags via {C,CXX,F}OPTFLAGS to extend defaults
+# instead of clobbering
+
 python ./configure \
   AR="${AR:-ar}" \
+  CPP="$CPP" \
+  RANLIB="$RANLIB" \
   CC="mpicc" \
   CXX="mpicxx" \
   FC="mpifort" \
-  CFLAGS="$CFLAGS" \
   CPPFLAGS="$CPPFLAGS" \
-  CXXFLAGS="$CXXFLAGS" \
-  FFLAGS="$FFLAGS" \
   LDFLAGS="$LDFLAGS" \
-  LIBS="$LIBS" \
-  --COPTFLAGS=-O3 \
-  --CXXOPTFLAGS=-O3 \
-  --FOPTFLAGS=-O3 \
+  --COPTFLAGS="$CFLAGS -O3" \
+  --CXXOPTFLAGS="$CXXFLAGS -O3" \
+  --FOPTFLAGS="$FFLAGS -O3" \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
