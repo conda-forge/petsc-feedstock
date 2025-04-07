@@ -75,6 +75,7 @@ python ./configure \
   --COPTFLAGS="$CFLAGS -O3" \
   --CXXOPTFLAGS="$CXXFLAGS -O3" \
   --FOPTFLAGS="$FFLAGS -O3" \
+  --CUDAOPTFLAGS="-O3" \
   --with-clib-autodetect=0 \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
@@ -135,7 +136,8 @@ sedinplace "s%${BUILD_PREFIX}/bin/python%/usr/bin/env python%g" $PETSC_ARCH/lib/
 for path in $PETSC_DIR $BUILD_PREFIX; do
     for f in $(grep -l "${path}" $PETSC_ARCH/include/petsc*.h); do
         echo "Fixing ${path} in $f"
-        sedinplace s%$path%\${PREFIX}%g $f
+        grep "${path}" "$f"
+        sedinplace s%${path}%\${PREFIX}%g $f
     done
 done
 
@@ -146,18 +148,22 @@ make install
 rm -f ${PREFIX}/lib/petsc/conf/configure-hash
 find $PREFIX/lib/petsc -name '*.pyc' -delete
 
-# Replace ${BUILD_PREFIX} and CUDA temporary information
-# after installation, otherwise 'make install' above may fail
-if [[ -n "$cuda_dir" ]]; then
-  for s in $cuda_incl $cuda_dir; do
-    for f in $(grep -l "${s}" -R "${PREFIX}/lib/petsc"); do
-      echo "Fixing ${s} in $f"
-      sedinplace s%${s}%${PREFIX}%g $f
-    done
-  done
-fi
-for f in $(grep -l "${BUILD_PREFIX}" -R "${PREFIX}/lib/petsc"); do
+echo "#### unpatched petscvariables"
+cat $PREFIX/lib/petsc/conf/petscvariables
+echo "#### end unpatched petscvariables"
+
+# remove abspath of executables in $BUILD_PREFIX
+# let them resolve on $PATH
+for f in $(grep -l "${BUILD_PREFIX}/bin/" -R "${PREFIX}/lib/petsc") "$PREFIX/lib/pkgconfig/PETSc.pc"; do
+  echo "Fixing ${BUILD_PREFIX}/bin/ in $f"
+  grep "${BUILD_PREFIX}/bin/" "$f" || true
+  sedinplace s%${BUILD_PREFIX}/bin/%%g $f
+done
+
+# rewrite remaining $BUILD_PREFIX to $PREFIX
+for f in $(grep -l "${BUILD_PREFIX}" -R "${PREFIX}/lib/petsc") "$PREFIX/lib/pkgconfig/PETSc.pc"; do
   echo "Fixing ${BUILD_PREFIX} in $f"
+  grep "${BUILD_PREFIX}" "$f" || true
   sedinplace s%${BUILD_PREFIX}%${PREFIX}%g $f
 done
 
@@ -167,3 +173,7 @@ rm -fr $PREFIX/share/petsc/examples/src
 echo "Removing data files"
 du -hs $PREFIX/share/petsc/datafiles/*
 rm -fr $PREFIX/share/petsc/datafiles
+
+echo "#### final petscvariables"
+cat $PREFIX/lib/petsc/conf/petscvariables
+echo "#### end final petscvariables"
