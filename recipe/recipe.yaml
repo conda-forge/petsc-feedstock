@@ -60,6 +60,7 @@ requirements:
         # otherwise, we only have 'arm64-apple-darwin20.0.0-install_name_tool'
         - cctools
     - bison  # not actually required, but petsc declares it as necessary to link against ptscotch
+    - diffutils
     - make
     - pkg-config
     - python 3.12.*
