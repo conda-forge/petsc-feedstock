@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "3.23.1"
+  version: "3.23.2"
   build: 0
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
@@ -28,7 +28,7 @@ package:
 
 source:
   url: https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-${{ version }}.tar.gz
-  sha256: f729885710c3b42b818fdb525cbd7e1b8c95c1cc25139a44968aa0e7f9e75418
+  sha256: 030ec6c4e9ed885457a6155f20b6f914593a1cd960b28706521a19a9cdadd5e2
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
