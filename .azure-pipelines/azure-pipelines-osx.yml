@@ -8,30 +8,55 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_mpimpichscalarcomplex:
-        CONFIG: osx_64_mpimpichscalarcomplex
+      osx_64_mpimpichprecisiondoublescalarcomplex:
+        CONFIG: osx_64_mpimpichprecisiondoublescalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpimpichscalarreal:
-        CONFIG: osx_64_mpimpichscalarreal
+      osx_64_mpimpichprecisiondoublescalarreal:
+        CONFIG: osx_64_mpimpichprecisiondoublescalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpiscalarcomplex:
-        CONFIG: osx_64_mpiopenmpiscalarcomplex
+      osx_64_mpimpichprecisionsinglescalarcomplex:
+        CONFIG: osx_64_mpimpichprecisionsinglescalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_64_mpiopenmpiscalarreal:
-        CONFIG: osx_64_mpiopenmpiscalarreal
+      osx_64_mpimpichprecisionsinglescalarreal:
+        CONFIG: osx_64_mpimpichprecisionsinglescalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpimpichscalarcomplex:
-        CONFIG: osx_arm64_mpimpichscalarcomplex
+      osx_64_mpiopenmpiprecisiondoublescalarcomplex:
+        CONFIG: osx_64_mpiopenmpiprecisiondoublescalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpimpichscalarreal:
-        CONFIG: osx_arm64_mpimpichscalarreal
+      osx_64_mpiopenmpiprecisiondoublescalarreal:
+        CONFIG: osx_64_mpiopenmpiprecisiondoublescalarreal
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpiopenmpiscalarcomplex:
-        CONFIG: osx_arm64_mpiopenmpiscalarcomplex
+      osx_64_mpiopenmpiprecisionsinglescalarcomplex:
+        CONFIG: osx_64_mpiopenmpiprecisionsinglescalarcomplex
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_mpiopenmpiscalarreal:
-        CONFIG: osx_arm64_mpiopenmpiscalarreal
+      osx_64_mpiopenmpiprecisionsinglescalarreal:
+        CONFIG: osx_64_mpiopenmpiprecisionsinglescalarreal
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpimpichprecisiondoublescalarcomplex:
+        CONFIG: osx_arm64_mpimpichprecisiondoublescalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpimpichprecisiondoublescalarreal:
+        CONFIG: osx_arm64_mpimpichprecisiondoublescalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpimpichprecisionsinglescalarcomplex:
+        CONFIG: osx_arm64_mpimpichprecisionsinglescalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpimpichprecisionsinglescalarreal:
+        CONFIG: osx_arm64_mpimpichprecisionsinglescalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpiopenmpiprecisiondoublescalarcomplex:
+        CONFIG: osx_arm64_mpiopenmpiprecisiondoublescalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpiopenmpiprecisiondoublescalarreal:
+        CONFIG: osx_arm64_mpiopenmpiprecisiondoublescalarreal
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpiopenmpiprecisionsinglescalarcomplex:
+        CONFIG: osx_arm64_mpiopenmpiprecisionsinglescalarcomplex
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_mpiopenmpiprecisionsinglescalarreal:
+        CONFIG: osx_arm64_mpiopenmpiprecisionsinglescalarreal
+        UPLOAD_PACKAGES: 'True'
+    maxParallel: 9
   timeoutInMinutes: 360
   variables: {}
 

@@ -5,3 +5,7 @@ mpi:
 scalar:
   - real
   - complex
+
+precision:
+  - single
+  - double
