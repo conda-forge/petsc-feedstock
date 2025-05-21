@@ -2,11 +2,12 @@ schema_version: 1
 
 context:
   version: "3.23.2"
-  build: 0
+  build: 1
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
   scalar: ${{ scalar | default('real') }}
+  precision: ${{ precision | default('double') }}
   cuda_compiler_version: ${{ cuda_compiler_version | default('None') }}
   # construct some variables to use in the recipe
   # with_cuda can be used as a bool for cuda or not conditions
@@ -20,7 +21,7 @@ context:
     }}
   # construct the build prefix (e.g. 'cuda12_complex' or 'real')
   cuda_prefix: ${{ "cuda" + cuda_major + "_" }}
-  build_prefix: ${{ cuda_prefix + scalar if with_cuda else scalar }}
+  build_prefix: ${{ cuda_prefix + scalar + "_" + precision if with_cuda else scalar + "_" + precision }}
 
 package:
   name: petsc
@@ -44,6 +45,7 @@ build:
       ${{
         (1 if with_cuda else 0)
       + (1 if scalar == "complex" else 0)
+      + (1 if precision == "single" else 0)
       }}
 
 requirements:

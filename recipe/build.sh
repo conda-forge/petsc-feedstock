@@ -105,6 +105,7 @@ python ./configure \
   --with-suitesparse-dir=$PREFIX \
   --with-x=0 \
   --with-scalar-type=${scalar} \
+  --with-precision=${precision} \
   "$cuda_c" \
   "$cuda_libs" \
   $cuda_opts \
