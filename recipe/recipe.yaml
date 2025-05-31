@@ -73,7 +73,9 @@ requirements:
     - cmake
     - ${{ mpi }}
     - yaml
-    - hypre
+    - if: scalar == 'real'
+      then:
+        - hypre
     - libhwloc
     - metis
     - parmetis

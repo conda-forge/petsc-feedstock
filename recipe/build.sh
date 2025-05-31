@@ -59,6 +59,13 @@ fi
 export -n AR FC F90 F77 CC CXX CPP RANLIB
 export -n CFLAGS CXXFLAGS CPPFLAGS FFLAGS LDFLAGS
 
+if [[ "${scalar}" == "complex" ]]; then
+  # conda-forge doesn't have complex hypre builds
+  with_hypre="0"
+else
+  with_hypre="1"
+fi
+
 # petsc doesn't want us to set CFLAGS, etc.
 # pass compiler flags via {C,CXX,F}OPTFLAGS to extend defaults
 # instead of clobbering
@@ -87,7 +94,7 @@ python ./configure \
   --with-fftw=1 \
   --with-hwloc=1 \
   --with-openmp=1 \
-  --with-hypre=1 \
+  --with-hypre=${with_hypre} \
   --with-metis=1 \
   --with-mpi=1 \
   --with-mumps=1 \
