@@ -13,9 +13,9 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cuda_compiler:
-- None
+- cuda-nvcc
 cuda_compiler_version:
-- None
+- '12.6'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -61,7 +61,7 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- real
+- complex
 superlu_dist:
 - '9'
 target_platform:
@@ -70,6 +70,4 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
-  - cuda_compiler
   - cuda_compiler_version
-  - docker_image
