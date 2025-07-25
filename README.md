@@ -3,7 +3,7 @@ About petsc-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/petsc-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.mcs.anl.gov/petsc/
+Home: https://petsc.org/
 
 Package license: BSD-2-Clause
 
@@ -31,115 +31,115 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_cuda_compiler_version12.6mpimpichscalarcomplex</td>
+              <td>linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.6mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version12.6mpimpichscalarreal</td>
+              <td>linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.6mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version12.6mpiopenmpiscalarcomplex</td>
+              <td>linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.6mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version12.6mpiopenmpiscalarreal</td>
+              <td>linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.6mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonempimpichscalarcomplex</td>
+              <td>linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_versionNonempimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonempimpichscalarreal</td>
+              <td>linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_versionNonempimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonempiopenmpiscalarcomplex</td>
+              <td>linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_versionNonempiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonempiopenmpiscalarreal</td>
+              <td>linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_versionNonempiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_version12.6mpimpichscalarcomplex</td>
+              <td>linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.6mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_version12.6mpimpichscalarreal</td>
+              <td>linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.6mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_version12.6mpiopenmpiscalarcomplex</td>
+              <td>linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.6mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_version12.6mpiopenmpiscalarreal</td>
+              <td>linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.6mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version13cuda_compiler_version12.6cxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_versionNonempimpichscalarcomplex</td>
+              <td>linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_versionNonempimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_versionNonempimpichscalarreal</td>
+              <td>linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_versionNonempimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarcomplex</td>
+              <td>linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarreal</td>
+              <td>linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -171,31 +171,31 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex</td>
+              <td>linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal</td>
+              <td>linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpimpichscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpimpichscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex</td>
+              <td>linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarcomplex</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarcomplex" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarcomplex" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal</td>
+              <td>linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarreal</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=771&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version13cuda_compiler_versionNonecxx_compiler_version13fortran_compiler_version13mpiopenmpiscalarreal" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/petsc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_c_compiler_version14cuda_compiler_versionNonecxx_compiler_version14fortran_compiler_version14mpiopenmpiscalarreal" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -391,7 +391,4 @@ Feedstock Maintainers
 * [@matthiasdiener](https://github.com/matthiasdiener/)
 * [@minrk](https://github.com/minrk/)
 * [@stefanozampini](https://github.com/stefanozampini/)
-
-
-<!-- dummy commit to enable rerendering -->
 
