@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '18'
+- '19'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -21,13 +21,13 @@ cuda_compiler_version:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '18'
+- '19'
 fftw:
 - '3'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '13'
+- '14'
 hdf5:
 - 1.14.6
 libamd:
@@ -43,9 +43,9 @@ libklu:
 liblapack:
 - 3.9.* *netlib
 libptscotch:
-- 7.0.6
+- 7.0.8
 libscotch:
-- 7.0.6
+- 7.0.8
 libspqr:
 - '4'
 libumfpack:
