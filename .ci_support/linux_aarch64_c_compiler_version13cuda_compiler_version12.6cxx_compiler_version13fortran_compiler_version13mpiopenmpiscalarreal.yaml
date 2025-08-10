@@ -15,7 +15,7 @@ channel_targets:
 cuda_compiler:
 - cuda-nvcc
 cuda_compiler_version:
-- None
+- '12.6'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -37,7 +37,7 @@ libblas:
 libcholmod:
 - '5'
 libhwloc:
-- 2.11.2
+- 2.12.1
 libklu:
 - '2'
 liblapack:
@@ -53,7 +53,7 @@ libumfpack:
 metis:
 - 5.1.0
 mpi:
-- mpich
+- openmpi
 mpich:
 - '4'
 mumps_mpi:
@@ -61,11 +61,11 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- complex
+- real
 superlu_dist:
 - '9'
 target_platform:
-- linux-64
+- linux-aarch64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

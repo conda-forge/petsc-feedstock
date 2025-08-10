@@ -1,7 +1,7 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '13'
+- '14'
 c_stdlib:
 - sysroot
 c_stdlib_version:
@@ -15,11 +15,11 @@ channel_targets:
 cuda_compiler:
 - cuda-nvcc
 cuda_compiler_version:
-- '12.6'
+- None
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '13'
+- '14'
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 fftw:
@@ -27,7 +27,7 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '13'
+- '14'
 hdf5:
 - 1.14.6
 libamd:
@@ -37,7 +37,7 @@ libblas:
 libcholmod:
 - '5'
 libhwloc:
-- 2.11.2
+- 2.12.1
 libklu:
 - '2'
 liblapack:
@@ -61,7 +61,7 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- complex
+- real
 superlu_dist:
 - '9'
 target_platform:

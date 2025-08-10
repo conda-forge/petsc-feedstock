@@ -37,7 +37,7 @@ libblas:
 libcholmod:
 - '5'
 libhwloc:
-- 2.11.2
+- 2.12.1
 libklu:
 - '2'
 liblapack:
@@ -65,7 +65,7 @@ scalar:
 superlu_dist:
 - '9'
 target_platform:
-- linux-64
+- linux-aarch64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
