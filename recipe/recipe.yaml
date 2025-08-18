@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: petsc
   version: "3.23.5"
-  build: 0
+  build: 1
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
