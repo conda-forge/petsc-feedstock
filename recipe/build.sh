@@ -48,7 +48,7 @@ if [[ "${cuda_compiler_version}" != "None" ]]; then
   fi
   export CUDA_CONDA_HOME=$cuda_dir
   cuda_incl=$cuda_dir/targets/${CUDA_CONDA_TARGET_NAME}/include
-  cuda_libs="--with-cuda-lib=-lcudart -lnvToolsExt -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda"
+  cuda_libs="--with-cuda-lib=-lcudart -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda"
   cuda_opts="--with-cuda=1 --with-cuda-include=$cuda_incl --with-cuda-arch=all-major"
 else
   cuda_opts="--with-cuda=0"
