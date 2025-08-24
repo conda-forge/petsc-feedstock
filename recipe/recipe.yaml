@@ -85,6 +85,8 @@ requirements:
     - superlu
     - superlu_dist
     - libscotch
+    # needs 32b libscotch
+    - libscotch * int32_*
     - mumps-mpi
     # suitesparse
     - libamd
