@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: petsc
   version: "3.23.5"
-  build: 2
+  build: 3
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
@@ -85,6 +85,8 @@ requirements:
     - superlu
     - superlu_dist
     - libscotch
+    # needs 32b libscotch
+    - libscotch * int32_*
     - mumps-mpi
     # suitesparse
     - libamd
