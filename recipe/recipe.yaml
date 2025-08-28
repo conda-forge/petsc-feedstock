@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: petsc
-  version: "3.23.5"
-  build: 3
+  version: "3.23.6"
+  build: 0
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
@@ -29,7 +29,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: b0bb614dfbf36c286c8cad30912fe77359dccbf6b65a5edd1dde82af293f21fc
+  sha256: 07e0492c5c38d2fc5aa6dd981c450086f3b88f8834df11247a87d4becfb85c72
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
