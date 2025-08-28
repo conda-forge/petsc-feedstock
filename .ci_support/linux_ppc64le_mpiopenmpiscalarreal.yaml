@@ -61,7 +61,7 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- complex
+- real
 superlu_dist:
 - '9'
 target_platform:
@@ -70,4 +70,5 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
+  - c_stdlib_version
   - cuda_compiler_version
