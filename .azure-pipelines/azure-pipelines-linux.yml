@@ -8,68 +8,100 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_cuda_compiler_version12.9mpimpichscalarcomplex:
-        CONFIG: linux_64_cuda_compiler_version12.9mpimpichscalarcomplex
+      linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarcomplex:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_cuda_compiler_version12.9mpimpichscalarreal:
-        CONFIG: linux_64_cuda_compiler_version12.9mpimpichscalarreal
+      linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarreal:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_cuda_compiler_version12.9mpiopenmpiscalarcomplex:
-        CONFIG: linux_64_cuda_compiler_version12.9mpiopenmpiscalarcomplex
+      linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarcomplex:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_cuda_compiler_version12.9mpiopenmpiscalarreal:
-        CONFIG: linux_64_cuda_compiler_version12.9mpiopenmpiscalarreal
+      linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarreal:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_cuda_compiler_versionNonempimpichscalarcomplex:
-        CONFIG: linux_64_cuda_compiler_versionNonempimpichscalarcomplex
+      linux_64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarcomplex:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_cuda_compiler_versionNonempimpichscalarreal:
-        CONFIG: linux_64_cuda_compiler_versionNonempimpichscalarreal
+      linux_64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarreal:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_cuda_compiler_versionNonempiopenmpiscalarcomplex:
-        CONFIG: linux_64_cuda_compiler_versionNonempiopenmpiscalarcomplex
+      linux_64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarcomplex:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_cuda_compiler_versionNonempiopenmpiscalarreal:
-        CONFIG: linux_64_cuda_compiler_versionNonempiopenmpiscalarreal
+      linux_64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarreal:
+        CONFIG: linux_64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_version12.9mpimpichscalarcomplex:
-        CONFIG: linux_aarch64_cuda_compiler_version12.9mpimpichscalarcomplex
+      linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarcomplex:
+        CONFIG: linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_version12.9mpimpichscalarreal:
-        CONFIG: linux_aarch64_cuda_compiler_version12.9mpimpichscalarreal
+      linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarreal:
+        CONFIG: linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_version12.9mpiopenmpiscalarcomplex:
-        CONFIG: linux_aarch64_cuda_compiler_version12.9mpiopenmpiscalarcomplex
+      linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarcomplex:
+        CONFIG: linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_version12.9mpiopenmpiscalarreal:
-        CONFIG: linux_aarch64_cuda_compiler_version12.9mpiopenmpiscalarreal
+      linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarreal:
+        CONFIG: linux_64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_versionNonempimpichscalarcomplex:
-        CONFIG: linux_aarch64_cuda_compiler_versionNonempimpichscalarcomplex
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarcomplex:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_versionNonempimpichscalarreal:
-        CONFIG: linux_aarch64_cuda_compiler_versionNonempimpichscalarreal
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarreal:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarcomplex:
-        CONFIG: linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarcomplex
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarcomplex:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarreal:
-        CONFIG: linux_aarch64_cuda_compiler_versionNonempiopenmpiscalarreal
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarreal:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_version12.9mpiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarcomplex:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarreal:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarcomplex:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarreal:
+        CONFIG: linux_aarch64_c_stdlib_version2.17cuda_compiler_versionNonempiopenmpiscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarcomplex:
+        CONFIG: linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarreal:
+        CONFIG: linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpimpichscalarreal
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarcomplex:
+        CONFIG: linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarcomplex
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarreal:
+        CONFIG: linux_aarch64_c_stdlib_version2.28cuda_compiler_version13.0mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_mpimpichscalarcomplex:
