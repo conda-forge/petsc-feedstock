@@ -34,6 +34,7 @@ source:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - target-cudadir.patch
+    - fix-demangle.patch
 
 build:
   number: ${{ build }}
