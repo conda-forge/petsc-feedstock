@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: petsc
   version: "3.24.0"
-  build: 0
+  build: 1
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
@@ -105,33 +105,24 @@ requirements:
     - if: with_cuda
       then:
         - cuda-version ${{ cuda_compiler_version }}.*
-        - if: cuda_major == "11"
-          then:
-            - cudatoolkit
-          else:
-            - cuda-cudart-dev
-            - cuda-nvtx-dev
-            - libcublas-dev
-            - libcufft-dev
-            - libcurand-dev
-            - libcusolver-dev
-            - libcusparse-dev
+        - cuda-cudart-dev
+        - cuda-nvtx-dev
+        - libcublas-dev
+        - libcufft-dev
+        - libcurand-dev
+        - libcusolver-dev
+        - libcusparse-dev
   run:
     - if: with_cuda
       then:
-        - if: cuda_major == "11"
-          then:
-            - cuda-version >=11.2,<12
-            - cudatoolkit >=11.2,<12
-          else:
-            - ${{ pin_compatible('cuda-version', lower_bound='x', upper_bound='x') }}
-            - ${{ pin_compatible('cuda-nvtx', lower_bound='x', upper_bound='x') }}
-            - ${{ pin_compatible('cuda-cudart', lower_bound='x', upper_bound='x') }}
-            - ${{ pin_compatible('libcublas', lower_bound='x', upper_bound='x') }}
-            - ${{ pin_compatible('libcufft', lower_bound='x', upper_bound='x') }}
-            - ${{ pin_compatible('libcurand', lower_bound='x', upper_bound='x') }}
-            - ${{ pin_compatible('libcusolver', lower_bound='x', upper_bound='x') }}
-            - ${{ pin_compatible('libcusparse', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('cuda-version', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('cuda-nvtx', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('cuda-cudart', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('libcublas', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('libcufft', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('libcurand', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('libcusolver', lower_bound='x', upper_bound='x') }}
+        - ${{ pin_compatible('libcusparse', lower_bound='x', upper_bound='x') }}
   run_exports:
     weak:
       - ${{ pin_subpackage('petsc', upper_bound='x.x') }}

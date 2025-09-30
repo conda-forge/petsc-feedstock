@@ -17,25 +17,10 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
 fi
 
 if [[ "${cuda_compiler_version}" != "None" ]]; then
-  if [[ -n "$CUDA_HOME" ]]; then # cuda 11.8
-    # CUDA in $CUDA_HOME/targets/xxx
-    cuda_dir=$CUDA_HOME
-    # nvcc in the build stage is a script that adds
-    # -ccbin ${CXX} if not provided, but ${CXX} from
-    # the environment is not propagated inside PETSc's
-    # configure. We will thus end up with running
-    # $ /usr/local/cuda/bin/nvcc -ccbin empty_variable <other_options>
-    # which will make PETSc configure fail with
-    # an obscure message from nvcc
-    # No such file or directory
-    # nvcc fatal   : Failed to preprocess host compiler properties.
-    cuda_c="--with-cudac=nvcc -ccbin mpicxx"
-  else
-    # CUDA in $PREFIX/targets/xxx
-    cuda_dir=$PREFIX # cuda 12 and later
-    # already providing ccbin in prepend flags
-    cuda_c="--with-cudac=nvcc"
-  fi
+  # CUDA in $PREFIX/targets/xxx
+  cuda_dir=$PREFIX # cuda 12 and later
+  # already providing ccbin in prepend flags
+  cuda_c="--with-cudac=nvcc"
   if [[ "${target_platform}" == "linux-64" ]]; then
     export CUDA_CONDA_TARGET_NAME=x86_64-linux
   elif [[ "${target_platform}" == "linux-aarch64" ]]; then
