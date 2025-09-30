@@ -1,8 +1,8 @@
-diff --git a/config/BuildSystem/config/packages/cuda.py b/config/BuildSystem/config/packages/cuda.py
-index df59f693727..8291fe6bc1b 100644
---- a/config/BuildSystem/config/packages/cuda.py
-+++ b/config/BuildSystem/config/packages/cuda.py
-@@ -311,9 +311,14 @@ class Configure(config.package.Package):
+diff --git a/config/BuildSystem/config/packages/CUDA.py b/config/BuildSystem/config/packages/CUDA.py
+index 2a845a505c7..5139712d04b 100644
+--- a/config/BuildSystem/config/packages/CUDA.py
++++ b/config/BuildSystem/config/packages/CUDA.py
+@@ -326,9 +326,14 @@ class Configure(config.package.Package):
          nvccDir = os.path.dirname(self.systemNvcc) # /path/bin
          d = os.path.dirname(nvccDir) # /path
          # d might be /to/Linux_x86_64/21.7/cuda or /to/Linux_x86_64/21.7/cuda/12.2, check if math_libs exist. If yes, we are using NVHPC
