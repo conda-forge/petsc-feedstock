@@ -43,9 +43,9 @@ libklu:
 liblapack:
 - 3.9.* *netlib
 libptscotch:
-- 7.0.8
+- 7.0.10
 libscotch:
-- 7.0.8
+- 7.0.10
 libspqr:
 - '4'
 libumfpack:
