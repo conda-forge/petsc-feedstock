@@ -5,33 +5,41 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-15
+    vmImage: $(VMIMAGE)
   strategy:
     matrix:
       osx_64_mpimpichscalarcomplex:
         CONFIG: osx_64_mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_mpimpichscalarreal:
         CONFIG: osx_64_mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_mpiopenmpiscalarcomplex:
         CONFIG: osx_64_mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_mpiopenmpiscalarreal:
         CONFIG: osx_64_mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_mpimpichscalarcomplex:
         CONFIG: osx_arm64_mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_mpimpichscalarreal:
         CONFIG: osx_arm64_mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_mpiopenmpiscalarcomplex:
         CONFIG: osx_arm64_mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_mpiopenmpiscalarreal:
         CONFIG: osx_arm64_mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
   timeoutInMinutes: 360
   variables: {}
 
