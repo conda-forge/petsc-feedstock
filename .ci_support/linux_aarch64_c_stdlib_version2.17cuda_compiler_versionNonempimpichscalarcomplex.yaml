@@ -55,7 +55,7 @@ mpi:
 mpich:
 - '4'
 mumps_mpi:
-- 5.8.1
+- 5.8.2
 openmpi:
 - '5'
 scalar:
