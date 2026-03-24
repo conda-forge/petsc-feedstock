@@ -55,7 +55,7 @@ metis:
 mpi:
 - mpich
 mpich:
-- '4'
+- '5'
 mumps_mpi:
 - 5.8.2
 openmpi:
