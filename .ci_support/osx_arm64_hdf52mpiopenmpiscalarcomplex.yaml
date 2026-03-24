@@ -1,25 +1,25 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
+MACOSX_SDK_VERSION:
+- '11.0'
 c_compiler:
-- gcc
+- clang
 c_compiler_version:
-- '14'
+- '19'
 c_stdlib:
-- sysroot
+- macosx_deployment_target
 c_stdlib_version:
-- '2.17'
+- '11.0'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-cuda_compiler:
-- cuda-nvcc
 cuda_compiler_version:
 - None
 cxx_compiler:
-- gxx
+- clangxx
 cxx_compiler_version:
-- '14'
-docker_image:
-- quay.io/condaforge/linux-anvil-x86_64:alma9
+- '19'
 fftw:
 - '3'
 fortran_compiler:
@@ -27,7 +27,7 @@ fortran_compiler:
 fortran_compiler_version:
 - '14'
 hdf5:
-- 1.14.6
+- '2'
 libamd:
 - '3'
 libblas:
@@ -48,6 +48,8 @@ libspqr:
 - '4'
 libumfpack:
 - '6'
+macos_machine:
+- arm64-apple-darwin20.0.0
 metis:
 - 5.1.0
 mpi:
@@ -59,14 +61,12 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- real
+- complex
 superlu_dist:
 - '9'
 target_platform:
-- linux-ppc64le
+- osx-arm64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
-  - c_stdlib_version
-  - cuda_compiler_version

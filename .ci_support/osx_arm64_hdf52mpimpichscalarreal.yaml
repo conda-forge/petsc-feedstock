@@ -14,8 +14,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-cuda_compiler:
-- cuda-nvcc
 cuda_compiler_version:
 - None
 cxx_compiler:
@@ -29,7 +27,7 @@ fortran_compiler:
 fortran_compiler_version:
 - '14'
 hdf5:
-- 1.14.6
+- '2'
 libamd:
 - '3'
 libblas:
@@ -55,7 +53,7 @@ macos_machine:
 metis:
 - 5.1.0
 mpi:
-- openmpi
+- mpich
 mpich:
 - '4'
 mumps_mpi:
@@ -63,7 +61,7 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- complex
+- real
 superlu_dist:
 - '9'
 target_platform:
