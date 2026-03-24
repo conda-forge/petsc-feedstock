@@ -14,8 +14,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-cuda_compiler:
-- cuda-nvcc
 cuda_compiler_version:
 - None
 cxx_compiler:
@@ -55,7 +53,7 @@ macos_machine:
 metis:
 - 5.1.0
 mpi:
-- openmpi
+- mpich
 mpich:
 - '4'
 mumps_mpi:

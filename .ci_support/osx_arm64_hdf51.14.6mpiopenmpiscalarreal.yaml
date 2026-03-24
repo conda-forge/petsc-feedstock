@@ -14,8 +14,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-cuda_compiler:
-- cuda-nvcc
 cuda_compiler_version:
 - None
 cxx_compiler:
@@ -51,11 +49,11 @@ libspqr:
 libumfpack:
 - '6'
 macos_machine:
-- x86_64-apple-darwin13.4.0
+- arm64-apple-darwin20.0.0
 metis:
 - 5.1.0
 mpi:
-- mpich
+- openmpi
 mpich:
 - '4'
 mumps_mpi:
@@ -67,7 +65,7 @@ scalar:
 superlu_dist:
 - '9'
 target_platform:
-- osx-64
+- osx-arm64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
