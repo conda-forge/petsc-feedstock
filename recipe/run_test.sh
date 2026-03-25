@@ -3,6 +3,10 @@ set -exu
 
 export PETSC_DIR=${PREFIX}
 
+# this seems to significantly improve performance for mpich
+# on CI, at least
+export FI_PROVIDER=tcp
+
 pkg-config --validate PETSc
 pkg-config --cflags PETSc | grep -v isystem
 pkg-config --libs PETSc

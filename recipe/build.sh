@@ -12,6 +12,11 @@ if [[ $mpi == "openmpi" ]]; then
   export OPAL_PREFIX=$PREFIX
 fi
 
+# this seems to significantly improve performance for mpich
+# on CI, at least
+export FI_PROVIDER=tcp
+
+
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   extra_opts="--with-batch"
 fi
