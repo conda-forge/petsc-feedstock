@@ -116,7 +116,6 @@ requirements:
     - if: with_cuda
       then:
         - ${{ pin_compatible('cuda-version', lower_bound='x', upper_bound='x') }}
-        - ${{ pin_compatible('cuda-nvml', lower_bound='x', upper_bound='x') }}
         - ${{ pin_compatible('cuda-nvtx', lower_bound='x', upper_bound='x') }}
         - ${{ pin_compatible('cuda-cudart', lower_bound='x', upper_bound='x') }}
         - ${{ pin_compatible('libcublas', lower_bound='x', upper_bound='x') }}
@@ -135,7 +134,6 @@ requirements:
           - ${{ compiler("cuda") | split | first }}
       - cudatoolkit
       - cuda-cudart-dev
-      - cuda-nvml-dev
       - cuda-nvtx-dev
       - libcublas-dev
       - libcufft-dev
