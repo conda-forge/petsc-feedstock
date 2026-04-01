@@ -155,6 +155,13 @@ tests:
         - ${{ compiler('c') }}
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
+        - if: with_cuda
+          then:
+            # libnvidia-ml is a _driver_ file,
+            # not packaged on conda-forge,
+            # but must be present for the dlopen test
+            # use the stub for the test env
+            - cuda-nvml-dev
     script:
       file: run_test.sh
       env:
