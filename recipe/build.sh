@@ -39,7 +39,7 @@ if [[ "${cuda_compiler_version}" != "None" ]]; then
   export CUDA_CONDA_HOME=$cuda_dir
   cuda_incl=$cuda_dir/targets/${CUDA_CONDA_TARGET_NAME}/include
   # check config/BuildSystem/config/packages/CUDA.py
-  cuda_libs="--with-cuda-lib=-lcuda -lnvidia-ml"
+  cuda_libs="--with-cuda-lib=-lcudart -lcufft -lcublas -lcusparse -lcusolver -lcurand -lcuda -lnvidia-ml"
   cuda_opts="--with-cuda=1 --with-cuda-include=$cuda_incl --with-cuda-arch=all-major"
 else
   cuda_opts="--with-cuda=0"
