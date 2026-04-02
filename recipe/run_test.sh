@@ -21,11 +21,11 @@ cd tests
 # dynamic loading
 if [[ "${cuda_compiler_version}" != "None" ]]; then
     make testdlopen
-    # aarch64 failing tests
-    # ./testdlopen: /lib64/libm.so.6: version `GLIBC_2.27' not found (required by $PREFIX/lib/./libcurand.so.10)
-    if [[ "${target_platform}" != "linux-aarch64" ]]; then
-        ./testdlopen
-    fi
+    # in 'real' installs, libnvidia-ml is part of the driver
+    # mock with stub
+    # only this one file, though, the rest shouldn't need help
+    cp $PREFIX/lib/stubs/libnvidia-ml.so $PREFIX/lib/
+    ./testdlopen
 else
     make ex1
     make ex1f
