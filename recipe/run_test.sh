@@ -21,11 +21,11 @@ cd tests
 # dynamic loading
 if [[ "${cuda_compiler_version}" != "None" ]]; then
     make testdlopen
-    # aarch64 failing tests
-    # ./testdlopen: /lib64/libm.so.6: version `GLIBC_2.27' not found (required by $PREFIX/lib/./libcurand.so.10)
-    if [[ "${target_platform}" != "linux-aarch64" ]]; then
-        ./testdlopen
-    fi
+    # in 'real' installs, libnvidia-ml is part of the cuda driver,
+    # not distributed by conda-forge.
+    # Stage the stub into place or we'll get DLL not found
+    cp $PREFIX/lib/stubs/libnvidia-ml.so $PREFIX/lib/libnvidia-ml.so.1
+    ./testdlopen
 else
     make ex1
     make ex1f

@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: petsc
-  version: "3.24.6"
+  version: "3.25.0"
   build: 0
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
@@ -29,12 +29,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: d6ad14652996b0e0d3da51068eec902118057f275de867e8cf258ffd64d90a7d
+  sha256: dc1c018c16bd9dcf40596959875725edb4ba8b854a0b67bbce62a0d4be1bd3be
   patches:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - target-cudadir.patch
-    - fix-demangle.patch
 
 build:
   number: ${{ build }}
@@ -106,6 +105,7 @@ requirements:
       then:
         - cuda-version ${{ cuda_compiler_version }}.*
         - cuda-cudart-dev
+        - cuda-nvml-dev
         - cuda-nvtx-dev
         - libcublas-dev
         - libcufft-dev
@@ -155,6 +155,13 @@ tests:
         - ${{ compiler('c') }}
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
+        - if: with_cuda
+          then:
+            # libnvidia-ml is a _driver_ file,
+            # not packaged on conda-forge,
+            # but must be present for the dlopen test
+            # use the stub for the test env
+            - cuda-nvml-dev
     script:
       file: run_test.sh
       env:
