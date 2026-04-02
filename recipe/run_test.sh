@@ -21,10 +21,10 @@ cd tests
 # dynamic loading
 if [[ "${cuda_compiler_version}" != "None" ]]; then
     make testdlopen
-    # in 'real' installs, libnvidia-ml is part of the driver
-    # mock with stub
-    # only this one file, though, the rest shouldn't need help
-    cp $PREFIX/lib/stubs/libnvidia-ml.so $PREFIX/lib/
+    # in 'real' installs, libnvidia-ml is part of the cuda driver,
+    # not distributed by conda-forge.
+    # Stage the stub into place or we'll get DLL not found
+    cp $PREFIX/lib/stubs/libnvidia-ml.so $PREFIX/lib/libnvidia-ml.so.1
     ./testdlopen
 else
     make ex1
