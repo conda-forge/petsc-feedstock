@@ -9,6 +9,7 @@ context:
   mpi: ${{ mpi | default('mpich') }}
   scalar: ${{ scalar | default('real') }}
   cuda_compiler_version: ${{ cuda_compiler_version | default('None') }}
+  blas_impl: ${{ blas_impl | default('generic') }}
   # construct some variables to use in the recipe
   # with_cuda can be used as a bool for cuda or not conditions
   with_cuda: ${{ 'true' if cuda_compiler_version != 'None' else '' }}
@@ -21,7 +22,8 @@ context:
     }}
   # construct the build prefix (e.g. 'cuda12_complex' or 'real')
   cuda_prefix: ${{ "cuda" + cuda_major + "_" }}
-  build_prefix: ${{ cuda_prefix + scalar if with_cuda else scalar }}
+  mkl_prefix: '${{ "mkl_" if blas_impl == "mkl" else "" }}'
+  build_prefix: ${{ cuda_prefix + mkl_prefix + scalar if with_cuda else mkl_prefix + scalar }}
 
 package:
   name: petsc
@@ -38,13 +40,17 @@ source:
 build:
   number: ${{ build }}
   string: ${{ build_prefix }}_h${{ hash }}_${{ build }}
-  skip: win
+  skip:
+    - win
+    - ${{ blas_impl == 'mkl' and target_platform != 'linux-64' }}
+    - ${{ blas_impl == 'mkl' and cuda_compiler_version != 'None' }}
   variant:
-    # deprioritize cuda and complex with track_features
+    # deprioritize cuda, complex, and mkl with track_features
     down_prioritize_variant: >
       ${{
         (1 if with_cuda else 0)
       + (1 if scalar == "complex" else 0)
+      + (1 if blas_impl == "mkl" else 0)
       }}
 
 requirements:
@@ -69,8 +75,13 @@ requirements:
     - if: mpi == 'openmpi' and build_platform != target_platform
       then: ${{ mpi }}
   host:
-    - libblas
-    - liblapack
+    - if: blas_impl != 'mkl'
+      then:
+        - libblas
+        - liblapack
+    - if: blas_impl == 'mkl'
+      then:
+        - mkl-devel
     - cmake
     - ${{ mpi }}
     - yaml
@@ -167,6 +178,7 @@ tests:
       env:
         target_platform: ${{ target_platform }}
         cuda_compiler_version: ${{ cuda_compiler_version }}
+        blas_impl: ${{ blas_impl }}
 
 about:
   summary: |

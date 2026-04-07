@@ -5,3 +5,7 @@ mpi:
 scalar:
   - real
   - complex
+
+blas_impl:
+  - generic
+  - mkl
