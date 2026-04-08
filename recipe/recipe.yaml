@@ -21,9 +21,9 @@ context:
       else "0"
     }}
   # construct the build prefix (e.g. 'cuda12_complex' or 'real')
-  cuda_prefix: ${{ "cuda" + cuda_major + "_" }}
+  cuda_prefix: ${{ "cuda" + cuda_major + "_" if with_cuda else "" }}
   mkl_prefix: '${{ "mkl_" if blas_impl == "mkl" else "" }}'
-  build_prefix: ${{ cuda_prefix + mkl_prefix + scalar if with_cuda else mkl_prefix + scalar }}
+  build_prefix: ${{ cuda_prefix + mkl_prefix + scalar }}
 
 package:
   name: petsc
