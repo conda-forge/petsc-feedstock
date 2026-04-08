@@ -50,6 +50,15 @@ fi
 export -n AR FC F90 F77 CC CXX CPP RANLIB
 export -n CFLAGS CXXFLAGS CPPFLAGS FFLAGS LDFLAGS
 
+if [[ "${blas_impl:-generic}" == "mkl" ]]; then
+  # Use MKL for BLAS/LAPACK and enable MKL Pardiso solvers.
+  blas_opts="--with-blaslapack-dir=$PREFIX"
+  mkl_opts="--with-mkl_pardiso=1 --with-mkl_pardiso-dir=$PREFIX --with-mkl_cpardiso=1 --with-mkl_cpardiso-dir=$PREFIX"
+else
+  blas_opts="--with-blas-lib=libblas${SHLIB_EXT} --with-lapack-lib=liblapack${SHLIB_EXT}"
+  mkl_opts="--with-mkl_pardiso=0 --with-mkl_cpardiso=0"
+fi
+
 if [[ "${scalar}" == "complex" ]]; then
   # conda-forge doesn't have complex hypre builds
   with_hypre="0"
@@ -78,11 +87,12 @@ python ./configure \
   --with-cxxlib-autodetect=0 \
   --with-fortranlib-autodetect=0 \
   --with-debugging=0 \
-  --with-blas-lib=libblas${SHLIB_EXT} \
-  --with-lapack-lib=liblapack${SHLIB_EXT} \
+  $blas_opts \
+  $mkl_opts \
   --with-yaml=1 \
   --with-hdf5=1 \
   --with-fftw=1 \
+  --with-fftw-dir=$PREFIX \
   --with-hwloc=1 \
   --with-openmp=1 \
   --with-hypre=${with_hypre} \

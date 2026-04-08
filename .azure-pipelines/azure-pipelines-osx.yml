@@ -8,68 +8,68 @@ jobs:
     vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_hdf51.14.6mpimpichscalarcomplex:
-        CONFIG: osx_64_hdf51.14.6mpimpichscalarcomplex
+      osx_64_blas_implgenerichdf51.14.6mpimpichscalarcomplex:
+        CONFIG: osx_64_blas_implgenerichdf51.14.6mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_64_hdf51.14.6mpimpichscalarreal:
-        CONFIG: osx_64_hdf51.14.6mpimpichscalarreal
+      osx_64_blas_implgenerichdf51.14.6mpimpichscalarreal:
+        CONFIG: osx_64_blas_implgenerichdf51.14.6mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_64_hdf51.14.6mpiopenmpiscalarcomplex:
-        CONFIG: osx_64_hdf51.14.6mpiopenmpiscalarcomplex
+      osx_64_blas_implgenerichdf51.14.6mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_blas_implgenerichdf51.14.6mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_64_hdf51.14.6mpiopenmpiscalarreal:
-        CONFIG: osx_64_hdf51.14.6mpiopenmpiscalarreal
+      osx_64_blas_implgenerichdf51.14.6mpiopenmpiscalarreal:
+        CONFIG: osx_64_blas_implgenerichdf51.14.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_64_hdf52mpimpichscalarcomplex:
-        CONFIG: osx_64_hdf52mpimpichscalarcomplex
+      osx_64_blas_implgenerichdf52mpimpichscalarcomplex:
+        CONFIG: osx_64_blas_implgenerichdf52mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_64_hdf52mpimpichscalarreal:
-        CONFIG: osx_64_hdf52mpimpichscalarreal
+      osx_64_blas_implgenerichdf52mpimpichscalarreal:
+        CONFIG: osx_64_blas_implgenerichdf52mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_64_hdf52mpiopenmpiscalarcomplex:
-        CONFIG: osx_64_hdf52mpiopenmpiscalarcomplex
+      osx_64_blas_implgenerichdf52mpiopenmpiscalarcomplex:
+        CONFIG: osx_64_blas_implgenerichdf52mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_64_hdf52mpiopenmpiscalarreal:
-        CONFIG: osx_64_hdf52mpiopenmpiscalarreal
+      osx_64_blas_implgenerichdf52mpiopenmpiscalarreal:
+        CONFIG: osx_64_blas_implgenerichdf52mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf51.14.6mpimpichscalarcomplex:
-        CONFIG: osx_arm64_hdf51.14.6mpimpichscalarcomplex
+      osx_arm64_blas_implgenerichdf51.14.6mpimpichscalarcomplex:
+        CONFIG: osx_arm64_blas_implgenerichdf51.14.6mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf51.14.6mpimpichscalarreal:
-        CONFIG: osx_arm64_hdf51.14.6mpimpichscalarreal
+      osx_arm64_blas_implgenerichdf51.14.6mpimpichscalarreal:
+        CONFIG: osx_arm64_blas_implgenerichdf51.14.6mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf51.14.6mpiopenmpiscalarcomplex:
-        CONFIG: osx_arm64_hdf51.14.6mpiopenmpiscalarcomplex
+      osx_arm64_blas_implgenerichdf51.14.6mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_blas_implgenerichdf51.14.6mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf51.14.6mpiopenmpiscalarreal:
-        CONFIG: osx_arm64_hdf51.14.6mpiopenmpiscalarreal
+      osx_arm64_blas_implgenerichdf51.14.6mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_blas_implgenerichdf51.14.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf52mpimpichscalarcomplex:
-        CONFIG: osx_arm64_hdf52mpimpichscalarcomplex
+      osx_arm64_blas_implgenerichdf52mpimpichscalarcomplex:
+        CONFIG: osx_arm64_blas_implgenerichdf52mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf52mpimpichscalarreal:
-        CONFIG: osx_arm64_hdf52mpimpichscalarreal
+      osx_arm64_blas_implgenerichdf52mpimpichscalarreal:
+        CONFIG: osx_arm64_blas_implgenerichdf52mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf52mpiopenmpiscalarcomplex:
-        CONFIG: osx_arm64_hdf52mpiopenmpiscalarcomplex
+      osx_arm64_blas_implgenerichdf52mpiopenmpiscalarcomplex:
+        CONFIG: osx_arm64_blas_implgenerichdf52mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf52mpiopenmpiscalarreal:
-        CONFIG: osx_arm64_hdf52mpiopenmpiscalarreal
+      osx_arm64_blas_implgenerichdf52mpiopenmpiscalarreal:
+        CONFIG: osx_arm64_blas_implgenerichdf52mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
   timeoutInMinutes: 360
