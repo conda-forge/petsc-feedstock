@@ -12,66 +12,82 @@ jobs:
         CONFIG: osx_64_hdf51.14.6mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_hdf51.14.6mpimpichscalarreal:
         CONFIG: osx_64_hdf51.14.6mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_hdf51.14.6mpiopenmpiscalarcomplex:
         CONFIG: osx_64_hdf51.14.6mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_hdf51.14.6mpiopenmpiscalarreal:
         CONFIG: osx_64_hdf51.14.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_hdf52mpimpichscalarcomplex:
         CONFIG: osx_64_hdf52mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_hdf52mpimpichscalarreal:
         CONFIG: osx_64_hdf52mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_hdf52mpiopenmpiscalarcomplex:
         CONFIG: osx_64_hdf52mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_64_hdf52mpiopenmpiscalarreal:
         CONFIG: osx_64_hdf52mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf51.14.6mpimpichscalarcomplex:
         CONFIG: osx_arm64_hdf51.14.6mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf51.14.6mpimpichscalarreal:
         CONFIG: osx_arm64_hdf51.14.6mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf51.14.6mpiopenmpiscalarcomplex:
         CONFIG: osx_arm64_hdf51.14.6mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf51.14.6mpiopenmpiscalarreal:
         CONFIG: osx_arm64_hdf51.14.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf52mpimpichscalarcomplex:
         CONFIG: osx_arm64_hdf52mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf52mpimpichscalarreal:
         CONFIG: osx_arm64_hdf52mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf52mpiopenmpiscalarcomplex:
         CONFIG: osx_arm64_hdf52mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
       osx_arm64_hdf52mpiopenmpiscalarreal:
         CONFIG: osx_arm64_hdf52mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        store_build_artifacts: false
   timeoutInMinutes: 360
   variables: {}
 
