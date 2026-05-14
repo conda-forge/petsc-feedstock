@@ -35,7 +35,7 @@ libblas:
 libcholmod:
 - '5'
 libhwloc:
-- 2.12.2
+- 2.13.0
 libklu:
 - '2'
 liblapack:
