@@ -12,88 +12,122 @@ jobs:
         CONFIG: osx_64_hdf51.14.6mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_hdf51.14.6mpimpichscalarreal:
         CONFIG: osx_64_hdf51.14.6mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_hdf51.14.6mpiopenmpiscalarcomplex:
         CONFIG: osx_64_hdf51.14.6mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_hdf51.14.6mpiopenmpiscalarreal:
         CONFIG: osx_64_hdf51.14.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_hdf52mpimpichscalarcomplex:
         CONFIG: osx_64_hdf52mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_hdf52mpimpichscalarreal:
         CONFIG: osx_64_hdf52mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_hdf52mpiopenmpiscalarcomplex:
         CONFIG: osx_64_hdf52mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_hdf52mpiopenmpiscalarreal:
         CONFIG: osx_64_hdf52mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf51.14.6mpimpichscalarcomplex:
         CONFIG: osx_arm64_hdf51.14.6mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf51.14.6mpimpichscalarreal:
         CONFIG: osx_arm64_hdf51.14.6mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf51.14.6mpiopenmpiscalarcomplex:
         CONFIG: osx_arm64_hdf51.14.6mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf51.14.6mpiopenmpiscalarreal:
         CONFIG: osx_arm64_hdf51.14.6mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf52mpimpichscalarcomplex:
         CONFIG: osx_arm64_hdf52mpimpichscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf52mpimpichscalarreal:
         CONFIG: osx_arm64_hdf52mpimpichscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf52mpiopenmpiscalarcomplex:
         CONFIG: osx_arm64_hdf52mpiopenmpiscalarcomplex
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_arm64_hdf52mpiopenmpiscalarreal:
         CONFIG: osx_arm64_hdf52mpiopenmpiscalarreal
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
         store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
   timeoutInMinutes: 360
   variables: {}
 
   steps:
   # TODO: Fast finish on azure pipelines?
   - script: |
+      export MINIFORGE_HOME=$(tools_install_dir)
+      export CONDA_BLD_PATH=$(build_workspace_dir)
       export CI=azure
       export flow_run_id=azure_$(Build.BuildNumber).$(System.JobAttempt)
       export remote_url=$(Build.Repository.Uri)
