@@ -13,7 +13,7 @@ channel_targets:
 cuda_compiler:
 - cuda-nvcc
 cuda_compiler_version:
-- '13.0'
+- '13.4'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -27,7 +27,7 @@ fortran_compiler:
 fortran_compiler_version:
 - '15'
 hdf5:
-- '2'
+- 1.14.6
 libamd:
 - '3'
 libblas:
@@ -51,7 +51,7 @@ libumfpack:
 metis:
 - 5.1.0
 mpi:
-- mpich
+- openmpi
 mpich:
 - '5'
 mumps_mpi:
@@ -59,7 +59,7 @@ mumps_mpi:
 openmpi:
 - '5'
 scalar:
-- real
+- complex
 superlu_dist:
 - '9'
 target_platform:
