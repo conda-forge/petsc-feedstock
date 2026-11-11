@@ -50,6 +50,7 @@ int main(int argc,char **argv)
   PetscCall(KSPGetPC(ksp, &pc));
   PetscCall(PCSetType(pc, PCJACOBI));
   PetscCall(KSPSetTolerances(ksp, 1e-12, PETSC_DEFAULT, PETSC_DEFAULT, PETSC_DEFAULT));
+  PetscCall(KSPSetFromOptions(ksp));
   PetscCall(KSPSolve(ksp, b, x));
   PetscCall(KSPGetConvergedReason(ksp, &reason));
   PetscCheck(reason > 0, PETSC_COMM_WORLD, PETSC_ERR_NOT_CONVERGED, "KSP did not converge (reason %d)", (int)reason);

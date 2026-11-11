@@ -44,6 +44,7 @@ source:
         - patches/p6-win32fe-exe-regex.patch
         - patches/p7-win32fe-gnu-flags.patch
         - patches/p8-install-unlock.patch
+        - patches/p9-sedinplace-probe.patch
 
 build:
   number: ${{ build }}

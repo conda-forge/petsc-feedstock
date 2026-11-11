@@ -43,6 +43,9 @@ if errorlevel 1 exit /b 1
 
 "%TEST_BUILD%\ex1.exe"
 if errorlevel 1 exit /b 1
+rem Exercise PETSc's built-in direct solver through command-line options.
+"%TEST_BUILD%\ex1.exe" -ksp_type preonly -pc_type lu -ksp_error_if_not_converged
+if errorlevel 1 exit /b 1
 "%TEST_BUILD%\ex1_cpp.exe"
 if errorlevel 1 exit /b 1
 mpiexec.exe -localonly -n 2 -env PATH "%MPI_TEST_PATH%" "%TEST_BUILD%\ex1.exe" > "%MPI_OUTPUT%" 2>&1

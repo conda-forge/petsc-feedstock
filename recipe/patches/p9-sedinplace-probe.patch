@@ -1,0 +1,40 @@
+--- a/config/BuildSystem/config/programs.py
++++ b/config/BuildSystem/config/programs.py
+@@ -80,20 +80,28 @@
+     if not hasattr(self, 'sed'): raise RuntimeError('Could not locate sed executable')
+     # check if sed supports -i "" or -i option
+     sed1 = os.path.join(self.tmpDir,'sed1')
+-    f = open(sed1, 'w')
+-    f.write('sed\n')
+-    f.close()
++    sedinplace_found = False
+     for sedcmd in [self.sed+' -i',self.sed+' -i ""','perl -pi -e']:
+       try:
+-        (out,err,status) = Configure.executeShellCommand('%s s/sed/sd/g "%s"'%(sedcmd,sed1), log = self.log)
++        # An unsuccessful in-place edit can remove the input on Windows.
++        # Each candidate needs its own input, and success must preserve it.
++        with open(sed1, 'w') as f:
++          f.write('sed\n')
++        Configure.executeShellCommand('%s s/sed/sd/g "%s"'%(sedcmd,sed1), log = self.log)
++        with open(sed1) as f:
++          if f.read() != 'sd\n':
++            raise RuntimeError('In-place edit did not produce the expected contents')
+         self.logPrint('Adding SEDINPLACE cmd: '+sedcmd)
+         self.addMakeMacro('SEDINPLACE',sedcmd)
+-        status = 1
++        sedinplace_found = True
+         break
+-      except RuntimeError:
+-        self.logPrint('Rejected SEDINPLACE cmd: '+sedcmd)
+-    os.unlink(sed1)
+-    if not status:
++      except (RuntimeError, OSError) as e:
++        self.logPrint('Rejected SEDINPLACE cmd: '+sedcmd+' ('+str(e)+')')
++    try:
++      os.unlink(sed1)
++    except FileNotFoundError:
++      pass
++    if not sedinplace_found:
+         self.logPrint('No suitable SEDINPLACE found')
+         self.addMakeMacro('SEDINPLACE','SEDINPLACE_NOT_FOUND')
+     self.getExecutable('mv',   getFullPath = 1)

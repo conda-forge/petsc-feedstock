@@ -13,3 +13,9 @@ and installed metadata. The petsc.lib alias also supports setuptools consumers.
 Configure uses a temporary directory inside the source work directory so native
 Python and MSYS2 tools do not depend on runner-specific short-name temp paths or
 a separate temporary drive. Configure failures print configure.log in CI.
+
+The sed in-place configure probe is hardened against missing temporary files,
+failed subprocesses, and commands that succeed without editing their input.
+This adapts the p9 work in precise-simulation/fenics-windows-ci, with explicit
+content validation and a fresh input for each candidate command. Windows tests
+also exercise PETSc's built-in LU solver through KSPSetFromOptions.
