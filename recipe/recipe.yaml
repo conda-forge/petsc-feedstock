@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: petsc
   version: "3.26.1"
-  build: 0
+  build: 1
   # these variables should all be overridden in variant files
   # but default values are sometimes needed for conda-smithy rerender
   mpi: ${{ mpi | default('mpich') }}
@@ -34,11 +34,23 @@ source:
     - ignore-not-invalid.patch
     - no-cppflags-in-pkgconfig-cflags.patch
     - target-cudadir.patch
+    - if: win
+      then:
+        - patches/p1-win32-python.patch
+        - patches/p2-function-name-cxx.patch
+        - patches/p3-nargs-pathsep.patch
+        - patches/p4-check-exe-ext.patch
+        - patches/p5-symlink-fallback.patch
+        - patches/p6-win32fe-exe-regex.patch
+        - patches/p7-win32fe-gnu-flags.patch
+        - patches/p8-install-unlock.patch
 
 build:
   number: ${{ build }}
   string: ${{ build_prefix }}_h${{ hash }}_${{ build }}
-  skip: win
+  skip: win and (mpi != 'impi' or scalar != 'real' or cuda_compiler_version != 'None')
+  script:
+    file: build${{ ".bat" if win else ".sh" }}
   variant:
     # deprioritize cuda and complex with track_features
     down_prioritize_variant: >
@@ -51,68 +63,92 @@ requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
-    - ${{ compiler('cxx') }}
-    - ${{ compiler('fortran') }}
-    - if: with_cuda
-      then: ${{ compiler('cuda') }}
-    - if: osx
+    - if: win
       then:
-        # has symlinks for 'otool', 'install_name_tool', etc.
-        # otherwise, we only have 'arm64-apple-darwin20.0.0-install_name_tool'
-        - cctools
-    - bison  # not actually required, but petsc declares it as necessary to link against ptscotch
-    - diffutils
-    - make
-    - pkg-config
-    - python 3.12.*
-    - gnuconfig
-    - if: mpi == 'openmpi' and build_platform != target_platform
-      then: ${{ mpi }}
+        - python 3.12.*
+        - m2-bash
+        - m2-make
+        - m2-diffutils
+        - m2-sed
+        - m2-tar
+        - m2-coreutils
+        - m2-findutils
+        - m2-grep
+        - m2-gawk
+    - if: not win
+      then:
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
+        - if: with_cuda
+          then: ${{ compiler('cuda') }}
+        - if: osx
+          then:
+            # has symlinks for 'otool', 'install_name_tool', etc.
+            # otherwise, we only have 'arm64-apple-darwin20.0.0-install_name_tool'
+            - cctools
+        - bison  # not actually required, but petsc declares it as necessary to link against ptscotch
+        - diffutils
+        - make
+        - pkg-config
+        - python 3.12.*
+        - gnuconfig
+        - if: mpi == 'openmpi' and build_platform != target_platform
+          then: ${{ mpi }}
   host:
-    - libblas
-    - liblapack
-    - cmake
-    - ${{ mpi }}
-    - yaml
-    - if: scalar == 'real'
+    - if: win
       then:
-        - hypre
-    - libhwloc
-    - metis
-    - parmetis
-    - libptscotch
-    - scalapack
-    - superlu
-    - superlu_dist
-    - libscotch
-    # needs 32b libscotch
-    - libscotch * int32_*
-    - mumps-mpi
-    # suitesparse
-    - libamd
-    - libcholmod
-    - libklu
-    - libspqr
-    - libumfpack
-
-    - hdf5
-    - hdf5 * mpi_${{ mpi }}_*
-    - fftw
-    - fftw * mpi_${{ mpi }}_*
-
-    # cuda
-    - if: with_cuda
+        - impi-devel
+        - libopenblas * pthreads_*
+    - if: not win
       then:
-        - cuda-version ${{ cuda_compiler_version }}.*
-        - cuda-cudart-dev
-        - cuda-nvml-dev
-        - cuda-nvtx-dev
-        - libcublas-dev
-        - libcufft-dev
-        - libcurand-dev
-        - libcusolver-dev
-        - libcusparse-dev
+        - libblas
+        - liblapack
+        - cmake
+        - ${{ mpi }}
+        - yaml
+        - if: scalar == 'real'
+          then:
+            - hypre
+        - libhwloc
+        - metis
+        - parmetis
+        - libptscotch
+        - scalapack
+        - superlu
+        - superlu_dist
+        - libscotch
+        # needs 32b libscotch
+        - libscotch * int32_*
+        - mumps-mpi
+        # suitesparse
+        - libamd
+        - libcholmod
+        - libklu
+        - libspqr
+        - libumfpack
+
+        - hdf5
+        - hdf5 * mpi_${{ mpi }}_*
+        - fftw
+        - fftw * mpi_${{ mpi }}_*
+
+        # cuda
+        - if: with_cuda
+          then:
+            - cuda-version ${{ cuda_compiler_version }}.*
+            - cuda-cudart-dev
+            - cuda-nvml-dev
+            - cuda-nvtx-dev
+            - libcublas-dev
+            - libcufft-dev
+            - libcurand-dev
+            - libcusolver-dev
+            - libcusparse-dev
   run:
+    - if: win
+      then:
+        - impi_rt
+        - libopenblas * pthreads_*
     - if: with_cuda
       then:
         - ${{ pin_compatible('cuda-version', lower_bound='x', upper_bound='x') }}
@@ -142,31 +178,52 @@ requirements:
       - libcusparse-dev
 
 tests:
-  - files:
-      recipe:
-        - tests/ex1.c
-        - tests/ex1f.F90
-        - tests/testdlopen.c
-        - tests/makefile
-    requirements:
-      run:
-        - pkg-config
-        - make
-        - ${{ compiler('c') }}
-        - ${{ compiler('cxx') }}
-        - ${{ compiler('fortran') }}
-        - if: with_cuda
-          then:
-            # libnvidia-ml is a _driver_ file,
-            # not packaged on conda-forge,
-            # but must be present for the dlopen test
-            # use the stub for the test env
-            - cuda-nvml-dev
-    script:
-      file: run_test.sh
-      env:
-        target_platform: ${{ target_platform }}
-        cuda_compiler_version: ${{ cuda_compiler_version }}
+  - if: not win
+    then:
+      - files:
+          recipe:
+            - tests/ex1.c
+            - tests/ex1f.F90
+            - tests/testdlopen.c
+            - tests/makefile
+        requirements:
+          run:
+            - pkg-config
+            - make
+            - ${{ compiler('c') }}
+            - ${{ compiler('cxx') }}
+            - ${{ compiler('fortran') }}
+            - if: with_cuda
+              then:
+                # libnvidia-ml is a _driver_ file,
+                # not packaged on conda-forge,
+                # but must be present for the dlopen test
+                # use the stub for the test env
+                - cuda-nvml-dev
+        script:
+          file: run_test.sh
+          env:
+            target_platform: ${{ target_platform }}
+            cuda_compiler_version: ${{ cuda_compiler_version }}
+  - if: win
+    then:
+      - files:
+          recipe:
+            - tests/ex1.c
+            - tests/ex1.cpp
+            - tests/CMakeLists.txt
+            - tests/check_metadata.py
+        requirements:
+          run:
+            - python
+            - cmake
+            - ninja
+            - pkg-config
+            - impi-devel
+            - libopenblas * pthreads_*
+            - ${{ compiler('c') }}
+        script:
+          file: run_test_win.bat
 
 about:
   summary: |

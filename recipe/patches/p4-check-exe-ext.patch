@@ -1,0 +1,23 @@
+diff --git a/config/BuildSystem/config/base.py b/config/BuildSystem/config/base.py
+index 0ef791b..30d1afe 100644
+--- a/config/BuildSystem/config/base.py
++++ b/config/BuildSystem/config/base.py
+@@ -222,6 +222,9 @@ class Configure(script.Script):
+     if os.path.isfile(prog) and os.access(prog, os.X_OK):
+       found = 1
+       self.logWrite('found\n')
++    elif os.name == 'nt' and os.path.isfile(prog+'.exe') and os.access(prog+'.exe', os.X_OK):
++      found = 1
++      self.logWrite('found (as .exe)\n')
+     else:
+       self.logWrite('not found\n')
+     return found
+@@ -232,7 +235,7 @@ class Configure(script.Script):
+        - If found, the path is attached to self as an attribute named "name", or "resultName" if given
+        - By default, a make macro "resultName" will hold the path'''
+     found = 0
+-    if isinstance(names,str) and names.startswith('/'):
++    if isinstance(names,str) and (names.startswith('/') or (len(names) > 1 and names[1] == ':')):
+       path = os.path.dirname(names)
+       names = os.path.basename(names)
+ 

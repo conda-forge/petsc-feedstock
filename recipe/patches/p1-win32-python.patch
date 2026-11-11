@@ -1,0 +1,13 @@
+diff --git a/config/configure.py b/config/configure.py
+index e682411..3bf5dcb 100644
+--- a/config/configure.py
++++ b/config/configure.py
+@@ -237,7 +237,7 @@ def chkbrokencygwin():
+   return 0
+ 
+ def chkusingwindowspython():
+-  if sys.platform == 'win32':
++  if sys.platform == 'win32' and os.environ.get('PETSC_ALLOW_WIN32_PYTHON', '0') != '1':
+     print('===============================================================================')
+     print(' *** Windows python detected. Please rerun ./configure with cygwin-python. ***')
+     print('===============================================================================')

@@ -1,0 +1,17 @@
+diff --git a/config/configure.py b/config/configure.py
+index e682411..1afeef6 100644
+--- a/config/configure.py
++++ b/config/configure.py
+@@ -376,7 +376,11 @@ def move_configure_log(framework):
+     if os.path.isfile(curr_file):
+       shutil.copyfile(curr_file,new_file)
+       os.remove(curr_file)
+-    if os.path.isfile(new_file): os.symlink(new_file,curr_file)
++    if os.path.isfile(new_file):
++      try:
++        os.symlink(new_file,curr_file)
++      except (OSError, NotImplementedError):
++        shutil.copyfile(new_file,curr_file)
+     # If the old bkp is using the same PETSC_ARCH/lib/petsc/conf - then update bkp link
+     if os.path.realpath(curr_bkp) == os.path.realpath(new_file):
+       if os.path.isfile(curr_bkp): os.remove(curr_bkp)

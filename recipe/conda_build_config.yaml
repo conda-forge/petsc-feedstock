@@ -1,7 +1,8 @@
 mpi:
-  - mpich
-  - openmpi
+  - mpich  # [not win]
+  - openmpi  # [not win]
+  - impi  # [win]
 
 scalar:
   - real
-  - complex
+  - complex  # [not win]

@@ -1,0 +1,13 @@
+diff --git a/config/install.py b/config/install.py
+index 42d07f0..78b5d11 100644
+--- a/config/install.py
++++ b/config/install.py
+@@ -626,4 +626,7 @@ if __name__ == '__main__':
+   delfiles=['RDict.db','RDict.log','buildsystem.log','default.log','buildsystem.log.bkp','default.log.bkp']
+   for delfile in delfiles:
+     if os.path.exists(delfile) and (os.stat(delfile).st_uid==0):
+-      os.remove(delfile)
++      try:
++        os.remove(delfile)
++      except OSError:
++        pass
