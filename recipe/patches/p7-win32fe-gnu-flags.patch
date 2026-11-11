@@ -1,0 +1,20 @@
+diff --git a/config/BuildSystem/config/compile/C.py b/config/BuildSystem/config/compile/C.py
+index daeeb8c..32103dc 100644
+--- a/config/BuildSystem/config/compile/C.py
++++ b/config/BuildSystem/config/compile/C.py
+@@ -18,12 +18,13 @@ class Compiler(config.compile.processor.Processor):
+   '''The C compiler'''
+   def __init__(self, argDB, usePreprocessorFlags = True):
+     import platform
+-    if platform.system() == 'Windows':
++    useWin32fe = platform.system() == 'Windows' and 'win32fe' in str(argDB.get('with-cc', ''))
++    if platform.system() == 'Windows' and not useWin32fe:
+       ext = '.obj'
+     else:
+       ext = '.o'
+     config.compile.processor.Processor.__init__(self, argDB, 'CC', 'CFLAGS', '.c', ext)
+-    if platform.system() == 'Windows':
++    if platform.system() == 'Windows' and not useWin32fe:
+       self.outputFlag         = '/Fo'
+       self.requiredFlags[-1]  = '/c'
+     else:

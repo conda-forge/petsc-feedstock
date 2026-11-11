@@ -1,0 +1,30 @@
+diff --git a/include/petscmacros.h b/include/petscmacros.h
+index 619d73b..afcf7e3 100644
+--- a/include/petscmacros.h
++++ b/include/petscmacros.h
+@@ -40,6 +40,25 @@
+   #define PETSC_C_VERSION 0
+ #endif
+ 
++/* ========================================================================== */
++/* PETSc configured without a C++ compiler does not define PETSC_FUNCTION_NAME_CXX;
++   fall back to the C name so that C++ consumers compile. */
++#if defined(__cplusplus) && !defined(PETSC_FUNCTION_NAME_CXX)
++  #define PETSC_FUNCTION_NAME_CXX PETSC_FUNCTION_NAME_C
++#endif
++
++/* A C-only configuration does not define PETSC_CXX_RESTRICT; provide a
++   conservative fallback so C++ consumers compile. */
++#if defined(__cplusplus) && !defined(PETSC_CXX_RESTRICT)
++#  if defined(_MSC_VER)
++#    define PETSC_CXX_RESTRICT __restrict
++#  elif defined(__GNUC__) || defined(__clang__)
++#    define PETSC_CXX_RESTRICT __restrict__
++#  else
++#    define PETSC_CXX_RESTRICT
++#  endif
++#endif
++
+ /* ========================================================================== */
+ /* This facilitates using the C version of PETSc from C++ and the C++ version from C. */
+ #if defined(__cplusplus)

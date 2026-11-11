@@ -1,0 +1,22 @@
+c_compiler:
+- vs2022
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cuda_compiler_version:
+- None
+impi_devel:
+- 2021.16.0
+mpi:
+- impi
+mpich:
+- '5'
+openmpi:
+- '5'
+scalar:
+- real
+target_platform:
+- win-64
